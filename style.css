@@ -121,9 +121,9 @@ header.scrolled {
 }
 
 .logo img {
-  height: 40px;
+  height: 52px;              /* was 40px */
   width: auto;
-  filter: drop-shadow(0 2px 4px rgba(165, 64, 64, 0.2));
+  filter: drop-shadow(0 2px 4px rgba(165, 64, 64, 0.3));
 }
 
 nav ul {
@@ -236,7 +236,8 @@ section.slideshow-hero {
   justify-content: center;
   transition: opacity 1.5s ease-in-out;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
+  background-attachment: scroll;
   background-repeat: no-repeat;
   z-index: 0;              /* add this */
   pointer-events: none;    /* add this */
@@ -259,11 +260,10 @@ section.slideshow-hero {
 }
 
 .slide-logo {
-  height: 60px;
+  height: 90px;  /* bigger in hero */
   width: auto;
   margin-bottom: var(--space-24);
   filter: drop-shadow(0 2px 8px rgba(165, 64, 64, 0.4));
-  animation: fadeInDown 0.8s ease-out;
 }
 
 .slide h2 {
@@ -750,7 +750,7 @@ label {
 
 /* FOOTER */
 footer {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.95);
   border-top: 1px solid var(--border-grey);
   padding: 60px var(--space-32);
   color: var(--label-grey);
@@ -999,4 +999,42 @@ footer {
     gap: 8px;
     font-size: 0.85rem;
   }
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background: #000;
+  border: 1px solid var(--border-grey);
+  border-radius: 8px;
+  padding: 8px 0;
+  display: none;
+  z-index: 20;
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  color: var(--text-beige);
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background: rgba(165, 64, 64, 0.2);
+}
+
+/* show menu when .active is applied by JS Navigation class */
+.dropdown.active .dropdown-menu {
+  display: block;
 }
