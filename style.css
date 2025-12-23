@@ -260,7 +260,7 @@ section.slideshow-hero {
 }
 
 .slide-logo {
-  height: 90px;  /* bigger in hero */
+  height: 150px;  /* bigger in hero */
   width: auto;
   margin-bottom: var(--space-24);
   filter: drop-shadow(0 2px 8px rgba(165, 64, 64, 0.4));
