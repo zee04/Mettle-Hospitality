@@ -240,7 +240,7 @@ section.slideshow-hero {
   justify-content: center;
   transition: opacity 1.5s ease-in-out;
   background-size: cover;
-  background-position: center top;
+  background-position: center center;
   background-attachment: scroll;
   background-repeat: no-repeat;
   z-index: 0;              /* add this */
