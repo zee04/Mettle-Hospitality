@@ -29,6 +29,8 @@ body {
   color: var(--text-beige);
   line-height: 1.6;
   letter-spacing: 0.5px;
+  overflow-x: hidden;
+  
 }
 
 /* TYPOGRAPHY */
@@ -218,11 +220,10 @@ section.slideshow-hero {
 
 .slideshow-container {
  position: relative;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   overflow: hidden;
   margin-top: 60px;
-  margin-left: calc(-50vw + 50%);
 }
 
 .slide {
