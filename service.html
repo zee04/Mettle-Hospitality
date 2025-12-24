@@ -6,156 +6,160 @@
   <title>Services - Mettle Hospitality</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="images/mettle logo no back.png" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <!-- HEADER -->
-  <header id="navbar">
-    <div class="header-container">
-      <a href="index.html" class="logo">
-        <img src="images/mettle logo no back.png" alt="Mettle Hospitality">
-        <span></span>
+  <header id="navbar" class="nav-header">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/mettle logo no back.png" alt="Mettle Hospitality" style="height: 50px;">
       </a>
-      <button class="mobile-toggle" id="mobile-toggle">
+      <div class="mobile-menu-toggle" id="mobile-toggle">
         <span></span>
         <span></span>
         <span></span>
-      </button>
-      <nav id="nav-menu">
-        <ul>
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="about.html" class="nav-link">About us</a></li>
-          <li class="dropdown">
-              <a href="service.html" class="nav-link active dropdown-toggle">Services</a>
-                <ul class="dropdown-menu">
-                   <li><a href="service.html#offer">What We Offer</a></li>
-                   <li><a href="service.html#secret-sauce">Our Secret Sauce</a></li>
-                </ul>
-          </li>
-          <li class="dropdown">
-            <a href="work.html" class="nav-link dropdown-toggle">Projects</a>
-            <ul class="dropdown-menu">
-              <li><a href="work.html#current">Current Projects</a></li>
-              <li><a href="work.html#past">Past Projects</a></li>
-            </ul>
-          </li>
-          <li><a href="media.html" class="nav-link">Media</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
+      </div>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About us</a>
+        <div class="dropdown">
+            <a href="service.html" class="nav-link active dropdown-toggle">Services <span class="dropdown-arrow">›</span></a>
+            <div class="dropdown-menu">
+                <a href="service.html#offer" class="dropdown-link">What We Offer</a>
+                <a href="service.html#secret" class="dropdown-link">Our Secret Sauce</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="work.html" class="nav-link dropdown-toggle">Projects <span class="dropdown-arrow">›</span></a>
+            <div class="dropdown-menu">
+                <a href="work.html#current" class="dropdown-link">Current Projects</a>
+                <a href="work.html#past" class="dropdown-link">Past Projects</a>
+            </div>
+        </div>
+        <a href="media.html" class="nav-link">Media</a>
+        <a href="contact.html" class="nav-link">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- SECTION 1: WHAT WE OFFER -->
-  <section class="services-offer-section" id="offer">
-    <div class="services-offer-inner">
+  <!-- SERVICES SPLIT LAYOUT -->
+  <main class="services-split-layout" id="offer">
+    
+    <!-- LEFT: DIAGRAM -->
+    <div class="services-diagram-container">
+      <div class="diagram-wrapper">
+        
+        <!-- Central Loop -->
+        <div class="central-loop"></div>
 
-      <!-- Left: Circular diagram + text blocks -->
-      <div class="services-offer-left">
-
-        <!-- Central loop diagram -->
-        <div class="services-loop">
-          <div class="loop-circle"></div>
-
-          <!-- 5 nodes around the loop (use your existing SVG / icons) -->
-          <div class="loop-node node-1">
-            <img src="images/icon-turnkey.svg" alt="Turnkey Solutions">
-          </div>
-          <div class="loop-node node-2">
-            <img src="images/icon-fnb.svg" alt="F&B Consultancy">
-          </div>
-          <div class="loop-node node-3">
-            <img src="images/icon-scale.svg" alt="Scale & Franchise">
-          </div>
-          <div class="loop-node node-4">
-            <img src="images/icon-private.svg" alt="Private Dining & Pop-Ups">
-          </div>
-          <div class="loop-node node-5">
-            <img src="images/icon-styling.svg" alt="Food Styling & Visuals">
-          </div>
-
-          <!-- Connector lines (pure CSS) -->
-          <span class="loop-line line-1"></span>
-          <span class="loop-line line-2"></span>
-          <span class="loop-line line-3"></span>
-          <span class="loop-line line-4"></span>
-          <span class="loop-line line-5"></span>
+        <!-- NODE 1: Turnkey (10 o'clock) -->
+        <div class="loop-node node-1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M3 21h18M5 21V7l8-4 8 4v14M10 9a2 2 0 0 1 2 2v10m-4 0h8"/>
+          </svg>
+        </div>
+        <div class="connector-line line-1"></div>
+        <div class="text-block block-1">
+          <h3>Turnkey Solutions</h3>
+          <p>From blank space to first service: brand, menu, systems, hiring, training, go-live.</p>
         </div>
 
-        <!-- Text callouts around the loop -->
-        <div class="services-callouts">
-          <div class="service-callout callout-1">
-            <h3>Turnkey Solutions</h3>
-            <p>From blank space to first service: brand, menu, systems, hiring, training, go-live. Complete end-to-end implementation.</p>
-          </div>
+        <!-- NODE 2: Culinary (1 o'clock) -->
+        <div class="loop-node node-2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/>
+            <line x1="10" y1="9" x2="10" y2="9.1"/>
+            <line x1="14" y1="9" x2="14" y2="9.1"/>
+          </svg>
+        </div>
+        <div class="connector-line line-2"></div>
+        <div class="text-block block-2">
+          <h3>F&B Consultancy</h3>
+          <p>Menus engineered for margins, speed, and identity. Strategic culinary design.</p>
+        </div>
 
-          <div class="service-callout callout-2">
-            <h3>F&amp;B Consultancy</h3>
-            <p>Menus engineered for margins, speed, and identity. Strategic culinary design that balances creativity with profitability.</p>
-          </div>
+        <!-- NODE 3: Scale (3 o'clock) -->
+        <div class="loop-node node-3">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+            <polyline points="17 6 23 6 23 12"></polyline>
+          </svg>
+        </div>
+        <div class="connector-line line-3"></div>
+        <div class="text-block block-3">
+          <h3>Scale & Franchise</h3>
+          <p>Standardize the magic. Systems for consistent excellence across locations.</p>
+        </div>
 
-          <div class="service-callout callout-3">
-            <h3>Scale &amp; Franchise Readiness</h3>
-            <p>Standardize the magic, build the replication playbook. Systems designed for consistent excellence across multiple locations.</p>
-          </div>
+        <!-- NODE 4: Private Dining (5 o'clock) -->
+        <div class="loop-node node-4">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </div>
+        <div class="connector-line line-4"></div>
+        <div class="text-block block-4">
+          <h3>Private Dining</h3>
+          <p>Chef-led, intimate experiences. Exclusive culinary events that impress.</p>
+        </div>
 
-          <div class="service-callout callout-4">
-            <h3>Private Dining &amp; Pop-Ups</h3>
-            <p>Bespoke private dining—chef-led, intimate, and fully produced. Exclusive culinary experiences that create lasting impressions.</p>
-          </div>
-
-          <div class="service-callout callout-5">
-            <h3>Food Styling &amp; Visuals</h3>
-            <p>Because how it looks matters—but only if it is honest. Professional photography and styling that captures your culinary vision authentically.</p>
-          </div>
+        <!-- NODE 5: Styling (8 o'clock) -->
+        <div class="loop-node node-5">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+            <circle cx="12" cy="13" r="4"></circle>
+          </svg>
+        </div>
+        <div class="connector-line line-5"></div>
+        <div class="text-block block-5">
+          <h3>Food Styling</h3>
+          <p>Professional photography. Authentic visual storytelling for your brand.</p>
         </div>
 
       </div>
-
-      <!-- Right: Service image (same vibe as deck) -->
-      <div class="services-offer-image">
-        <div class="services-offer-image-inner"></div>
-      </div>
-
     </div>
-  </section>
 
-  <!-- SECTION 2: OUR SECRET SAUCE -->
-  <section class="services-secret-section" id="secret-sauce">
-    <div class="services-secret-overlay"></div>
-    <div class="services-secret-content">
+    <!-- RIGHT: IMAGE -->
+    <div class="services-image-side">
+      <img src="images/services-chef.jpg" alt="Chef at work">
+    </div>
+
+  </main>
+
+  <!-- SECRET SAUCE -->
+  <section class="secret-sauce-section" id="secret">
+    <div class="secret-content">
       <h2>Our Secret Sauce</h2>
-      <p>We turn opinions into options.</p>
-      <p>We remove the noise from decisions.</p>
-      <p>Just consistent, rigorous thinking.</p>
+      <div class="secret-text">
+        <p>We turn opinions into options.</p>
+        <p>We remove the noise from decisions.</p>
+        <p>Just consistent, rigorous thinking.</p>
+      </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer>
+  <footer class="footer">
     <div class="footer-content">
-      <div class="footer-left">
-        <img src="images/mettle logo no back.png" alt="Mettle Hospitality" class="footer-logo">
+      <div class="footer-brand">
+        <h3>METTLE</h3>
       </div>
-      <div class="footer-center">
-        <nav class="footer-nav">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="service.html">Services</a></li>
-            <li><a href="work.html">Projects</a></li>
-            <li><a href="media.html">Media</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="service.html">Services</a>
+        <a href="work.html">Projects</a>
+        <a href="media.html">Media</a>
+        <a href="contact.html">Contact</a>
       </div>
-      <div class="footer-right">
-        <p>Based in Mumbai, serving nationwide &amp; globally</p>
-        <p><a href="contact.html">Get in touch</a></p>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Mettle Hospitality. All rights reserved.</p>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 Mettle Hospitality. All rights reserved.</p>
     </div>
   </footer>
 
