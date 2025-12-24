@@ -1,143 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services - Mettle Hospitality</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="images/mettle logo no back.png" type="image/jpeg">
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Mettle Hospitality</title>
+    <!-- Google Fonts: Playfair Display (Serif) & Inter (Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="services-body">
+<body>
 
-  <!-- HEADER -->
-  <nav class="nav-header" id="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="nav-logo">
-        <img src="images/mettle logo no back.png" alt="Mettle Hospitality" style="height: 50px;">
-      </a>
-      <div class="mobile-menu-toggle" id="mobile-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="nav-menu" id="nav-menu">
-        <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
-        <div class="nav-item"><a href="about.html" class="nav-link">About us</a></div>
-        <div class="nav-item dropdown">
-            <a href="service.html" class="nav-link active dropdown-toggle">Services <span class="dropdown-arrow">›</span></a>
-            <div class="dropdown-menu">
-                <a href="#offer" class="dropdown-link">What We Offer</a>
-                <a href="#secret" class="dropdown-link">Our Secret Sauce</a>
+    <!-- Sticky Navigation -->
+    <header class="nav-header">
+        <nav class="navbar">
+            <div class="logo">METTLE</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html" class="active">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECTION 1: The Services Loop Diagram -->
+        <section id="services-loop" class="services-wrapper">
+            <!-- Background Image with Dark Overlay -->
+            <div class="bg-layer"></div>
+            
+            <div class="content-container">
+                <!-- Left Column: 2 Items -->
+                <div class="column left-col">
+                    <div class="service-item item-left">
+                        <div class="text-block">
+                            <h3>Turnkey Solutions</h3>
+                            <div class="crimson-line"></div>
+                            <p>From blank space to first service: brand, menu, systems, hiring, training, go-live.</p>
+                        </div>
+                        <div class="connector-line"></div>
+                    </div>
+
+                    <div class="service-item item-left">
+                        <div class="text-block">
+                            <h3>Food Styling & Visuals</h3>
+                            <div class="crimson-line"></div>
+                            <p>Professional photography and styling that captures your culinary vision authentically.</p>
+                        </div>
+                        <div class="connector-line"></div>
+                    </div>
+                </div>
+
+                <!-- Center Column: The Loop Ring -->
+                <div class="column center-col">
+                    <div class="loop-ring">
+                        <!-- Nodes on the ring -->
+                        <div class="node node-l-1"></div>
+                        <div class="node node-l-2"></div>
+                        <div class="node node-r-1"></div>
+                        <div class="node node-r-2"></div>
+                        <div class="node node-r-3"></div>
+                    </div>
+                </div>
+
+                <!-- Right Column: 3 Items -->
+                <div class="column right-col">
+                    <div class="service-item item-right">
+                        <div class="connector-line"></div>
+                        <div class="text-block">
+                            <h3>F&B Consultancy</h3>
+                            <div class="crimson-line"></div>
+                            <p>Menus engineered for margins, speed, and identity. Strategic culinary design.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-item item-right">
+                        <div class="connector-line"></div>
+                        <div class="text-block">
+                            <h3>Scale & Franchise</h3>
+                            <div class="crimson-line"></div>
+                            <p>Standardize the magic. Systems designed for consistent excellence across locations.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-item item-right">
+                        <div class="connector-line"></div>
+                        <div class="text-block">
+                            <h3>Private Dining</h3>
+                            <div class="crimson-line"></div>
+                            <p>Bespoke private dining. Exclusive culinary experiences for intimate gatherings.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="nav-item dropdown">
-            <a href="work.html" class="nav-link dropdown-toggle">Projects <span class="dropdown-arrow">›</span></a>
-            <div class="dropdown-menu">
-                <a href="work.html#current" class="dropdown-link">Current Projects</a>
-                <a href="work.html#past" class="dropdown-link">Past Projects</a>
-            </div>
-        </div>
-        <div class="nav-item"><a href="media.html" class="nav-link">Media</a></div>
-        <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
-      </div>
-    </div>
-  </nav>
+        </section>
 
-  <!-- MAIN LAYOUT: TEXT - DIAGRAM - IMAGE -->
-  <section class="services-deck-layout" id="offer">
-    
-    <!-- CONTENT SIDE (Text + Diagram) -->
-    <div class="services-content-side">
-      <div class="deck-header">
-        <h1>What We Offer</h1>
-      </div>
-
-      <div class="deck-grid">
-        
-        <!-- LEFT TEXT COLUMN -->
-        <div class="deck-col-left">
-          <div class="deck-item item-turnkey">
-            <h3>Turnkey Solutions</h3>
-            <p>From blank space to first service: brand, menu, systems, hiring, training, go-live. Complete end-to-end implementation.</p>
-          </div>
-          
-          <div class="deck-item item-styling">
-            <h3>Food Styling & Visuals</h3>
-            <p>Because how it looks matters—but only if it is honest. Professional photography and styling that captures your culinary vision authentically.</p>
-          </div>
-        </div>
-
-        <!-- CENTER DIAGRAM -->
-        <div class="deck-col-center">
-            <div class="deck-loop">
-                <!-- Node 1: Top Left (Turnkey) -->
-                <div class="deck-node node-1">
-                    <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l8-4 8 4v14M10 9a2 2 0 0 1 2 2v10m-4 0h8" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        <!-- SECTION 2: Our Secret Sauce -->
+        <section id="secret-sauce" class="secret-sauce-wrapper">
+            <div class="sauce-container">
+                <div class="sauce-image">
+                    <!-- Placeholder for the Left-side image -->
+                    <img src="images/secret-sauce.jpg" alt="Culinary Detail"> 
                 </div>
-                <!-- Node 2: Top Right (Culinary) -->
-                <div class="deck-node node-2">
-                    <svg viewBox="0 0 24 24"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="9" r="1" fill="currentColor"/><circle cx="14" cy="9" r="1" fill="currentColor"/></svg>
-                </div>
-                <!-- Node 3: Mid Right (Scale) -->
-                <div class="deck-node node-3">
-                    <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18" fill="none" stroke="currentColor" stroke-width="1.5"/><polyline points="17 6 23 6 23 12" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-                </div>
-                <!-- Node 4: Bottom Right (Dining) -->
-                <div class="deck-node node-4">
-                    <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-                </div>
-                <!-- Node 5: Bottom Left (Styling) -->
-                <div class="deck-node node-5">
-                    <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="13" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+                <div class="sauce-content">
+                    <h2>Our Secret Sauce</h2>
+                    <div class="crimson-line large"></div>
+                    <p class="sauce-quote">
+                        "We turn opinions into options.<br>
+                        We remove the noise from decisions.<br>
+                        Just consistent, rigorous thinking."
+                    </p>
                 </div>
             </div>
-        </div>
+        </section>
+    </main>
 
-        <!-- RIGHT TEXT COLUMN -->
-        <div class="deck-col-right">
-          <div class="deck-item item-fnb">
-            <h3>F&B Consultancy</h3>
-            <p>Menus engineered for margins, speed, and identity. Strategic culinary design that balances creativity with profitability.</p>
-          </div>
-          
-          <div class="deck-item item-scale">
-            <h3>Scale & Franchise Readiness</h3>
-            <p>Standardize the magic, build the replication playbook. Systems designed for consistent excellence across multiple locations.</p>
-          </div>
-          
-          <div class="deck-item item-dining">
-            <h3>Private Dining & Pop-Ups</h3>
-            <p>Bespoke private dining—chef-led, intimate, and fully produced. Exclusive culinary experiences that create lasting impressions.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- IMAGE SIDE -->
-    <div class="services-image-side">
-       <img src="images/services-chef.jpg" alt="Chef Team Working">
-    </div>
-
-  </section>
-
-  <!-- SECRET SAUCE -->
-  <section class="secret-sauce" id="secret">
-    <div class="secret-inner">
-      <h2>Our Secret Sauce</h2>
-      <p>We turn opinions into options.</p>
-      <p>We remove the noise from decisions.</p>
-      <p>Just consistent, rigorous thinking.</p>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-col"><h3>METTLE</h3></div>
-      <div class="footer-col">
-        <a href="index.html">Home</a> <a href="about.html">About</a> <a href="service.html">Services</a> <a href="work.html">Projects</a> <a href="media.html">Media</a> <a href="contact
+    <script src="app.js"></script>
+</body>
+</html>
