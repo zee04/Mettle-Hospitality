@@ -1278,58 +1278,46 @@ footer {
   }
 }
 
-/* =================================================================
-   NEW SERVICES PAGE STYLES (Appended)
-   - Loop Diagram (Centered, Dark Overlay, Crimson Lines)
-   - Secret Sauce Section
-   ================================================================= */
-
-/* --- Service Page Container --- */
+/* =========================================
+   2. CENTERED LOOP LAYOUT
+   ========================================= */
 .services-wrapper {
     position: relative;
     width: 100%;
-    min-height: 100vh; /* Full viewport height */
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
-    /* Ensure it sits below fixed header */
-    padding-top: 80px; 
+    padding-top: 60px;
 }
 
-/* Background Image (Fixed/Parallax) */
+/* Background */
 .bg-layer {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('images/services-chef.jpg'); /* Ensure this image exists */
+    background-image: url('images/services-chef.jpg');
     background-size: cover;
     background-position: center;
     z-index: -2;
 }
-
-/* Heavy Dark Overlay */
 .bg-layer::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.85); /* Heavy dark tint */
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85); /* Dark Overlay */
     z-index: -1;
 }
 
-/* --- The Grid Layout: Left Text | Ring | Right Text --- */
+/* 3-Column Grid */
 .content-container {
     display: grid;
-    grid-template-columns: 1fr 340px 1fr; 
-    width: 90%;
+    grid-template-columns: 1fr 340px 1fr; /* Text | Ring | Text */
+    width: 95%;
     max-width: 1400px;
-    height: 75vh;
-    position: relative;
+    height: 80vh;
 }
 
 .column {
@@ -1339,254 +1327,161 @@ footer {
     position: relative;
 }
 
-/* --- Text Styling (No Cards) --- */
-.text-block {
-    text-align: inherit;
-    position: relative;
-}
-
+/* =========================================
+   3. TEXT & CONNECTORS
+   ========================================= */
 .text-block h3 {
-    font-family: 'Playfair Display', serif; /* Explicit override if needed */
     font-size: 1.6rem;
-    margin-bottom: 8px;
     color: var(--text-beige);
-    font-weight: 400;
+    margin-bottom: 5px;
 }
-
-/* The Crimson Line (Brand Signature) */
-.crimson-line {
-    width: 100%; 
-    height: 3px;
-    background-color: var(--accent-crimson);
-    margin-bottom: 12px;
-}
-
 .text-block p {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: #cccccc; /* Slightly dimmed beige */
-    opacity: 0.9;
+    font-size: 0.9rem;
+    color: #ccc;
+    line-height: 1.4;
 }
 
-/* --- Left Column (2 Items) --- */
+/* The Crimson Underline */
+.crimson-line {
+    width: 100%;
+    height: 3px;
+    background-color: var(--crimson);
+    margin-bottom: 8px;
+}
+
+/* LEFT COLUMN ALIGNMENT */
 .left-col {
-    align-items: flex-end; /* Align right to touch lines */
+    align-items: flex-end;
     text-align: right;
     justify-content: space-evenly;
-    padding-right: 0;
+    padding-right: 10px;
 }
-
 .item-left {
     display: flex;
     align-items: center;
-    gap: 0; /* Connect directly */
-    flex-direction: row;
-    width: 100%;
     justify-content: flex-end;
+    width: 100%;
 }
 
-/* --- Right Column (3 Items) --- */
+/* RIGHT COLUMN ALIGNMENT */
 .right-col {
-    align-items: flex-start; /* Align left to touch lines */
+    align-items: flex-start;
     text-align: left;
     justify-content: space-between;
-    padding-left: 0;
+    padding-left: 10px;
 }
-
 .item-right {
     display: flex;
     align-items: center;
-    gap: 0;
-    flex-direction: row;
-    width: 100%;
     justify-content: flex-start;
+    width: 100%;
 }
 
-/* --- Connector Lines (Visible Arrows) --- */
+/* --- THE CONNECTORS (Arrows) --- */
 .connector-line {
-    height: 1px;
-    width: 60px; /* Line length */
-    background-color: var(--text-beige);
-    opacity: 0.4;
+    width: 60px;
+    height: 2px;
+    background-color: var(--crimson); /* Visible Red Line */
     position: relative;
-    flex-shrink: 0;
+    margin: 0 15px; /* Spacing from text */
 }
 
-/* Small dots at the text-end of lines */
+/* Arrowhead / Dot at end of line */
 .connector-line::after {
     content: '';
-    width: 4px;
-    height: 4px;
-    background: var(--accent-crimson);
-    border-radius: 50%;
     position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: var(--crimson);
+    border-radius: 50%;
+    top: -2px;
 }
-/* Left lines: dot on left end */
-.item-left .connector-line::after { left: 0; top: -1.5px; }
-/* Right lines: dot on right end */
-.item-right .connector-line::after { right: 0; top: -1.5px; }
+/* Left Line: Dot touches Ring (Right side of line) */
+.line-left::after { right: -3px; }
 
-/* --- Center Loop Ring --- */
-.center-col {
-    align-items: center;
-    justify-content: center;
-}
+/* Right Line: Dot touches Ring (Left side of line) */
+.line-right::after { left: -3px; }
+
+
+/* =========================================
+   4. LOOP RING & SVG ICONS
+   ========================================= */
+.center-col { align-items: center; }
 
 .loop-ring {
     width: 340px;
     height: 340px;
-    border: 1px solid rgba(245, 245, 220, 0.2); /* Faint beige ring */
+    border: 2px solid rgba(225, 217, 198, 0.2);
     border-radius: 50%;
     position: relative;
-    box-shadow: 0 0 40px rgba(165, 64, 64, 0.1); /* Faint crimson glow */
 }
 
-/* Nodes on Ring */
+/* The Nodes */
 .node {
-    width: 10px;
-    height: 10px;
-    background-color: var(--accent-crimson);
+    width: 45px; /* Bigger to fit icon */
+    height: 45px;
+    background-color: var(--crimson);
     border-radius: 50%;
     position: absolute;
-    box-shadow: 0 0 10px rgba(165, 64, 64, 0.8);
-    z-index: 2;
-}
-
-/* Node Positioning (Matches the Asymmetrical Text) */
-/* Left Side (2 Nodes) */
-.node-l-1 { top: 25%; left: 6.7%; transform: translate(-50%, -50%); } /* Matches Turnkey */
-.node-l-2 { bottom: 25%; left: 6.7%; transform: translate(-50%, 50%); } /* Matches Styling */
-
-/* Right Side (3 Nodes) */
-.node-r-1 { top: 15%; right: 6.7%; transform: translate(50%, -50%); } /* Matches F&B */
-.node-r-2 { top: 50%; right: -5px; transform: translate(50%, -50%); } /* Matches Scale */
-.node-r-3 { bottom: 15%; right: 6.7%; transform: translate(50%, 50%); } /* Matches Private Dining */
-
-
-/* --- Section 2: Secret Sauce --- */
-.secret-sauce-wrapper {
-    width: 100%;
-    min-height: 80vh; 
-    background-color: var(--bg-black); /* Solid black */
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 80px 0;
-    border-top: 1px solid var(--border-grey);
+    box-shadow: 0 0 15px rgba(153, 0, 0, 0.6);
+    z-index: 10;
 }
 
+/* SVG Styling */
+.node svg {
+    width: 24px;
+    height: 24px;
+    stroke: #fff; /* White Icon */
+    stroke-width: 2;
+}
+
+/* Node Positions (Matching Text) */
+.node-l-1 { top: 25%; left: 6.7%; transform: translate(-50%, -50%); }
+.node-l-2 { bottom: 25%; left: 6.7%; transform: translate(-50%, 50%); }
+
+.node-r-1 { top: 15%; right: 6.7%; transform: translate(50%, -50%); }
+.node-r-2 { top: 50%; right: -5px; transform: translate(50%, -50%); }
+.node-r-3 { bottom: 15%; right: 6.7%; transform: translate(50%, 50%); }
+
+
+/* =========================================
+   5. SECRET SAUCE (Lower Section)
+   ========================================= */
+.secret-sauce-wrapper {
+    background: #000;
+    padding: 80px 0;
+    display: flex;
+    justify-content: center;
+}
 .sauce-container {
     display: flex;
-    width: 85%;
     max-width: 1200px;
+    gap: 60px;
     align-items: center;
-    gap: 80px;
 }
-
 .sauce-image {
-    flex: 1;
-    height: 500px;
-    position: relative;
-    border-right: 4px solid var(--accent-crimson); /* The crimson border */
+    width: 50%;
+    height: 400px;
+    border-right: 4px solid var(--crimson);
 }
-
 .sauce-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(100%); /* Black & white photo */
+    width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%);
 }
+.sauce-content { width: 50%; }
+.sauce-content h2 { font-size: 3rem; color: var(--text-beige); margin-bottom: 20px; }
+.sauce-quote { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-style: italic; color: var(--text-beige); }
 
-.sauce-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: left;
-}
-
-.sauce-content h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    color: var(--text-beige);
-    margin-bottom: 25px;
-    text-shadow: none; /* Clean look */
-}
-
-/* Large Crimson Line for Header */
-.crimson-line.large {
-    width: 120px; 
-    height: 4px;
-    background-color: var(--accent-crimson);
-    margin-bottom: 40px;
-}
-
-.sauce-quote {
-    font-family: 'Playfair Display', serif; /* Serif for quote */
-    font-size: 1.8rem;
-    line-height: 1.5;
-    font-style: italic;
-    color: var(--text-beige);
-    opacity: 0.9;
-}
-
-
-/* --- Responsive Adjustments for Services --- */
+/* MOBILE */
 @media (max-width: 1024px) {
-    .services-wrapper {
-        height: auto;
-        padding: 120px 20px 60px;
-    }
-
-    .content-container {
-        grid-template-columns: 1fr; /* Stack vertically */
-        height: auto;
-        gap: 50px;
-    }
-
-    /* Hide the complex loop diagram on tablet/mobile */
-    .loop-ring, .connector-line, .center-col {
-        display: none; 
-    }
-
-    .left-col, .right-col {
-        align-items: flex-start;
-        text-align: left;
-        padding: 0;
-    }
-
-    .item-left, .item-right {
-        justify-content: flex-start;
-        width: 100%;
-    }
-
-    .service-item {
-        margin-bottom: 30px;
-        /* Mobile fallback: Crimson left border instead of horizontal line */
-        border-left: 3px solid var(--accent-crimson); 
-        padding-left: 20px;
-    }
-    
-    .service-item .crimson-line {
-        display: none; /* Hide horizontal line on mobile */
-    }
-
-    /* Secret Sauce Mobile */
-    .sauce-container {
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .sauce-image {
-        width: 100%;
-        height: 300px;
-        border-right: none;
-        border-bottom: 4px solid var(--accent-crimson);
-    }
-    
-    .sauce-content h2 { font-size: 2.2rem; }
-    .sauce-quote { font-size: 1.4rem; }
+    .content-container { grid-template-columns: 1fr; height: auto; gap: 40px; padding: 40px; }
+    .loop-ring, .center-col { display: none; }
+    .left-col, .right-col { text-align: left; align-items: flex-start; }
+    .item-left { justify-content: flex-start; }
+    .connector-line { display: none; }
+    .sauce-container { flex-direction: column; }
+    .sauce-image, .sauce-content { width: 100%; }
 }
-
 
