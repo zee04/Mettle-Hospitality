@@ -1,3 +1,59 @@
+// SMOOTH SCROLL IMPLEMENTATION
+let isScrolling = false;
+const scrollSections = [
+  document.getElementById('crew'),
+  document.getElementById('purpose'),
+  document.getElementById('north-star')
+];
+
+function smoothScrollToSection(targetScroll) {
+  window.scrollTo({
+    top: targetScroll,
+    behavior: 'smooth'
+  });
+}
+
+window.addEventListener('wheel', (e) => {
+  // Only intercept if not already scrolling
+  if (isScrolling) return;
+  
+  const currentScroll = window.scrollY;
+  const viewportHeight = window.innerHeight;
+  
+  // Find which section we're in
+  let nextTarget = 0;
+  
+  if (e.deltaY > 0) {
+    // Scrolling DOWN - go to next section
+    for (let section of scrollSections) {
+      if (section.offsetTop > currentScroll + viewportHeight / 2) {
+        nextTarget = section.offsetTop;
+        break;
+      }
+    }
+  } else {
+    // Scrolling UP - go to previous section
+    for (let i = scrollSections.length - 1; i >= 0; i--) {
+      if (scrollSections[i].offsetTop < currentScroll - viewportHeight / 2) {
+        nextTarget = scrollSections[i].offsetTop;
+        break;
+      }
+    }
+  }
+  
+  if (nextTarget !== 0) {
+    e.preventDefault();
+    isScrolling = true;
+    smoothScrollToSection(nextTarget);
+    
+    setTimeout(() => {
+      isScrolling = false;
+    }, 1000); // Lock scrolling for 1 second during animation
+  }
+}, { passive: false });
+
+
+
 class SmoothSlideshow {
     constructor(selector, options = {}) {
         this.slides = document.querySelectorAll(selector);
