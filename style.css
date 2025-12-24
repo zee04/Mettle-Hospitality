@@ -1225,10 +1225,7 @@ footer {
 }
 
 /* SCROLL SPACERS - LARGER FOR SMOOTH JUMP */
-.scroll-spacer-large {
-  height: 100px;
-  background: #0f172a;
-}
+
 
 /* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
