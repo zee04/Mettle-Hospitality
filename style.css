@@ -1278,3 +1278,292 @@ footer {
   }
 }
 
+/* ===========================
+   SERVICES PAGE
+   =========================== */
+
+.services-offer-section {
+  background: #020617;
+  color: #f9fafb;
+  padding: 80px 60px;
+}
+
+.services-offer-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1.2fr;
+  gap: 60px;
+  align-items: stretch;
+}
+
+/* Left side wrapper */
+.services-offer-left {
+  position: relative;
+  min-height: 520px;
+}
+
+/* Loop diagram container */
+.services-loop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 260px;
+  height: 260px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+/* Main loop circle (soft beige / blush like deck) */
+.loop-circle {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 8px solid #f5d5c8;
+  box-shadow: 0 0 40px rgba(0,0,0,0.6);
+}
+
+/* Nodes */
+.loop-node {
+  position: absolute;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: #f5d5c8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loop-node img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+/* Positions – tweak to taste to match deck */
+.node-1 { /* Top */
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.node-2 { /* Top-right */
+  top: 18%;
+  right: -22px;
+}
+
+.node-3 { /* Bottom-right */
+  bottom: 8px;
+  right: -12px;
+}
+
+.node-4 { /* Bottom */
+  bottom: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.node-5 { /* Left-middle / bottom-left */
+  bottom: 18%;
+  left: -22px;
+}
+
+/* Lines from nodes outwards (just rough coords – adjust visually) */
+.loop-line {
+  position: absolute;
+  height: 3px;
+  background: #8B3A3A;
+  transform-origin: left center;
+}
+
+/* Each line: length + angle tuned to reach callout boxes */
+.line-1 {
+  top: -6px;
+  left: 50%;
+  width: 180px;
+  transform: translateX(-50%) rotate(-35deg);
+}
+
+.line-2 {
+  top: 24%;
+  right: -12px;
+  width: 150px;
+  transform: rotate(-10deg);
+}
+
+.line-3 {
+  bottom: 18%;
+  right: -12px;
+  width: 150px;
+  transform: rotate(15deg);
+}
+
+.line-4 {
+  bottom: -10px;
+  left: 50%;
+  width: 180px;
+  transform: translateX(-50%) rotate(25deg);
+}
+
+.line-5 {
+  bottom: 18%;
+  left: -12px;
+  width: 150px;
+  transform: rotate(185deg);
+}
+
+/* Text callouts around the loop */
+.services-callouts {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.service-callout {
+  position: absolute;
+  max-width: 260px;
+}
+
+.service-callout h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #f9fafb;
+  margin-bottom: 10px;
+}
+
+.service-callout p {
+  color: #e5e7eb;
+}
+
+/* Positions matching slide layout (rough, adjust with dev tools) */
+.callout-1 {
+  top: 2%;
+  left: 0;
+}
+
+.callout-5 {
+  bottom: 2%;
+  left: 0;
+}
+
+.callout-2 {
+  top: 2%;
+  right: 0;
+}
+
+.callout-3 {
+  top: 42%;
+  right: 0;
+}
+
+.callout-4 {
+  bottom: 2%;
+  right: 0;
+}
+
+/* Right side image – matches B&W kitchen photo style */
+.services-offer-image {
+  position: relative;
+  min-height: 520px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #020617;
+}
+
+.services-offer-image-inner {
+  position: absolute;
+  inset: 0;
+  background-image: url('images/services-chef.jpg'); /* replace with your photo */
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%) contrast(1.1);
+}
+
+/* OUR SECRET SAUCE SECTION */
+.services-secret-section {
+  position: relative;
+  padding: 100px 60px;
+  background-image: url('images/secret-sauce-bg.jpg'); /* optional */
+  background-size: cover;
+  background-position: center;
+  color: #f9fafb;
+  overflow: hidden;
+}
+
+.services-secret-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.78);
+}
+
+.services-secret-content {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.services-secret-content h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #f9fafb;
+}
+
+.services-secret-content p {
+  font-size: 1rem;
+  color: #e5e7eb;
+  margin-bottom: 8px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .services-offer-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .services-offer-left {
+    min-height: 620px;
+  }
+
+  .services-offer-image {
+    min-height: 360px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-offer-section,
+  .services-secret-section {
+    padding: 70px 24px;
+  }
+
+  .services-offer-left {
+    min-height: 580px;
+  }
+
+  .services-callouts .service-callout {
+    position: static;
+    max-width: 100%;
+    margin-bottom: 28px;
+  }
+
+  .services-callouts {
+    margin-top: 320px; /* push callouts below the loop on small screens */
+  }
+
+  .services-loop {
+    position: relative;
+    margin: 0 auto 30px auto;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+
+  .loop-line {
+    display: none; /* lines get messy on mobile; hide them */
+  }
+}
+
