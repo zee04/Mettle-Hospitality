@@ -1918,6 +1918,8 @@ footer {
   display: none;
 }
 
+/* CONNECTOR LINES – fixed geometry */
+
 .connector-line {
   height: 2px;
   width: 90px;
@@ -1925,14 +1927,13 @@ footer {
   opacity: 1;
   position: relative;
   flex-shrink: 0;
-  margin: 0 var(--space-16);
 }
 
+/* vertical stem (from node) + dot (near text) */
 .connector-line::before {
   content: "";
   position: absolute;
   width: 2px;
-  height: 36px;
   background-color: var(--brand-crimson);
 }
 
@@ -1947,31 +1948,62 @@ footer {
   transform: translateY(-50%);
 }
 
+/* LEFT SIDE (Turnkey, Styling) – shorter stems so no stub sticks out */
+
 .item-left .connector-line {
   margin-right: var(--space-20);
 }
 
-.item-left .connector-line::before {
+/* Turnkey */
+.left-col .service-item:nth-child(1) .connector-line::before {
   right: 0;
   bottom: 100%;
+  height: 26px; /* shorter so it meets line cleanly */
+}
+
+/* Food Styling */
+.left-col .service-item:nth-child(2) .connector-line::before {
+  right: 0;
+  bottom: 100%;
+  height: 30px;
 }
 
 .item-left .connector-line::after {
-  left: 0;
+  left: 0; /* dot near text */
 }
+
+/* RIGHT SIDE (F&B, Scale, Private Dining) */
 
 .item-right .connector-line {
   margin-left: var(--space-20);
 }
 
-.item-right .connector-line::before {
+/* F&B Consultancy – adjusted height so angle looks right */
+.right-col .service-item:nth-child(1) .connector-line::before {
   left: 0;
   bottom: 100%;
+  height: 32px;
+}
+
+/* Scale & Franchise */
+.right-col .service-item:nth-child(2) .connector-line::before {
+  left: 0;
+  bottom: 100%;
+  height: 36px;
+}
+
+/* Private Dining */
+.right-col .service-item:nth-child(3) .connector-line::before {
+  left: 0;
+  bottom: 100%;
+  height: 30px;
 }
 
 .item-right .connector-line::after {
-  right: 0;
+  right: 0; /* dot near text */
 }
+
+/* LOOP NODES */
 
 .center-col {
   align-items: center;
@@ -2047,6 +2079,8 @@ footer {
   transform: translate(50%, 50%);
 }
 
+/* SECRET SAUCE – match brand deck */
+
 .secret-sauce-wrapper {
   background: #000;
   padding: 80px 0;
@@ -2073,6 +2107,12 @@ footer {
   margin-bottom: var(--space-12);
   text-shadow: none;
 }
+
+/* colour “options.” like the deck */
+.secret-inner h2 span {
+  color: var(--brand-crimson);
+}
+
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
