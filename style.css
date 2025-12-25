@@ -1917,6 +1917,7 @@ footer {
 .crimson-line {
   display: none;
 }
+
 /* CONNECTOR LINES – node → up → across → text */
 
 .connector-line {
@@ -1953,21 +1954,20 @@ footer {
   margin-right: 20px;
 }
 
-/* Turnkey – shorter stem so no stub */
+/* Turnkey */
 .left-col .service-item:nth-child(1) .connector-line::before {
   right: 0;
   bottom: 100%;
   height: 26px;
 }
 
-/* Food Styling – slightly longer */
+/* Food Styling */
 .left-col .service-item:nth-child(2) .connector-line::before {
   right: 0;
   bottom: 100%;
   height: 30px;
 }
 
-/* Dot at text side (left column) */
 .item-left .connector-line::after {
   left: 0;
 }
@@ -1978,29 +1978,27 @@ footer {
   margin-left: 20px;
 }
 
-/* F&B Consultancy – node is slightly above text,
-   so stem drops a bit BEFORE heading across */
+/* F&B Consultancy – top right */
 .right-col .service-item:nth-child(1) .connector-line::before {
   left: 0;
-  bottom: 80%;   /* not full 100%, stem ends a bit lower */
-  height: 26px;  /* shorter stem */
+  bottom: 100%;
+  height: 32px;
 }
 
-/* Scale & Franchise – roughly level with node, longer stem */
+/* Scale & Franchise */
 .right-col .service-item:nth-child(2) .connector-line::before {
   left: 0;
   bottom: 100%;
-  height: 34px;
+  height: 36px;
 }
 
-/* Private Dining – node sits lower, so stem is shorter again */
+/* Private Dining */
 .right-col .service-item:nth-child(3) .connector-line::before {
   left: 0;
-  bottom: 90%;
-  height: 22px;
+  bottom: 100%;
+  height: 30px;
 }
 
-/* Dot at text side (right column) */
 .item-right .connector-line::after {
   right: 0;
 }
