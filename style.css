@@ -2010,74 +2010,63 @@ footer {
 }
 
 .loop-ring {
-  width: 420px;
-  height: 420px;
-  border-radius: var(--radius-full);
-  border: 6px solid rgba(245, 245, 220, 0.6);
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  border: 5px solid rgba(245, 245, 220, 0.7);
   position: relative;
-  box-shadow: var(--shadow-lg), inset var(--shadow-lg);
+  box-shadow: none;
 }
 
+
 .node {
-  width: 56px;
-  height: 56px;
-  border-radius: var(--radius-full);
-  background-color: var(--brand-crimson);
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 20px rgba(var(--brand-crimson-rgb), 0.9), 0 0 0 4px #000000;
-  z-index: 5;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #fbe9e9;
+  box-shadow: 0 0 0 4px #000;
 }
 
 .node::before {
-  content: "";
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-full);
-  background-color: #000000;
-  border: 2px solid var(--color-text);
+  display: none; /* remove inner black circle */
 }
 
 .node svg {
-  position: absolute;
-  width: 22px;
-  height: 22px;
-  stroke: var(--color-text);
-  stroke-width: 1.6;
-  fill: none;
+  stroke: #000;
 }
 
-.node-l-1 {
-  top: 25%;
-  left: 5%;
+/* positions: left, bottom, right, top, extra-right if you keep 5th */
+.node-l-1 { /* left */
+  top: 50%;
+  left: 0;
   transform: translate(-50%, -50%);
 }
 
-.node-l-2 {
-  bottom: 25%;
-  left: 5%;
+.node-l-2 { /* bottom */
+  bottom: 0;
+  left: 50%;
   transform: translate(-50%, 50%);
 }
 
-.node-r-1 {
-  top: 15%;
-  right: 5%;
+.node-r-1 { /* top */
+  top: 0;
+  right: 50%;
   transform: translate(50%, -50%);
 }
 
-.node-r-2 {
+.node-r-2 { /* right */
   top: 50%;
-  right: -10px;
+  right: 0;
   transform: translate(50%, -50%);
 }
 
+/* optional 5th: slightly lower right */
 .node-r-3 {
   bottom: 15%;
-  right: 5%;
+  right: 0;
   transform: translate(50%, 50%);
 }
+
 
 /* SECRET SAUCE – match brand deck */
 
@@ -2099,17 +2088,20 @@ footer {
   margin-bottom: var(--space-24);
 }
 
-.secret-inner h2 {
+.ss-line {
   font-family: var(--font-family-base);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-2xl);
   color: var(--color-text);
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-24);
   text-shadow: none;
 }
 
-/* colour “options.” like the deck */
-.secret-inner h2 span {
+.ss-line-primary {
+  color: var(--color-text);
+}
+
+.ss-line-primary span {
   color: var(--brand-crimson);
 }
 
