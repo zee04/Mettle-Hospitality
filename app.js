@@ -174,3 +174,71 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+/* PROJECTS PAGE - CAROUSEL + MODAL */
+const projectData = {
+  vantara: {
+    title: "Vantara Niwas, Jamnagar",
+    desc: "Visiting Chefs Series",
+    details: "Orchestrated multi-day culinary experiences for high-profile events featuring modern Indian canapés with fresh truffle and caviar."
+  },
+  basque: {
+    title: "Basque by Breve, Mumbai",
+    desc: "Concept Cafe Development",
+    details: "Developed a concept cafe in Bandra inspired by St. Sebastian Cheesecake. Created a unique dessert-forward menu."
+  },
+  littlefood: {
+    title: "Little Food Co, Mumbai",
+    desc: "Kitchen Optimization",
+    details: "Elevated existing dishes, developed data tracking systems, implemented refined cooking techniques, optimized kitchen flow."
+  },
+  sarabi: {
+    title: "Sarabi, Goa",
+    desc: "Modern Indian Fine Dining",
+    details: "Developed recipes blending contemporary Indian cuisine. Located in the holiday capital, creating a destination dining vibe."
+  },
+  doppler: {
+    title: "Doppler, Jaipur",
+    desc: "Heritage Cafe Concept",
+    details: "Upcoming cafe within a historic haveli. Menu celebrates cafe classics with a distinct Jaipur twist."
+  },
+  meta: {
+    title: "WhatsApp Ad Film",
+    desc: "Food Styling & Kitchen Design",
+    details: "Comprehensive food consultancy, styling, and kitchen design for META privacy Ad film production."
+  }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  const carousel = document.getElementById('logo-carousel');
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
+
+  if (carousel && prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', () => carousel.scrollBy({ left: -280, behavior: 'smooth' }));
+    nextBtn.addEventListener('click', () => carousel.scrollBy({ left: 280, behavior: 'smooth' }));
+  }
+
+  const modal = document.getElementById('project-modal');
+  const modalContent = document.getElementById('modal-content');
+  const closeBtn = document.getElementById('close-modal');
+  const logoCards = document.querySelectorAll('.logo-card');
+
+  if (modal && logoCards.length > 0) {
+    logoCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const pid = card.getAttribute('data-project');
+        const data = projectData[pid];
+        if (data) {
+          modalContent.innerHTML = `<h3>${data.title}</h3><h4>${data.desc}</h4><p>${data.details}</p>`;
+          modal.classList.add('active');
+        }
+      });
+    });
+
+    const hideModal = () => modal.classList.remove('active');
+    if (closeBtn) closeBtn.addEventListener('click', hideModal);
+    modal.addEventListener('click', (e) => { if(e.target === modal) hideModal(); });
+    document.addEventListener('keydown', (e) => { if(e.key === 'Escape') hideModal(); });
+  }
+});
