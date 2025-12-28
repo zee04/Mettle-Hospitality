@@ -1,141 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects - Mettle Hospitality</title>
-
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="images/mettle logo no back.png" type="image/png" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
-    rel="stylesheet"
-  />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Work - Project Journey</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <!-- NAV -->
-  <nav class="nav-header" id="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="nav-logo">
-        <img src="images/mettle logo no back.png" alt="Mettle Hospitality" style="height: 40px;" />
-      </a>
-
-      <button class="mobile-menu-toggle" id="mobile-toggle">
-        <span></span><span></span><span></span>
-      </button>
-
-      <ul class="nav-menu" id="nav-menu">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About us</a></li>
-        <li class="dropdown">
-          <a href="service.html" class="nav-link dropdown-toggle">Services</a>
-          <ul class="dropdown-menu">
-            <li><a href="service.html#offer" class="dropdown-link">What We Offer</a></li>
-            <li><a href="service.html#secret" class="dropdown-link">Our Secret Sauce</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="work.html" class="nav-link active dropdown-toggle">Projects</a>
-          <ul class="dropdown-menu">
-            <li><a href="#projects" class="dropdown-link">Past Projects</a></li>
-            <li><a href="#journey" class="dropdown-link">Project Journey</a></li>
-          </ul>
-        </li>
-        <li><a href="media.html" class="nav-link">Media</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
-      </ul>
+    <div class="container">
+        <!-- PAGE HEADER -->
+        <section class="page-header">
+            <h1>The Project Journey</h1>
+            <p>Our methodology takes you from concept to successful launch with precision and clarity.</p>
+        </section>
+        
+        <!-- TIMELINE SECTION - MATCHES BRAND DECK -->
+        <section class="timeline-section">
+            <div class="timeline-wrapper">
+                <h2 class="timeline-title">Our Process</h2>
+                
+                <!-- HORIZONTAL TIMELINE -->
+                <div class="timeline-container">
+                    <svg class="timeline-svg" viewBox="0 0 1000 120" preserveAspectRatio="xMidYMid meet">
+                        <!-- Main timeline line -->
+                        <line x1="50" y1="60" x2="950" y2="60" stroke="rgba(198, 22, 46, 0.3)" stroke-width="2" stroke-dasharray="5,5"/>
+                        
+                        <!-- Filled segments for active phases -->
+                        <line x1="50" y1="60" x2="250" y2="60" stroke="#C6162E" stroke-width="3"/>
+                        <line x1="350" y1="60" x2="550" y2="60" stroke="#C6162E" stroke-width="3"/>
+                        <line x1="650" y1="60" x2="950" y2="60" stroke="#C6162E" stroke-width="3"/>
+                    </svg>
+                    
+                    <!-- Phase 1: Discovery -->
+                    <div class="timeline-phase phase-1">
+                        <div class="phase-number">1</div>
+                        <h3 class="phase-title">Discovery</h3>
+                        <p class="phase-description">Project definition & strategy lock-in. Deep market analysis and concept validation to ensure a solid foundation.</p>
+                    </div>
+                    
+                    <!-- Phase 2: Design -->
+                    <div class="timeline-phase phase-2">
+                        <div class="phase-number">2</div>
+                        <h3 class="phase-title">Design</h3>
+                        <p class="phase-description">Concept development, menu drafts, MEP work, BOQ list. Translating vision into detailed specifications.</p>
+                    </div>
+                    
+                    <!-- Phase 3: Build -->
+                    <div class="timeline-phase phase-3">
+                        <div class="phase-number">3</div>
+                        <h3 class="phase-title">Build</h3>
+                        <p class="phase-description">Operational lead hiring, CCG lock-in & core team hiring. Assembling the right people for success.</p>
+                    </div>
+                    
+                    <!-- Phase 4: Launch -->
+                    <div class="timeline-phase phase-4">
+                        <div class="phase-number">4</div>
+                        <h3 class="phase-title">Launch</h3>
+                        <p class="phase-description">Standardization & on-ground training, recipe calibration, SOP handovers. Ensuring flawless execution from day one.</p>
+                    </div>
+                </div>
+                
+                <!-- PHASE IMAGES SECTION -->
+                <div class="phase-images-grid">
+                    <div class="phase-image phase-image-1">
+                        <div class="image-placeholder">
+                            <p>Kitchen Layout & Planning</p>
+                        </div>
+                    </div>
+                    <div class="phase-image phase-image-2">
+                        <div class="image-placeholder">
+                            <p>Concept & Design</p>
+                        </div>
+                    </div>
+                    <div class="phase-image phase-image-3">
+                        <div class="image-placeholder">
+                            <p>Team Building</p>
+                        </div>
+                    </div>
+                    <div class="phase-image phase-image-4">
+                        <div class="image-placeholder">
+                            <p>Live Operations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CAROUSEL SECTION -->
+        <section class="carousel-section">
+            <h2 class="carousel-title">Our Work Showcase</h2>
+            <p class="carousel-subtitle">Click or hover on any project to see details</p>
+            
+            <div class="logo-carousel-wrapper">
+                <button class="carousel-arrow prev" id="carousel-prev">❮</button>
+                <button class="carousel-arrow next" id="carousel-next">❯</button>
+                
+                <div class="logo-carousel" id="logo-carousel"></div>
+            </div>
+        </section>
     </div>
-  </nav>
-
-  <main>
-    <!-- PROJECTS CAROUSEL SECTION -->
-    <section id="projects" class="projects-section" style="padding: 120px 32px;">
-      <div class="container">
-        <div style="max-width: 900px; margin: 0 auto 60px;">
-          <p style="color: var(--color-text-secondary); font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; margin: 0 0 12px; font-weight: 600;">Our Proof, Not Just Promises</p>
-          <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin: 0; color: var(--color-text); line-height: 1.25;">
-            From luxury resorts to urban eateries, our portfolio showcases diverse projects that deliver exceptional results.
-          </h2>
+    
+    <!-- PROJECT MODAL -->
+    <div class="project-modal" id="project-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">✕</button>
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-title">Project Name</h2>
+                <p class="modal-subtitle" id="modal-subtitle">Project Type</p>
+            </div>
+            <p class="modal-description" id="modal-description">Project description goes here.</p>
         </div>
-
-        <!-- Carousel Container -->
-        <div class="logo-carousel-container" style="position: relative; margin: 0 auto; max-width: 1200px;">
-          <button class="carousel-arrow prev" id="carousel-prev" aria-label="Previous">‹</button>
-          <div class="logo-carousel" id="logo-carousel"></div>
-          <button class="carousel-arrow next" id="carousel-next" aria-label="Next">›</button>
-        </div>
-
-        <p style="text-align: center; margin-top: 20px; color: var(--color-text-secondary); opacity: 0.7; font-size: 0.9rem;">
-          Click any project to learn more.
-        </p>
-      </div>
-    </section>
-
-    <!-- MODAL -->
-    <div class="project-flip-container" id="project-modal" role="dialog" aria-modal="true" aria-hidden="true">
-      <div class="flip-back">
-        <button class="modal-close-btn" aria-label="Close" title="Close">×</button>
-        <h3 id="modal-title" style="font-size: 2rem; font-weight: 700; margin: 0 0 8px; color: var(--color-text);">Project Name</h3>
-        <p id="modal-subtitle" style="color: var(--brand-crimson); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.95rem; margin: 0 0 20px;">Category</p>
-        <p id="modal-desc" style="color: var(--color-text-secondary); line-height: 1.8; margin: 0 0 30px; font-size: 1rem;">Description</p>
-        <a href="contact.html" style="display: inline-block; padding: 12px 28px; background: var(--brand-crimson); color: #fff; text-decoration: none; border-radius: 6px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; font-size: 0.85rem; transition: all 250ms ease;">
-          Start your own project
-        </a>
-      </div>
     </div>
 
-    <!-- TIMELINE SECTION -->
-    <section id="journey" class="projects-section" style="padding: 120px 32px; border-top: 1px solid var(--color-border);">
-      <div class="container">
-        <div style="max-width: 900px; margin: 0 auto 80px;">
-          <p style="color: var(--color-text-secondary); font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; margin: 0 0 12px; font-weight: 600;">The Project Journey</p>
-          <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin: 0; color: var(--color-text); line-height: 1.25;">
-            Our proven four-phase methodology takes you from concept to successful launch with precision and clarity.
-          </h2>
-        </div>
-
-        <!-- Timeline -->
-        <div class="timeline-container">
-          <div class="timeline-line"></div>
-
-          <article class="timeline-step" style="--step-order: 1;">
-            <div class="step-number">1</div>
-            <h3 class="step-title">Discovery</h3>
-            <div class="step-divider"></div>
-            <p class="step-text"><strong>Project definition & strategy lock-in.</strong> Deep market analysis and concept validation to ensure a solid foundation.</p>
-          </article>
-
-          <article class="timeline-step" style="--step-order: 2;">
-            <div class="step-number">2</div>
-            <h3 class="step-title">Design</h3>
-            <div class="step-divider"></div>
-            <p class="step-text"><strong>Concept development, menu drafts, MEP work.</strong> Translating vision into detailed specifications.</p>
-          </article>
-
-          <article class="timeline-step" style="--step-order: 3;">
-            <div class="step-number">3</div>
-            <h3 class="step-title">Build</h3>
-            <div class="step-divider"></div>
-            <p class="step-text"><strong>Operational lead hiring, CCG lock-in.</strong> Assembling the right people for success.</p>
-          </article>
-
-          <article class="timeline-step" style="--step-order: 4;">
-            <div class="step-number">4</div>
-            <h3 class="step-title">Launch</h3>
-            <div class="step-divider"></div>
-            <p class="step-text"><strong>Standardization & on-ground training.</strong> Ensuring flawless execution from day one.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- SCRIPTS -->
-  <script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
