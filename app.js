@@ -175,49 +175,156 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-/* PROJECTS PAGE - CAROUSEL + MODAL */
-const projectData = {
-  vantara: {
-    title: "Vantara Niwas, Jamnagar",
-    desc: "Visiting Chefs Series",
-    details: "Orchestrated multi-day culinary experiences for high-profile events featuring modern Indian canapés with fresh truffle and caviar."
-  },
-  basque: {
-    title: "Basque by Breve, Mumbai",
-    desc: "Concept Cafe Development",
-    details: "Developed a concept cafe in Bandra inspired by St. Sebastian Cheesecake. Created a unique dessert-forward menu."
-  },
-  littlefood: {
-    title: "Little Food Co, Mumbai",
-    desc: "Kitchen Optimization",
-    details: "Elevated existing dishes, developed data tracking systems, implemented refined cooking techniques, optimized kitchen flow."
-  },
-  sarabi: {
-    title: "Sarabi, Goa",
-    desc: "Modern Indian Fine Dining",
-    details: "Developed recipes blending contemporary Indian cuisine. Located in the holiday capital, creating a destination dining vibe."
-  },
-  doppler: {
-    title: "Doppler, Jaipur",
-    desc: "Heritage Cafe Concept",
-    details: "Upcoming cafe within a historic haveli. Menu celebrates cafe classics with a distinct Jaipur twist."
-  },
-  meta: {
-    title: "WhatsApp Ad Film",
-    desc: "Food Styling & Kitchen Design",
-    details: "Comprehensive food consultancy, styling, and kitchen design for META privacy Ad film production."
-  }
-};
+class ProjectCarousel {
+  constructor() {
+    this.carousel = document.getElementById('logo-carousel');
+    this.prevBtn = document.getElementById('carousel-prev');
+    this.nextBtn = document.getElementById('carousel-next');
+    this.modal = document.getElementById('project-modal');
+    this.modalClose = document.querySelector('.modal-close-btn');
 
+    this.projects = [
+      {
+        id: 'vantara',
+        name: 'Vantara Niwas - MACHAAN',
+        type: 'Luxury Hospitality',
+        image: 'images/project-images/vantaralogo.jpg',
+        description: 'Orchestrated multi-day culinary experiences for high-profile celebrations at Anant Ambani\'s seven-star hotel, featuring modern Indian canapés with truffle and caviar.'
+      },
+      {
+        id: 'littlefood',
+        name: 'Little Food Co.',
+        type: 'Culinary Consultancy',
+        image: 'images/project-images/littlefoodlogo.PNG',
+        description: 'Elevated existing dishes, implemented data tracking systems, and optimized kitchen workflows for premium catering and delivery service.'
+      },
+      {
+        id: 'meta',
+        name: 'META - WhatsApp Ad Film',
+        type: 'Food Styling',
+        image: 'images/project-images/whatsapplogo.png',
+        description: 'Comprehensive food styling and kitchen design consultation for production, ensuring authentic culinary scene portrayal.'
+      },
+      {
+        id: 'moonshine',
+        name: 'Moonshine',
+        type: 'Brand Positioning',
+        image: 'images/project-images/moonshine.png',
+        description: 'Developed brand identity, messaging, and sustainability-focused social media strategy for unique mead brand.'
+      },
+      {
+        id: 'basque',
+        name: 'Basque by Breve',
+        type: 'Concept Development',
+        image: 'images/project-images/basque.png',
+        description: 'Developed concept café inspired by Basque cheesecake with unique menu design and gourmet sandwich shop integration.'
+      },
+      {
+        id: 'doppler',
+        name: 'Doppler, Jaipur',
+        type: 'Heritage Café',
+        image: 'images/project-images/doppler.png',
+        description: 'Conceptualized café in historic haveli with experience-forward menu and distinct local narrative.'
+      },
+      {
+        id: 'sarabi',
+        name: 'Sarabi',
+        type: 'Modern Indian',
+        image: 'images/project-images/saarbai.png',
+        description: 'Contemporary progressive Indian menu development for premium 12,000 sqft dining destination.'
+      },
+      {
+        id: 'sunny',
+        name: 'Sunny Da Dhaba',
+        type: 'Brand Evolution',
+        image: 'images/project-images/sunnyy.png',
+        description: 'Evolved 30+ year legacy brand into multi-experience destination with Mediterranean café and modern-Indian restaurant.'
+      }
+    ];
+
+    this.currentIndex = 0;
+    this.init();
+  }
+
+  init() {
+    this.render();
+    this.bindEvents();
+  }
+
+  render() {
+    this.carousel.innerHTML = this.projects
+      .map(
+        (project, idx) => `
+      <div class="logo-card" data-index="${idx}">
+        <img src="${project.image}" alt="${project.name}" class="logo-card-image"
+          onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 80%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22200%22 height=%2280%22/%3E%3C/svg%3E'" />
+        <h3 class="logo-card-name">${project.name}</h3>
+        ${project.type ? `<p class="logo-card-type">${project.type}</p>` : ''}
+      </div>
+    `
+      )
+      .join('');
+
+    this.attachCardListeners();
+  }
+
+  attachCardListeners() {
+    const cards = document.querySelectorAll('.logo-card');
+    cards.forEach((card, idx) => {
+      card.addEventListener('click', () => this.openModal(idx));
+    });
+  }
+
+  openModal(index) {
+    const project = this.projects[index];
+    document.getElementById('modal-title').textContent = project.name;
+    document.getElementById('modal-subtitle').textContent = project.type || 'Project';
+    document.getElementById('modal-desc').textContent = project.description;
+
+    this.modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  closeModal() {
+    this.modal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+
+  bindEvents() {
+    this.prevBtn.addEventListener('click', () => this.scroll('prev'));
+    this.nextBtn.addEventListener('click', () => this.scroll('next'));
+    this.modalClose.addEventListener('click', () => this.closeModal());
+
+    this.modal.addEventListener('click', (e) => {
+      if (e.target === this.modal) this.closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.modal.classList.contains('active')) {
+        this.closeModal();
+      }
+    });
+  }
+
+  scroll(direction) {
+    const carousel = this.carousel;
+    const scrollAmount = 340; // card width + gap
+    const targetScroll =
+      direction === 'next'
+        ? carousel.scrollLeft + scrollAmount
+        : carousel.scrollLeft - scrollAmount;
+
+    carousel.scrollTo({
+      left: targetScroll,
+      behavior: 'smooth'
+    });
+  }
+}
+
+// Initialize carousel
 document.addEventListener('DOMContentLoaded', () => {
-  const carousel = document.getElementById('logo-carousel');
-  const prevBtn = document.getElementById('carousel-prev');
-  const nextBtn = document.getElementById('carousel-next');
-
-  if (carousel && prevBtn && nextBtn) {
-    prevBtn.addEventListener('click', () => carousel.scrollBy({ left: -280, behavior: 'smooth' }));
-    nextBtn.addEventListener('click', () => carousel.scrollBy({ left: 280, behavior: 'smooth' }));
-  }
+  const projectCarousel = new ProjectCarousel();
+});
 
   const modal = document.getElementById('project-modal');
   const modalContent = document.getElementById('modal-content');
