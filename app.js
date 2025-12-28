@@ -175,8 +175,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-class ProjectCarousel {
-  constructor() {
+class FlippingCoverFlow {
+  constructor(containerSelector) {
+    this.container = document.querySelector(containerSelector);
+    if (!this.container) return;
+
     this.carousel = document.getElementById('logo-carousel');
     this.prevBtn = document.getElementById('carousel-prev');
     this.nextBtn = document.getElementById('carousel-next');
@@ -185,60 +188,70 @@ class ProjectCarousel {
 
     this.projects = [
       {
-        id: 'vantara',
-        name: 'Vantara Niwas - MACHAAN',
+        title: 'VANTARA NIWAS - MACHAAN',
         type: 'Luxury Hospitality',
-        image: 'images/project-images/vantaralogo.jpg',
-        description: 'Orchestrated multi-day culinary experiences for high-profile celebrations at Anant Ambani\'s seven-star hotel, featuring modern Indian canapés with truffle and caviar.'
+        description: 'Launched the MACHAAN restaurant inside Vantara Niwas, a seven-star hotel owned by Anant Ambani, hosting an exclusive dinner for Mr. Ambani and other special guests.',
+        logo: 'images/project-images/vantaralogo.jpg'
       },
       {
-        id: 'littlefood',
-        name: 'Little Food Co.',
+        title: 'Little Food Co.',
         type: 'Culinary Consultancy',
-        image: 'images/project-images/littlefoodlogo.PNG',
-        description: 'Elevated existing dishes, implemented data tracking systems, and optimized kitchen workflows for premium catering and delivery service.'
+        description: 'Enhanced catering and delivery for this premier Mumbai brand, servicing clients like Spotify and Nykaa by elevating dishes, optimizing workflows, and implementing data tracking.',
+        logo: 'images/project-images/littlefoodlogo.PNG'
       },
       {
-        id: 'meta',
-        name: 'META - WhatsApp Ad Film',
+        title: 'META - WhatsApp Ad Film',
         type: 'Food Styling',
-        image: 'images/project-images/whatsapplogo.png',
-        description: 'Comprehensive food styling and kitchen design consultation for production, ensuring authentic culinary scene portrayal.'
+        description: 'Provided comprehensive food styling and kitchen design consultation for the ad film, ensuring authentic culinary scene portrayal.',
+        logo: 'images/project-images/whatsapplogo.png'
       },
       {
-        id: 'moonshine',
-        name: 'Moonshine',
+        title: 'Moonshine',
         type: 'Brand Positioning',
-        image: 'images/project-images/moonshine.png',
-        description: 'Developed brand identity, messaging, and sustainability-focused social media strategy for unique mead brand.'
+        description: 'Developed the brand identity and \'Be Better\' tagline, creating a social media strategy focused on sustainability for this unique mead brand.',
+        logo: 'images/project-images/moonshine.png'
       },
       {
-        id: 'basque',
-        name: 'Basque by Breve',
+        title: 'VIRAASAT',
+        type: 'Contemporary Indian Restaurant',
+        description: 'Collaborated on a 300-seat restaurant in Mysore focusing on Northern Frontier Cuisine, blending traditional flavors with modern techniques.',
+        logo: 'images/project-images/virasatlogo.png'
+      },
+      {
+        title: 'Basque by Breve',
         type: 'Concept Development',
-        image: 'images/project-images/basque.png',
-        description: 'Developed concept café inspired by Basque cheesecake with unique menu design and gourmet sandwich shop integration.'
+        description: 'Developed a concept café in Bandra inspired by St. Sebastian cheesecake, featuring unique varieties and a gourmet sandwich shop.',
+        logo: 'images/project-images/basque.png'
       },
       {
-        id: 'doppler',
-        name: 'Doppler, Jaipur',
+        title: 'Phat Fillings',
+        type: 'Premium Pie Delivery',
+        description: 'Led the creation of a premium delivery brand for pies with Indian and Australian flavors, featured in Vogue and Upper Crust.',
+        logo: 'images/project-images/phat logo.png'
+      },
+      {
+        title: 'ZEKI',
+        type: 'Upscale Casual Bistro',
+        description: 'Developed an upscale bistro in Andheri West focused on global cuisine, designing the kitchen, curating crockery, and crafting an international menu.',
+        logo: 'images/project-images/zekilogo.PNG'
+      },
+      {
+        title: 'Doppler',
         type: 'Heritage Café',
-        image: 'images/project-images/doppler.png',
-        description: 'Conceptualized café in historic haveli with experience-forward menu and distinct local narrative.'
+        description: 'Conceptualized a café in a historic Jaipur haveli, redefining the experience as the city\'s premier slow bar destination.',
+        logo: 'images/project-images/doppler.png'
       },
       {
-        id: 'sarabi',
-        name: 'Sarabi',
-        type: 'Modern Indian',
-        image: 'images/project-images/saarbai.png',
-        description: 'Contemporary progressive Indian menu development for premium 12,000 sqft dining destination.'
+        title: 'Sarabi',
+        type: 'Modern Indian Restaurant',
+        description: 'An upscale 12,000 sqft space offering contemporary progressive Indian food, designed for a discerning clientele.',
+        logo: 'images/project-images/saarbai.png'
       },
       {
-        id: 'sunny',
-        name: 'Sunny Da Dhaba',
+        title: 'Sunny Da Dhaba',
         type: 'Brand Evolution',
-        image: 'images/project-images/sunnyy.png',
-        description: 'Evolved 30+ year legacy brand into multi-experience destination with Mediterranean café and modern-Indian restaurant.'
+        description: 'Evolved a 30+ year legacy brand into a dual-floor destination with a Mediterranean café and a modern-Indian restaurant with playful tapas.',
+        logo: 'images/project-images/sunnyy.png'
       }
     ];
 
@@ -247,18 +260,18 @@ class ProjectCarousel {
   }
 
   init() {
-    this.render();
+    this.populateCarousel();
     this.bindEvents();
   }
 
-  render() {
+  populateCarousel() {
     this.carousel.innerHTML = this.projects
       .map(
         (project, idx) => `
       <div class="logo-card" data-index="${idx}">
-        <img src="${project.image}" alt="${project.name}" class="logo-card-image"
+        <img src="${project.logo}" alt="${project.title}" class="logo-card-image"
           onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 80%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22200%22 height=%2280%22/%3E%3C/svg%3E'" />
-        <h3 class="logo-card-name">${project.name}</h3>
+        <h3 class="logo-card-name">${project.title}</h3>
         ${project.type ? `<p class="logo-card-type">${project.type}</p>` : ''}
       </div>
     `
@@ -277,7 +290,7 @@ class ProjectCarousel {
 
   openModal(index) {
     const project = this.projects[index];
-    document.getElementById('modal-title').textContent = project.name;
+    document.getElementById('modal-title').textContent = project.title;
     document.getElementById('modal-subtitle').textContent = project.type || 'Project';
     document.getElementById('modal-desc').textContent = project.description;
 
@@ -308,7 +321,7 @@ class ProjectCarousel {
 
   scroll(direction) {
     const carousel = this.carousel;
-    const scrollAmount = 340; // card width + gap
+    const scrollAmount = 360;
     const targetScroll =
       direction === 'next'
         ? carousel.scrollLeft + scrollAmount
@@ -323,29 +336,6 @@ class ProjectCarousel {
 
 // Initialize carousel
 document.addEventListener('DOMContentLoaded', () => {
-  const projectCarousel = new ProjectCarousel();
+  const coverFlow = new FlippingCoverFlow('.logo-carousel-container');
 });
 
-  const modal = document.getElementById('project-modal');
-  const modalContent = document.getElementById('modal-content');
-  const closeBtn = document.getElementById('close-modal');
-  const logoCards = document.querySelectorAll('.logo-card');
-
-  if (modal && logoCards.length > 0) {
-    logoCards.forEach(card => {
-      card.addEventListener('click', () => {
-        const pid = card.getAttribute('data-project');
-        const data = projectData[pid];
-        if (data) {
-          modalContent.innerHTML = `<h3>${data.title}</h3><h4>${data.desc}</h4><p>${data.details}</p>`;
-          modal.classList.add('active');
-        }
-      });
-    });
-
-    const hideModal = () => modal.classList.remove('active');
-    if (closeBtn) closeBtn.addEventListener('click', hideModal);
-    modal.addEventListener('click', (e) => { if(e.target === modal) hideModal(); });
-    document.addEventListener('keydown', (e) => { if(e.key === 'Escape') hideModal(); });
-  }
-});
