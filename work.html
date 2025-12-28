@@ -13,102 +13,76 @@
             <h1>The Project Journey</h1>
             <p>Our methodology takes you from concept to successful launch with precision and clarity.</p>
         </section>
-        
-        <!-- TIMELINE SECTION - MATCHES BRAND DECK -->
+
+        <!-- TIMELINE SECTION -->
         <section class="timeline-section">
-            <div class="timeline-wrapper">
-                <h2 class="timeline-title">Our Process</h2>
-                
-                <!-- HORIZONTAL TIMELINE -->
-                <div class="timeline-container">
-                    <svg class="timeline-svg" viewBox="0 0 1000 120" preserveAspectRatio="xMidYMid meet">
-                        <!-- Main timeline line -->
-                        <line x1="50" y1="60" x2="950" y2="60" stroke="rgba(198, 22, 46, 0.3)" stroke-width="2" stroke-dasharray="5,5"/>
-                        
-                        <!-- Filled segments for active phases -->
-                        <line x1="50" y1="60" x2="250" y2="60" stroke="#C6162E" stroke-width="3"/>
-                        <line x1="350" y1="60" x2="550" y2="60" stroke="#C6162E" stroke-width="3"/>
-                        <line x1="650" y1="60" x2="950" y2="60" stroke="#C6162E" stroke-width="3"/>
-                    </svg>
-                    
-                    <!-- Phase 1: Discovery -->
-                    <div class="timeline-phase phase-1">
-                        <div class="phase-number">1</div>
-                        <h3 class="phase-title">Discovery</h3>
-                        <p class="phase-description">Project definition & strategy lock-in. Deep market analysis and concept validation to ensure a solid foundation.</p>
-                    </div>
-                    
-                    <!-- Phase 2: Design -->
-                    <div class="timeline-phase phase-2">
-                        <div class="phase-number">2</div>
-                        <h3 class="phase-title">Design</h3>
-                        <p class="phase-description">Concept development, menu drafts, MEP work, BOQ list. Translating vision into detailed specifications.</p>
-                    </div>
-                    
-                    <!-- Phase 3: Build -->
-                    <div class="timeline-phase phase-3">
-                        <div class="phase-number">3</div>
-                        <h3 class="phase-title">Build</h3>
-                        <p class="phase-description">Operational lead hiring, CCG lock-in & core team hiring. Assembling the right people for success.</p>
-                    </div>
-                    
-                    <!-- Phase 4: Launch -->
-                    <div class="timeline-phase phase-4">
-                        <div class="phase-number">4</div>
-                        <h3 class="phase-title">Launch</h3>
-                        <p class="phase-description">Standardization & on-ground training, recipe calibration, SOP handovers. Ensuring flawless execution from day one.</p>
-                    </div>
+            <div class="timeline-title">How We Execute</div>
+
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+
+                <!-- Phase 1: Discovery -->
+                <div class="timeline-step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Discovery</h3>
+                    <p class="step-description">
+                        Project definition & strategy lock-in. Deep market analysis and concept validation
+                        to ensure a solid foundation.
+                    </p>
                 </div>
-                
-                <!-- PHASE IMAGES SECTION -->
-                <div class="phase-images-grid">
-                    <div class="phase-image phase-image-1">
-                        <div class="image-placeholder">
-                            <p>Kitchen Layout & Planning</p>
-                        </div>
-                    </div>
-                    <div class="phase-image phase-image-2">
-                        <div class="image-placeholder">
-                            <p>Concept & Design</p>
-                        </div>
-                    </div>
-                    <div class="phase-image phase-image-3">
-                        <div class="image-placeholder">
-                            <p>Team Building</p>
-                        </div>
-                    </div>
-                    <div class="phase-image phase-image-4">
-                        <div class="image-placeholder">
-                            <p>Live Operations</p>
-                        </div>
-                    </div>
+
+                <!-- Phase 2: Design -->
+                <div class="timeline-step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Design</h3>
+                    <p class="step-description">
+                        Concept development, menu drafts, MEP work, BOQ list. Translating vision into detailed
+                        specifications.
+                    </p>
+                </div>
+
+                <!-- Phase 3: Build -->
+                <div class="timeline-step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Build</h3>
+                    <p class="step-description">
+                        Operational lead hiring, CCG lock-in & core team hiring. Assembling the right people
+                        for success.
+                    </p>
+                </div>
+
+                <!-- Phase 4: Launch -->
+                <div class="timeline-step">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Launch</h3>
+                    <p class="step-description">
+                        Standardization & on-ground training, recipe calibration, SOP handovers. Ensuring
+                        flawless execution from day one.
+                    </p>
                 </div>
             </div>
         </section>
-        
+
         <!-- CAROUSEL SECTION -->
         <section class="carousel-section">
-            <h2 class="carousel-title">Our Work Showcase</h2>
-            <p class="carousel-subtitle">Click or hover on any project to see details</p>
-            
-            <div class="logo-carousel-wrapper">
+            <h2 class="carousel-title">Our Work</h2>
+            <p class="carousel-subtitle">Click any project to learn more.</p>
+
+            <div class="logo-carousel-container">
                 <button class="carousel-arrow prev" id="carousel-prev">❮</button>
-                <button class="carousel-arrow next" id="carousel-next">❯</button>
-                
                 <div class="logo-carousel" id="logo-carousel"></div>
+                <button class="carousel-arrow next" id="carousel-next">❯</button>
             </div>
         </section>
     </div>
-    
+
     <!-- PROJECT MODAL -->
-    <div class="project-modal" id="project-modal">
-        <div class="modal-content">
-            <button class="modal-close" id="modal-close">✕</button>
-            <div class="modal-header">
-                <h2 class="modal-title" id="modal-title">Project Name</h2>
-                <p class="modal-subtitle" id="modal-subtitle">Project Type</p>
-            </div>
-            <p class="modal-description" id="modal-description">Project description goes here.</p>
+    <div class="project-flip-container" id="project-modal">
+        <div class="flip-back">
+            <button class="modal-close-btn">&times;</button>
+            <h2 id="modal-title"></h2>
+            <p id="modal-subtitle"></p>
+            <p id="modal-desc"></p>
         </div>
     </div>
 
