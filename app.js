@@ -175,9 +175,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// keep your existing momentum scroll + slideshow + nav
-// then use the original FlippingCoverFlow with your image paths
-
 class FlippingCoverFlow {
   constructor(containerSelector) {
     this.container = document.querySelector(containerSelector);
@@ -350,8 +347,8 @@ class FlippingCoverFlow {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // existing SmoothSlideshow + nav code from file:84 runs here
+  // existing slideshow + nav init...
+
   new FlippingCoverFlow(".logo-carousel-container");
 });
-
 
