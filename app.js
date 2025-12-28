@@ -175,167 +175,183 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// ===============================================================
+// === FINAL CAROUSEL CLASS - WITH LOOPING & ALL FIXES         ===
+// ===============================================================
 class FlippingCoverFlow {
-  constructor(containerSelector) {
-    this.container = document.querySelector(containerSelector);
-    if (!this.container) return;
+    constructor(containerSelector) {
+        this.container = document.querySelector(containerSelector);
+        if (!this.container) return;
 
-    this.carousel = document.getElementById('logo-carousel');
-    this.prevBtn = document.getElementById('carousel-prev');
-    this.nextBtn = document.getElementById('carousel-next');
-    this.modal = document.getElementById('project-modal');
-    this.modalClose = document.querySelector('.modal-close-btn');
+        this.carousel = this.container.querySelector('.logo-carousel');
+        this.prevButton = this.container.querySelector('.carousel-arrow.prev');
+        this.nextButton = this.container.querySelector('.carousel-arrow.next');
+        this.flipContainer = document.querySelector('.project-flip-container');
+        this.flipContent = this.flipContainer.querySelector('.flip-back');
 
-    this.projects = [
-      {
-        title: 'VANTARA NIWAS - MACHAAN',
-        type: 'Luxury Hospitality',
-        description: 'Launched the MACHAAN restaurant inside Vantara Niwas, a seven-star hotel owned by Anant Ambani, hosting an exclusive dinner for Mr. Ambani and other special guests.',
-        logo: 'images/project-images/vantaralogo.jpg'
-      },
-      {
-        title: 'Little Food Co.',
-        type: 'Culinary Consultancy',
-        description: 'Enhanced catering and delivery for this premier Mumbai brand, servicing clients like Spotify and Nykaa by elevating dishes, optimizing workflows, and implementing data tracking.',
-        logo: 'images/project-images/littlefoodlogo.PNG'
-      },
-      {
-        title: 'META - WhatsApp Ad Film',
-        type: 'Food Styling',
-        description: 'Provided comprehensive food styling and kitchen design consultation for the ad film, ensuring authentic culinary scene portrayal.',
-        logo: 'images/project-images/whatsapplogo.png'
-      },
-      {
-        title: 'Moonshine',
-        type: 'Brand Positioning',
-        description: 'Developed the brand identity and \'Be Better\' tagline, creating a social media strategy focused on sustainability for this unique mead brand.',
-        logo: 'images/project-images/moonshine.png'
-      },
-      {
-        title: 'VIRAASAT',
-        type: 'Contemporary Indian Restaurant',
-        description: 'Collaborated on a 300-seat restaurant in Mysore focusing on Northern Frontier Cuisine, blending traditional flavors with modern techniques.',
-        logo: 'images/project-images/virasatlogo.png'
-      },
-      {
-        title: 'Basque by Breve',
-        type: 'Concept Development',
-        description: 'Developed a concept café in Bandra inspired by St. Sebastian cheesecake, featuring unique varieties and a gourmet sandwich shop.',
-        logo: 'images/project-images/basque.png'
-      },
-      {
-        title: 'Phat Fillings',
-        type: 'Premium Pie Delivery',
-        description: 'Led the creation of a premium delivery brand for pies with Indian and Australian flavors, featured in Vogue and Upper Crust.',
-        logo: 'images/project-images/phat logo.png'
-      },
-      {
-        title: 'ZEKI',
-        type: 'Upscale Casual Bistro',
-        description: 'Developed an upscale bistro in Andheri West focused on global cuisine, designing the kitchen, curating crockery, and crafting an international menu.',
-        logo: 'images/project-images/zekilogo.PNG'
-      },
-      {
-        title: 'Doppler',
-        type: 'Heritage Café',
-        description: 'Conceptualized a café in a historic Jaipur haveli, redefining the experience as the city\'s premier slow bar destination.',
-        logo: 'images/project-images/doppler.png'
-      },
-      {
-        title: 'Sarabi',
-        type: 'Modern Indian Restaurant',
-        description: 'An upscale 12,000 sqft space offering contemporary progressive Indian food, designed for a discerning clientele.',
-        logo: 'images/project-images/saarbai.png'
-      },
-      {
-        title: 'Sunny Da Dhaba',
-        type: 'Brand Evolution',
-        description: 'Evolved a 30+ year legacy brand into a dual-floor destination with a Mediterranean café and a modern-Indian restaurant with playful tapas.',
-        logo: 'images/project-images/sunnyy.png'
-      }
-    ];
+        this.projects = [
+            { title: 'VANTARA NIWAS - MACHAAN Launch', type: '', description: "Launched the MACHAAN restaurant inside Vantara Niwas, a seven-star hotel owned by Anant Ambani, hosting an exclusive dinner for Mr. Ambani and other special guests.", logo: 'images/project-images/vantaralogo.jpg' },
+            { title: 'Little Food Co.', type: 'Culinary Consultancy', description: "Enhanced catering and delivery for this premier Mumbai brand, servicing clients like Spotify and Nykaa by elevating dishes, optimizing workflows, and implementing data tracking.", logo: 'images/project-images/littlefoodlogo.PNG' },
+            { title: 'META - WhatsApp Privacy Ad Film', type: '', description: 'Provided comprehensive food styling and kitchen design consultation for the ad film, ensuring authentic culinary scene portrayal.', logo: 'images/project-images/whatsapplogo.png' },
+            { title: 'Moonshine', type: 'Brand Positioning & Strategy', description: "Developed the brand identity and 'Be Better' tagline, creating a social media strategy focused on sustainability for this unique mead brand.", logo: 'images/project-images/moonshine.png' },
+            { title: 'VIRAASAT - Aaverina Hospitality', type: 'Contemporary Indian Restaurant', description: 'Collaborated on a 300-seat restaurant in Mysore focusing on Northern Frontier Cuisine, blending traditional flavors with modern techniques.', logo: 'images/project-images/virasatlogo.png' },
+            { title: 'Basque by Breve', type: 'Concept Development', description: 'Developed a concept café in Bandra inspired by St. Sebastian cheesecake, featuring unique varieties and a gourmet sandwich shop.', logo: 'images/project-images/basque.png' },
+            { title: 'Phat Fillings', type: 'Premium Pie Delivery', description: 'Led the creation of a premium delivery brand for pies with Indian and Australian flavors, featured in Vogue and Upper Crust.', logo: 'images/project-images/phat logo.png' },
+            { title: 'ZEKI', type: 'Upscale Casual Bistro', description: 'Developed an upscale bistro in Andheri West focused on global cuisine, designing the kitchen, curating crockery, and crafting an international menu.', logo: 'images/project-images/zekilogo.PNG' },
+            { title: 'Doppler', type: '', description: "Conceptualized a café for Boomerang Hospitality in a historic Jaipur haveli, redefining the experience as the city's premier slow bar destination.", logo: 'images/project-images/doppler.png' },
+            { title: 'Sarabi', type: 'Modern Indian Restaurant', description: "An upscale 12,000 sqft space offering contemporary progressive Indian food, designed for a discerning clientele.", logo: 'images/project-images/saarbai.png' },
+            { title: 'Sunny Da Dhaba', type: '', description: 'Evolved a 30+ year legacy brand into a dual-floor destination with a Mediterranean café and a modern-Indian restaurant with playful tapas.', logo: 'images/project-images/sunnyy.png' }
+        ];
 
-    this.currentIndex = 0;
-    this.init();
-  }
+        this.currentIndex = 0;
+        this.init();
+    }
 
-  init() {
-    this.populateCarousel();
-    this.bindEvents();
-  }
+    init() {
+        this.populateCarousel();
+        this.cards = this.carousel.querySelectorAll('.logo-card');
+        this.updateCarouselPositions(true); // Initial setup without transition
+        this.bindEvents();
+    }
 
-  populateCarousel() {
-    this.carousel.innerHTML = this.projects
-      .map(
-        (project, idx) => `
-      <div class="logo-card" data-index="${idx}">
-        <img src="${project.logo}" alt="${project.title}" class="logo-card-image"
-          onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 80%22%3E%3Crect fill=%22%23f0f0f0%22 width=%22200%22 height=%2280%22/%3E%3C/svg%3E'" />
-        <h3 class="logo-card-name">${project.title}</h3>
-        ${project.type ? `<p class="logo-card-type">${project.type}</p>` : ''}
-      </div>
-    `
-      )
-      .join('');
+    populateCarousel() {
+        this.carousel.innerHTML = this.projects.map((project, index) => `
+            <div class="logo-card" data-index="${index}">
+                <img src="${project.logo}" alt="${project.title}">
+            </div>
+        `).join('');
+    }
 
-    this.attachCardListeners();
-  }
+    updateCarouselPositions(isInitial = false) {
+        const total = this.projects.length;
 
-  attachCardListeners() {
-    const cards = document.querySelectorAll('.logo-card');
-    cards.forEach((card, idx) => {
-      card.addEventListener('click', () => this.openModal(idx));
-    });
-  }
+        // Loop through all cards to set their position
+        for (let i = 0; i < total; i++) {
+            const card = this.cards[i];
+            const offset = i - this.currentIndex;
 
-  openModal(index) {
+            let transform, zIndex, filter, opacity;
+
+            // This creates the circular distance for the loop
+            const circularOffset = (offset + total) % total;
+            const rightOffset = (this.currentIndex - i + total) % total;
+            const distance = Math.min(circularOffset, rightOffset);
+            
+            // Disable transition for the very first load
+            if (isInitial) card.style.transition = 'none';
+            else card.style.transition = 'transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease';
+
+            if (distance === 0) { // Center card
+                transform = 'translateX(0) scale(1)';
+                zIndex = 10;
+                filter = 'none';
+                opacity = 1;
+            } else if (distance === 1) { // Adjacent cards
+                // Check if it's the left or right card
+                if (circularOffset === 1 || circularOffset < total / 2 && circularOffset !== 0) {
+                    transform = 'translateX(150px) scale(0.7)'; // Right
+                } else {
+                    transform = 'translateX(-150px) scale(0.7)'; // Left
+                }
+                zIndex = 5;
+                filter = 'blur(2px)';
+                opacity = 0.5;
+            } else { // Hidden cards
+                transform = `translateX(${offset * 75}px) scale(0.5)`;
+                opacity = 0;
+                zIndex = 1;
+            }
+
+            card.style.transform = transform;
+            card.style.zIndex = zIndex;
+            card.style.filter = filter;
+            card.style.opacity = opacity;
+        }
+    }
+    
+   showFlipModal(index) {
     const project = this.projects[index];
-    document.getElementById('modal-title').textContent = project.title;
-    document.getElementById('modal-subtitle').textContent = project.type || 'Project';
-    document.getElementById('modal-desc').textContent = project.description;
-
-    this.modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-
-  closeModal() {
-    this.modal.classList.remove('active');
-    document.body.style.overflow = 'auto';
-  }
-
-  bindEvents() {
-    this.prevBtn.addEventListener('click', () => this.scroll('prev'));
-    this.nextBtn.addEventListener('click', () => this.scroll('next'));
-    this.modalClose.addEventListener('click', () => this.closeModal());
-
-    this.modal.addEventListener('click', (e) => {
-      if (e.target === this.modal) this.closeModal();
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && this.modal.classList.contains('active')) {
-        this.closeModal();
-      }
-    });
-  }
-
-  scroll(direction) {
-    const carousel = this.carousel;
-    const scrollAmount = 360;
-    const targetScroll =
-      direction === 'next'
-        ? carousel.scrollLeft + scrollAmount
-        : carousel.scrollLeft - scrollAmount;
-
-    carousel.scrollTo({
-      left: targetScroll,
-      behavior: 'smooth'
-    });
-  }
+    
+    // FORCE the content to be visible immediately
+    this.flipContent.innerHTML = `
+        <button class="modal-close-btn">&times;</button>
+        <h3 style="color: #FFFFFF !important; margin-bottom: 15px;">${project.title}</h3>
+        ${project.type ? `<p class="project-type" style="color: #CCCCCC !important; font-style: italic; margin-bottom: 15px;">${project.type}</p>` : ''}
+        <p style="color: #FFFFFF !important; line-height: 1.6;">${project.description}</p>
+        <a href="contact.html" class="enquire-btn" style="margin-top:24px;display:inline-block;">Start your own project</a>
+    `;
+    
+    // FORCE the flip-back to have the right colors
+    this.flipContent.style.backgroundColor = '#1f2121';
+    this.flipContent.style.color = '#FFFFFF';
+    
+    this.flipContainer.classList.add('active');
+    
+    // Add the close event
+    const closeBtn = this.flipContainer.querySelector('.modal-close-btn');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => this.hideFlipModal(), { once: true });
+    }
 }
 
-// Initialize carousel
-document.addEventListener('DOMContentLoaded', () => {
-  const coverFlow = new FlippingCoverFlow('.logo-carousel-container');
-});
+
+    hideFlipModal() {
+        this.flipContainer.classList.remove('active');
+    }
+
+   bindEvents() {
+    this.nextButton.addEventListener('click', () => {
+        this.currentIndex = (this.currentIndex + 1) % this.projects.length;
+        this.updateCarouselPositions();
+    });
+
+    this.prevButton.addEventListener('click', () => {
+        this.currentIndex = (this.currentIndex - 1 + this.projects.length) % this.projects.length;
+        this.updateCarouselPositions();
+    });
+
+    // FIXED: Separate touch and click handling for mobile vs desktop
+    let touchStartTime = 0;
+    let touchEndTime = 0;
+
+    // Handle touch events for mobile
+    this.carousel.addEventListener('touchstart', (e) => {
+        touchStartTime = Date.now();
+    });
+
+    this.carousel.addEventListener('touchend', (e) => {
+        touchEndTime = Date.now();
+        const touchDuration = touchEndTime - touchStartTime;
+        
+        // Only trigger if it's a quick tap (not a scroll)
+        if (touchDuration < 200) {
+            const card = e.target.closest('.logo-card');
+            if (card && parseInt(card.dataset.index) === this.currentIndex) {
+                e.preventDefault();
+                e.stopPropagation();
+                this.showFlipModal(this.currentIndex);
+            }
+        }
+    });
+
+    // Handle click events for desktop (but not mobile)
+    this.carousel.addEventListener('click', (e) => {
+        // Skip if this is a mobile touch device
+        if ('ontouchstart' in window) return;
+        
+        const card = e.target.closest('.logo-card');
+        if (card && parseInt(card.dataset.index) === this.currentIndex) {
+            this.showFlipModal(this.currentIndex);
+        }
+    });
+
+    // FIXED: Only close modal when clicking the background, not anywhere
+    this.flipContainer.addEventListener('click', (e) => {
+        if (e.target === this.flipContainer) {
+            this.hideFlipModal();
+        }
+    });
+}
+
+}
 
