@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projects - Mettle Hospitality</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="images/mettle logo no back.png" type="image/jpeg">
+
+  <!-- Your existing global CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Work-page-only CSS (NEW) -->
+  <link rel="stylesheet" href="work.css" />
+
+  <link rel="icon" href="images/mettle logo no back.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <!-- HEADER -->
+  <!-- NAV (keep same ids so your existing app.js Navigation keeps working) -->
   <nav class="nav-header" id="navbar">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">
-        <img src="images/mettle logo no back.png" alt="Mettle Hospitality" style="height: 50px;">
+        <img src="images/mettle logo no back.png" alt="Mettle Hospitality" style="height: 40px;">
       </a>
-      <button class="mobile-toggle" id="mobile-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
+
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
       </button>
-      <div class="nav-menu" id="nav-menu">
+
+      <ul class="nav-menu" id="nav-menu">
         <li><a href="index.html" class="nav-link">Home</a></li>
         <li><a href="about.html" class="nav-link">About us</a></li>
+
         <li class="dropdown">
           <a href="service.html" class="nav-link dropdown-toggle">Services</a>
           <ul class="dropdown-menu">
@@ -33,137 +40,8 @@
             <li><a href="service.html#secret" class="dropdown-link">Our Secret Sauce</a></li>
           </ul>
         </li>
+
         <li class="dropdown">
           <a href="work.html" class="nav-link active dropdown-toggle">Projects</a>
           <ul class="dropdown-menu">
-            <li><a href="#past" class="dropdown-link">Past Projects</a></li>
-            <li><a href="#current" class="dropdown-link">Project Journey</a></li>
-          </ul>
-        </li>
-        <li><a href="media.html" class="nav-link">Media</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
-      </div>
-    </div>
-  </nav>
-
-  <main>
-    <!-- SECTION 1: CAROUSEL + FLIP MODAL -->
-    <section class="projects-carousel-section" id="past">
-      <div class="container">
-        <div class="section-header">
-          <p class="label-grey">OUR PROOF, NOT JUST PROMISES</p>
-          <h2>From luxury resorts to urban eateries, our portfolio showcases diverse projects that deliver exceptional results.</h2>
-        </div>
-
-        <div class="logo-carousel-container">
-          <button class="carousel-arrow prev" id="carousel-prev">&#8592;</button>
-          <div class="carousel" id="logo-carousel">
-            <div class="logo-card" data-project="vantara">
-              <img src="images/vantara-logo.png" alt="Vantara Niwas">
-              <span class="logo-fallback">Vantara Niwas</span>
-            </div>
-            <div class="logo-card" data-project="basque">
-              <img src="images/basque-logo.png" alt="Basque by Breve">
-              <span class="logo-fallback">Basque</span>
-            </div>
-            <div class="logo-card" data-project="littlefood">
-              <img src="images/littlefood-logo.png" alt="Little Food">
-              <span class="logo-fallback">Little Food</span>
-            </div>
-            <div class="logo-card" data-project="sarabi">
-              <img src="images/sarabi-logo.png" alt="Sarabi">
-              <span class="logo-fallback">Sarabi</span>
-            </div>
-            <div class="logo-card" data-project="doppler">
-              <img src="images/doppler-logo.png" alt="Doppler">
-              <span class="logo-fallback">Doppler</span>
-            </div>
-            <div class="logo-card" data-project="meta">
-              <img src="images/meta-logo.png" alt="Meta Ad Film">
-              <span class="logo-fallback">Meta Ad Film</span>
-            </div>
-          </div>
-          <button class="carousel-arrow next" id="carousel-next">&#8594;</button>
-        </div>
-
-        <p class="click-hint">Click any logo to view project details</p>
-      </div>
-    </section>
-
-    <!-- SECTION 2: TIMELINE (PROJECT JOURNEY) -->
-    <section class="timeline-section" id="current">
-      <div class="container">
-        <div class="timeline-header">
-          <p class="label-grey">THE PROJECT JOURNEY</p>
-          <h2>Our proven four-phase methodology takes you from concept to successful launch with precision and clarity.</h2>
-        </div>
-
-        <div class="timeline-grid">
-          <div class="timeline-step">
-            <div class="step-number">1</div>
-            <h3>Discovery</h3>
-            <div class="timeline-divider"></div>
-            <p><strong>Project definition & strategy lock-in.</strong> Deep market analysis and concept validation to ensure a solid foundation.</p>
-          </div>
-
-          <div class="timeline-step">
-            <div class="step-number">2</div>
-            <h3>Design</h3>
-            <div class="timeline-divider"></div>
-            <p><strong>Concept development, menu drafts, MEP work, BOQ list.</strong> Translating vision into detailed specifications.</p>
-          </div>
-
-          <div class="timeline-step">
-            <div class="step-number">3</div>
-            <h3>Build</h3>
-            <div class="timeline-divider"></div>
-            <p><strong>Operational lead hiring, CCG lock-in & core team hiring.</strong> Assembling the right people for success.</p>
-          </div>
-
-          <div class="timeline-step">
-            <div class="step-number">4</div>
-            <h3>Launch</h3>
-            <div class="timeline-divider"></div>
-            <p><strong>Standardization & on-ground training, recipe calibration, SOP handovers.</strong> Ensuring flawless execution from day one.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- MODAL (HIDDEN BY DEFAULT) -->
-  <div class="project-flip-container" id="project-modal">
-    <div class="flip-back">
-      <button class="modal-close-btn" id="close-modal">&times;</button>
-      <div class="flip-content" id="modal-content"></div>
-    </div>
-  </div>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-col">
-        <h3>METTLE</h3>
-      </div>
-      <div class="footer-col">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="service.html">Services</a>
-        <a href="work.html">Projects</a>
-        <a href="media.html">Media</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="footer-col">
-        <p>Based in Mumbai, serving nationwide & globally</p>
-        <a href="mailto:admin@mettle-hospitality.com">admin@mettle-hospitality.com</a>
-        <a href="tel:+918169501153">+91 81695 01153</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 Mettle Hospitality. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script src="app.js"></script>
-</body>
-</html>
+            <li><a href="#work-projects" class
