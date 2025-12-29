@@ -2333,5 +2333,274 @@ footer {
   }
 }
 
+/* =======================================================
+   CAROUSEL + FLIP MODAL + GLASS CARDS - INTEGRATION BLOCK
+   ======================================================= */
+
+/* GLASS CARD COMPONENT */
+.glass-card {
+  background: #6B7280;
+  color: #F9FAFB;
+  border-radius: 8px;
+  box-shadow: none;
+  backdrop-filter: none;
+  border: none;
+  animation: none;
+  position: relative;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+  opacity: 0.6;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+  border-color: rgba(218, 165, 32, 0.3);
+}
+
+/* LOGO CAROUSEL - COMPLETE */
+.logo-carousel-container {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.logo-carousel {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-card {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: transform 0.5s ease, opacity 0.5s ease, filter 0.5s ease;
+}
+
+.logo-card img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  background: rgba(var(--color-text-rgb), 0.05);
+  border: 1px solid rgba(var(--color-text-rgb), 0.1);
+  color: var(--color-text-secondary);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-arrow:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: transparent;
+}
+
+.carousel-arrow.prev {
+  left: 20px;
+}
+
+.carousel-arrow.next {
+  right: 20px;
+}
+
+@media (min-width: 992px) {
+  .carousel-arrow.prev {
+    left: calc(50% - 300px);
+  }
+  .carousel-arrow.next {
+    right: calc(50% - 300px);
+  }
+}
+
+/* PROJECT FLIP CONTAINER - COMPLETE MODAL SYSTEM */
+.project-flip-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  perspective: 1500px;
+}
+
+.project-flip-container.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.flipper {
+  width: 90vw;
+  max-width: 550px;
+  height: 400px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transform: rotateY(0deg);
+}
+
+.project-flip-container.active .flipper {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.flip-front {
+  background: var(--color-surface);
+}
+
+.flip-back {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  padding: 40px;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.flip-back h3 {
+  margin-top: 0;
+  color: var(--color-primary);
+}
+
+.flip-back .project-type {
+  font-style: italic;
+  opacity: 0.7;
+  margin-bottom: 15px;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+  z-index: 5;
+}
+
+.modal-close-btn:hover {
+  opacity: 1;
+}
+
+/* RECTANGLE BUTTON */
+.rectangle-btn {
+  border-radius: 12px !important;
+  padding: 18px 36px !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  background: #fff !important;
+  color: #232323 !important;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.rectangle-btn:hover {
+  background: #f4f4f4 !important;
+  color: #111 !important;
+  cursor: pointer;
+}
+
+/* REQUIRED ANIMATIONS */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* GLASS CARD ANIMATION */
+@media (prefers-reduced-motion: no-preference) {
+  .glass-card {
+    animation: fadeInUp 0.6s var(--ease-standard);
+  }
+}
+
+/* MOBILE RESPONSIVE FOR CAROUSEL */
+@media (max-width: 768px) {
+  .logo-carousel-container {
+    height: 200px;
+  }
+  .logo-card {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* FLIP CONTAINER MOBILE */
+@media (max-width: 640px) {
+  .flipper {
+    width: 95vw;
+    height: 350px;
+  }
+}
+
+/* =======================================================
+   END CAROUSEL + FLIP + GLASS INTEGRATION
+   ======================================================= */
 
 
