@@ -49,76 +49,100 @@
   </header>
   
  <main>
-    <!-- 2ND LAST SLIDE - "Let's Turn Someday Into Now" -->
-    <section class="contact-hero">
+   <!-- YOUR 1ST DRAFT STYLE + SECRET INGREDIENT -->
+    <section class="contact-section-final">
       <div class="container">
-        <div class="hero-content">
-          <h1 class="hero-title">Let's Turn<br>Someday Into Now</h1>
-          <p class="hero-subtitle">Your vision. Our expertise. Exceptional hospitality experiences that set new standards and drive lasting success.</p>
-          <div class="hero-buttons">
-            <a href="#contact-details" class="btn btn--primary rectangle-btn">Get In Touch</a>
-            <a href="#schedule-call" class="btn btn--secondary rectangle-btn">Schedule Call</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- LAST SLIDE - CONTACT DETAILS + FORM -->
-    <section class="contact-section">
-      <div class="container">
-        <div class="contact-grid">
+        <div class="contact-content-final">
           
-          <!-- LEFT: CONTACT INFO + FORM -->
-          <div class="contact-details" id="contact-details">
-            <div class="section-header">
-              <span class="label-grey">LET'S TALK</span>
-              <h2>Get In Touch</h2>
-              <p>Ready to transform your hospitality concept into a thriving reality? Let's start the conversation today.</p>
-            </div>
-
-            <!-- CONTACT INFO -->
-            <div class="contact-info-grid">
-              <div class="contact-item">
-                <div class="label-grey">EMAIL</div>
-                <a href="mailto:admin@mettle-hospitality.com" class="contact-value">admin@mettle-hospitality.com</a>
-              </div>
-              
-              <div class="contact-item">
-                <div class="label-grey">PHONE</div>
-                <a href="tel:+91816950115" class="contact-value">+91 81695 01153</a>
-              </div>
-              
-              <div class="contact-item">
-                <div class="label-grey">LOCATION</div>
-                <p class="contact-value">Based in Mumbai,<br><span style="font-size: 0.95rem;">serving nationwide & globally</span></p>
-              </div>
-            </div>
-
-            <!-- QUICK FORM -->
-            <div class="quick-form-section">
-              <div class="label-grey">QUICK MESSAGE</div>
-              <form id="contact-form" class="quick-form">
-                <input type="text" name="name" placeholder="Your Name *" required>
-                <input type="email" name="email" placeholder="Your Email *" required>
-                <textarea name="message" rows="5" placeholder="Tell us about your project vision, timeline & goals..." required></textarea>
-                <button type="submit" class="btn btn--primary rectangle-btn">Send Message</button>
-              </form>
-            </div>
+          <!-- HERO TEXT (Your style) -->
+          <div class="section-header">
+            <h1 class="about-title-final">Get In Touch</h1>
+            <p class="about-subtitle-final">Connect with us for culinary consulting, hospitality projects, brand collaborations. Based in Mumbai, serving clients worldwide.</p>
           </div>
 
-          <!-- RIGHT: CALENDLY -->
-          <div class="calendly-section" id="schedule-call">
-            <div class="label-grey">SCHEDULE A CALL</div>
+          <!-- SECRET INGREDIENT FORM LAYOUT -->
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form-simple">
+            
+            <!-- Name + Phone Row (Secret Ingredient style) -->
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Name</label>
+                <input type="text" name="name" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Phone Number</label>
+                <input type="tel" name="phone" class="form-control" required>
+              </div>
+            </div>
+
+            <!-- Email Row -->
+            <div class="form-group">
+              <label class="form-label">Email ID</label>
+              <input type="email" name="email" class="form-control" required>
+            </div>
+
+            <!-- Location + Interest (Secret Ingredient dropdowns) -->
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Location</label>
+                <select name="location" class="form-control" required>
+                  <option value="">Select Location</option>
+                  <option value="mumbai">Mumbai</option>
+                  <option value="delhi-ncr">Delhi NCR</option>
+                  <option value="bangalore">Bangalore</option>
+                  <option value="goa">Goa</option>
+                  <option value="jaipur">Jaipur</option>
+                  <option value="hyderabad">Hyderabad</option>
+                  <option value="global">Global/Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Interest</label>
+                <select name="interest" class="form-control" required>
+                  <option value="">Select Interest</option>
+                  <option value="restaurant">Restaurant/Bar/Cafe</option>
+                  <option value="hotel">Hotels & Resorts</option>
+                  <option value="cloud-kitchen">Cloud Kitchens</option>
+                  <option value="menu">Menu Development</option>
+                  <option value="kitchen">Kitchen Design</option>
+                  <option value="consulting">F&B Consulting</option>
+                  <option value="franchise">Franchise Ready</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Message -->
+            <div class="form-group">
+              <label class="form-label">Message</label>
+              <textarea name="message" class="form-control" rows="5" placeholder="Tell us about your project vision, timeline, budget..." required></textarea>
+            </div>
+
+            <!-- SUBMIT BUTTON -->
+            <button type="submit" class="about-cta-btn-final btn--primary rectangle-btn">Send Message</button>
+          </form>
+
+          <!-- CALENDLY BUTTON (Your favorite style) -->
+          <div class="calendly-section-final">
             <div class="calendly-card glass-card">
-              <h3>Discovery Call</h3>
-              <p>Book a 30-minute call to discuss your project vision, timeline, and how we can bring it to life.</p>
-              <a href="https://calendly.com/vidit-aren/discovery-call" target="_blank" class="btn btn--primary rectangle-btn calendly-btn">Book Now</a>
-              <p class="whatsapp-note">Or WhatsApp for immediate response:<br>
-                <a href="https://wa.me/91816950115" class="whatsapp-link">+91 81695 01153</a>
-              </p>
+              <h3>📅 Book a 30-Min Discovery Call</h3>
+              <p>Discuss your project vision, timeline, and roadmap with our senior team</p>
+              <a href="https://calendly.com/vidit-aren/discovery-call" target="_blank" class="btn btn--primary rectangle-btn calendly-btn">Schedule Call</a>
+            </div>
+            
+            <!-- WHATSAPP BUTTON -->
+            <div class="whatsapp-section">
+              <a href="https://wa.me/91816950115" class="whatsapp-btn glass-card">
+                💬 WhatsApp for Instant Response
+              </a>
             </div>
           </div>
 
+        </div>
+
+        <!-- CONTACT IMAGE (Your style + Secret Ingredient) -->
+        <div class="contact-image-final">
+          <img src="images/contact/consultation.jpg" alt="Consultation">
         </div>
       </div>
     </section>
