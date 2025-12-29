@@ -2912,141 +2912,242 @@ footer {
   }
 }
 
-/* CONTACT PAGE - BRAND DECK LAST 2 SLIDES */
-.contact-hero {
-  padding: 160px 0;
-  background: linear-gradient(135deg, var(--color-background) 0%, #f8f7f4 100%);
-  text-align: center;
-}
+/* =======================================================
+   CONTACT PAGE - HYBRID SECRET INGREDIENT + YOUR STYLE
+   ======================================================= */
 
-.hero-title {
-  font-size: clamp(4rem, 10vw, 7rem);
-  font-weight: 900;
-  background: linear-gradient(135deg, var(--color-text) 0%, var(--brand-crimson) 50%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 24px;
-  line-height: 1;
-}
-
-.hero-subtitle {
-  font-size: 1.4rem;
-  color: var(--color-text-secondary);
-  max-width: 700px;
-  margin: 0 auto 48px;
-  line-height: 1.6;
-}
-
-.contact-section {
-  padding: 140px 0;
+/* HERO */
+.contact-section-final {
+  padding: 140px 0 120px;
   background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
-.contact-grid {
+.contact-content-final {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 450px;
   gap: 80px;
   align-items: start;
 }
 
-.contact-info-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  margin: 60px 0 40px;
+.section-header {
+  margin-bottom: 60px;
 }
 
-.contact-item .label-grey {
-  margin-bottom: 8px;
-  font-size: 0.85rem;
-  letter-spacing: 2px;
-}
-
-.contact-value {
-  font-size: 1.4rem;
-  font-weight: 500;
+.about-title-final {
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 800;
   color: white;
-  text-decoration: none;
-  display: block;
-}
-
-.contact-value:hover {
-  color: var(--brand-crimson);
-}
-
-.quick-form-section {
-  margin-top: 48px;
-}
-
-.quick-form input,
-.quick-form textarea {
-  width: 100%;
-  padding: 20px;
   margin-bottom: 20px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 16px;
-  color: white;
-  font-size: 1rem;
-  transition: all 0.3s ease;
+  line-height: 1.1;
 }
 
-.quick-form input::placeholder,
-.quick-form textarea::placeholder {
+.about-subtitle-final {
+  font-size: 1.4rem;
+  color: rgba(255,255,255,0.85);
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* FORM */
+.contact-form-simple {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 28px;
+  padding: 60px;
+  box-shadow: 0 35px 90px rgba(0,0,0,0.6);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-bottom: 28px;
+}
+
+.form-group {
+  margin-bottom: 28px;
+}
+
+.form-label {
+  display: block;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 22px 24px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 20px;
+  color: white;
+  font-size: 1.05rem;
+  font-family: inherit;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--brand-crimson);
+  background: rgba(255,255,255,0.12);
+  box-shadow: 0 0 0 4px rgba(165,64,64,0.2);
+  transform: translateY(-2px);
+}
+
+.form-control::placeholder {
   color: rgba(255,255,255,0.5);
 }
 
-.quick-form input:focus,
-.quick-form textarea:focus {
-  border-color: var(--brand-crimson);
-  box-shadow: 0 0 0 3px rgba(165,64,64,0.15);
-  background: rgba(255,255,255,0.12);
+.form-control option {
+  background: #1a1a1a;
+  color: white;
+}
+
+/* SUBMIT */
+.about-cta-btn-final {
+  width: 100%;
+  padding: 24px;
+  background: linear-gradient(135deg, var(--brand-crimson), #8B3636);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.about-cta-btn-final:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 60px rgba(165,64,64,0.5);
+}
+
+/* CALENDLY + WHATSAPP */
+.calendly-section-final {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .calendly-card {
-  background: rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.06);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
   border-radius: 24px;
-  padding: 48px 40px;
-  height: fit-content;
+  padding: 40px 32px;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+.calendly-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--brand-crimson);
+  box-shadow: 0 30px 80px rgba(165,64,64,0.3);
 }
 
 .calendly-card h3 {
   color: white;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   margin-bottom: 16px;
+  font-weight: 700;
 }
 
 .calendly-card p {
   color: rgba(255,255,255,0.85);
-  margin-bottom: 32px;
+  margin-bottom: 28px;
   line-height: 1.6;
 }
 
-.whatsapp-note {
-  font-size: 0.95rem;
-  color: rgba(255,255,255,0.7);
-  margin-top: 24px;
+.calendly-btn {
+  width: 100% !important;
 }
 
-.whatsapp-link {
-  color: var(--brand-crimson);
-  font-weight: 600;
+.whatsapp-section {
+  text-align: center;
+}
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 24px 32px;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: white !important;
   text-decoration: none;
+  border-radius: 24px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 30px rgba(37,211,102,0.3);
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 60px rgba(37,211,102,0.5);
+}
+
+/* IMAGE */
+.contact-image-final {
+  position: absolute;
+  right: 5%;
+  top: 20%;
+  width: 380px;
+  height: 500px;
+  z-index: 1;
+}
+
+.contact-image-final img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 28px;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.6);
 }
 
 /* MOBILE */
-@media (max-width: 1024px) {
-  .contact-grid {
+@media (max-width: 1200px) {
+  .contact-content-final {
     grid-template-columns: 1fr;
     gap: 60px;
   }
   
-  .calendly-card {
-    order: -1;
+  .contact-image-final {
+    display: none;
   }
 }
+
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .contact-section-final {
+    padding: 100px 0 80px;
+  }
+  
+  .contact-form-simple {
+    padding: 40px 24px;
+  }
+}
+
+/* =======================================================
+   END CONTACT PAGE CSS
+   ======================================================= */
+
 
 
 
