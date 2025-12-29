@@ -2603,4 +2603,194 @@ footer {
    END CAROUSEL + FLIP + GLASS INTEGRATION
    ======================================================= */
 
+/* PROJECT TIMELINE - PIXEL PERFECT */
+.project-timeline {
+  padding: 120px 0;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--brand-crimson), transparent);
+  opacity: 0.6;
+}
+
+.timeline-header {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.timeline-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, #fff 0%, var(--brand-crimson) 50%, #fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.timeline-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.timeline-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  height: 500px;
+}
+
+.timeline-phase {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1);
+  opacity: 0.6;
+  transform: scale(0.9);
+}
+
+.timeline-phase.active,
+.timeline-phase:hover {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.phase-number {
+  width: 80px;
+  height: 80px;
+  background: var(--brand-crimson);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  box-shadow: 0 10px 30px rgba(165, 64, 64, 0.4);
+  position: relative;
+  z-index: 10;
+  margin-bottom: 20px;
+}
+
+.phase-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.phase-desc {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+  max-width: 200px;
+  margin-bottom: 30px;
+}
+
+.phase-image {
+  width: 100%;
+  height: 280px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.phase-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.timeline-phase:hover .phase-image {
+  box-shadow: 0 30px 80px rgba(165, 64, 64, 0.3);
+  transform: translateY(-8px);
+}
+
+.timeline-phase:hover .phase-image img {
+  transform: scale(1.05);
+}
+
+/* Timeline Line */
+.timeline-container::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(165, 64, 64, 0.3) 20%, 
+    var(--brand-crimson) 40%, 
+    var(--brand-crimson) 60%, 
+    rgba(165, 64, 64, 0.3) 80%, 
+    transparent 100%);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+/* Active phase highlight */
+.timeline-phase.active .phase-number {
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2), 0 20px 40px rgba(165, 64, 64, 0.6);
+  transform: scale(1.1);
+}
+
+/* Mobile */
+@media (max-width: 1024px) {
+  .timeline-container {
+    flex-direction: column;
+    height: auto;
+    gap: 60px;
+  }
+  
+  .timeline-phase {
+    flex-direction: row;
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .phase-number {
+    margin-bottom: 0;
+    margin-right: 30px;
+    flex-shrink: 0;
+  }
+  
+  .timeline-container::after {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-timeline { padding: 80px 0; }
+  .timeline-header { margin-bottom: 60px; }
+  .timeline-title { font-size: 2rem; }
+  .phase-image { height: 200px; }
+}
 
