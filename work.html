@@ -1,91 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Work - Project Journey</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Work | Metal Hospitality</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-    <div class="container">
-        <!-- PAGE HEADER -->
-        <section class="page-header">
-            <h1>The Project Journey</h1>
-            <p>Our methodology takes you from concept to successful launch with precision and clarity.</p>
-        </section>
 
-        <!-- TIMELINE SECTION -->
-        <section class="timeline-section">
-            <div class="timeline-title">How We Execute</div>
+<body class="work-page">
+  <!-- existing header/nav -->
+  <header class="site-header">
+    <nav id="navbar">
+      <div class="logo">
+        <img src="images/logo.png" alt="Metal Hospitality logo" />
+      </div>
+      <div class="mobile-menu-toggle" id="mobile-toggle">
+        <span></span><span></span><span></span>
+      </div>
+      <ul id="nav-menu" class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="work.html" class="active">Work</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-            <div class="timeline-container">
-                <div class="timeline-line"></div>
-
-                <!-- Phase 1: Discovery -->
-                <div class="timeline-step">
-                    <div class="step-number">1</div>
-                    <h3 class="step-title">Discovery</h3>
-                    <p class="step-description">
-                        Project definition & strategy lock-in. Deep market analysis and concept validation
-                        to ensure a solid foundation.
-                    </p>
-                </div>
-
-                <!-- Phase 2: Design -->
-                <div class="timeline-step">
-                    <div class="step-number">2</div>
-                    <h3 class="step-title">Design</h3>
-                    <p class="step-description">
-                        Concept development, menu drafts, MEP work, BOQ list. Translating vision into detailed
-                        specifications.
-                    </p>
-                </div>
-
-                <!-- Phase 3: Build -->
-                <div class="timeline-step">
-                    <div class="step-number">3</div>
-                    <h3 class="step-title">Build</h3>
-                    <p class="step-description">
-                        Operational lead hiring, CCG lock-in & core team hiring. Assembling the right people
-                        for success.
-                    </p>
-                </div>
-
-                <!-- Phase 4: Launch -->
-                <div class="timeline-step">
-                    <div class="step-number">4</div>
-                    <h3 class="step-title">Launch</h3>
-                    <p class="step-description">
-                        Standardization & on-ground training, recipe calibration, SOP handovers. Ensuring
-                        flawless execution from day one.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- CAROUSEL SECTION -->
-        <section class="carousel-section">
-            <h2 class="carousel-title">Our Work</h2>
-            <p class="carousel-subtitle">Click any project to learn more.</p>
-
-            <div class="logo-carousel-container">
-                <button class="carousel-arrow prev" id="carousel-prev">❮</button>
-                <div class="logo-carousel" id="logo-carousel"></div>
-                <button class="carousel-arrow next" id="carousel-next">❯</button>
-            </div>
-        </section>
+  <!-- ======= 1 | Carousel ======= -->
+  <section class="carousel-section">
+    <h1>Our Projects</h1>
+    <div class="carousel-wrapper">
+      <button class="carousel-arrow prev" id="carousel-prev">❮</button>
+      <div class="logo-carousel" id="logo-carousel">
+        <!-- JavaScript builds the 11 cards here -->
+      </div>
+      <button class="carousel-arrow next" id="carousel-next">❯</button>
     </div>
+  </section>
 
-    <!-- PROJECT MODAL -->
-    <div class="project-flip-container" id="project-modal">
-        <div class="flip-back">
-            <button class="modal-close-btn">&times;</button>
-            <h2 id="modal-title"></h2>
-            <p id="modal-subtitle"></p>
-            <p id="modal-desc"></p>
-        </div>
+  <!-- ======= 2 | Timeline ======= -->
+  <section class="timeline-section">
+    <h2>The Project Journey</h2>
+    <div class="timeline-container">
+      <div class="phase">
+        <span>1</span>
+        <h3>Discovery</h3>
+        <p>Defining brand intent, audience, and core concept.</p>
+      </div>
+      <div class="phase">
+        <span>2</span>
+        <h3>Design</h3>
+        <p>Visual identity, menu and spatial planning stages.</p>
+      </div>
+      <div class="phase">
+        <span>3</span>
+        <h3>Build</h3>
+        <p>Kitchen build-out, vendor onboarding, staff training.</p>
+      </div>
+      <div class="phase">
+        <span>4</span>
+        <h3>Launch</h3>
+        <p>Soft opening, operations hand-off and final QA.</p>
+      </div>
     </div>
+  </section>
 
-    <script src="app.js"></script>
+  <!-- existing footer -->
+  <footer class="site-footer">
+    <p>© 2025 Metal Hospitality</p>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
