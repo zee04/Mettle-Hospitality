@@ -2600,10 +2600,10 @@ footer {
 }
 
 /* =======================================================
-   END CAROUSEL + FLIP + GLASS INTEGRATION
+   FINAL PROJECT TIMELINE - PIXEL PERFECT REFERENCE MATCH
    ======================================================= */
 
-/* PROJECT TIMELINE - PIXEL PERFECT */
+/* MAIN CONTAINER */
 .project-timeline {
   padding: 120px 0;
   background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
@@ -2622,6 +2622,7 @@ footer {
   opacity: 0.6;
 }
 
+/* HEADER */
 .timeline-header {
   text-align: center;
   margin-bottom: 100px;
@@ -2646,6 +2647,7 @@ footer {
   line-height: 1.6;
 }
 
+/* TIMELINE CONTAINER */
 .timeline-container {
   display: flex;
   justify-content: space-between;
@@ -2657,6 +2659,7 @@ footer {
   height: 500px;
 }
 
+/* PHASES */
 .timeline-phase {
   flex: 1;
   display: flex;
@@ -2670,12 +2673,30 @@ footer {
   transform: scale(0.9);
 }
 
-.timeline-phase.active,
-.timeline-phase:hover {
+/* FIRST PHASE ALWAYS ACTIVE */
+.timeline-phase:first-child {
   opacity: 1;
   transform: scale(1);
 }
 
+.timeline-phase:first-child .phase-number {
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2), 0 20px 40px rgba(165, 64, 64, 0.6);
+  transform: scale(1.1);
+}
+
+/* HOVER STATES */
+.timeline-phase:hover,
+.timeline-phase.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.timeline-phase:hover .phase-number {
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3), 0 20px 50px rgba(165, 64, 64, 0.5);
+  transform: scale(1.15);
+}
+
+/* PHASE NUMBER CIRCLE */
 .phase-number {
   width: 80px;
   height: 80px;
@@ -2691,8 +2712,10 @@ footer {
   position: relative;
   z-index: 10;
   margin-bottom: 20px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1);
 }
 
+/* PHASE LABEL */
 .phase-label {
   font-size: 1.1rem;
   font-weight: 600;
@@ -2702,6 +2725,7 @@ footer {
   margin-bottom: 12px;
 }
 
+/* PHASE DESCRIPTION */
 .phase-desc {
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.8);
@@ -2710,6 +2734,7 @@ footer {
   margin-bottom: 30px;
 }
 
+/* PHASE IMAGE */
 .phase-image {
   width: 100%;
   height: 280px;
@@ -2718,6 +2743,19 @@ footer {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
   transition: all 0.4s ease;
   position: relative;
+  background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
+}
+
+.phase-image::before {
+  content: 'Image Placeholder';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.85rem;
+  z-index: 2;
+  pointer-events: none;
 }
 
 .phase-image img {
@@ -2736,7 +2774,7 @@ footer {
   transform: scale(1.05);
 }
 
-/* Timeline Line */
+/* TIMELINE LINE */
 .timeline-container::after {
   content: '';
   position: absolute;
@@ -2755,13 +2793,7 @@ footer {
   z-index: 1;
 }
 
-/* Active phase highlight */
-.timeline-phase.active .phase-number {
-  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2), 0 20px 40px rgba(165, 64, 64, 0.6);
-  transform: scale(1.1);
-}
-
-/* Mobile */
+/* MOBILE RESPONSIVE */
 @media (max-width: 1024px) {
   .timeline-container {
     flex-direction: column;
@@ -2788,9 +2820,34 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .project-timeline { padding: 80px 0; }
-  .timeline-header { margin-bottom: 60px; }
-  .timeline-title { font-size: 2rem; }
-  .phase-image { height: 200px; }
+  .project-timeline { 
+    padding: 80px 0; 
+  }
+  
+  .timeline-header { 
+    margin-bottom: 60px; 
+  }
+  
+  .timeline-title { 
+    font-size: 2rem; 
+  }
+  
+  .phase-image { 
+    height: 200px; 
+  }
+  
+  .timeline-phase {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .phase-number {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 }
+
+/* =======================================================
+   END FINAL TIMELINE - 100% REFERENCE MATCH
+   ======================================================= */
 
