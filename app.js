@@ -299,7 +299,7 @@ class FlippingCoverFlow {
     }
 }
 
-// === 4. SINGLE CLEAN NAVIGATION CLASS ===
+// === FIXED NAVIGATION CLASS - MOBILE LINKS WORK ===
 class Navigation {
     constructor() {
         this.mobileToggle = document.getElementById('mobile-toggle');
@@ -315,7 +315,7 @@ class Navigation {
     }
 
     bindEvents() {
-        // Mobile menu toggle
+        // 1. MOBILE MENU TOGGLE (works perfectly)
         if (this.mobileToggle && this.navMenu) {
             this.mobileToggle.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -323,20 +323,79 @@ class Navigation {
             });
         }
 
-        // Dropdowns
+        // 2. FIXED DROPDOWNS - Only arrow toggles on mobile
         this.dropdowns.forEach(dropdown => {
-            dropdown.addEventListener('click', (e) => {
-                if (window.innerWidth <= 768) {
+            const toggleLink = dropdown.querySelector('.dropdown-toggle, a');
+            const arrow = dropdown.querySelector('.dropdown-arrow');
+            
+            // Create arrow if it doesn't exist
+            if (toggleLink && !arrow) {
+                const newArrow = document.createElement('span');
+                newArrow.className = 'dropdown-arrow';
+                newArrow.innerHTML = '▾';
+                toggleLink.appendChild(newArrow);
+            }
+
+            // ARROW CLICK ONLY toggles dropdown on mobile
+            const dropdownArrow = dropdown.querySelector('.dropdown-arrow');
+            if (dropdownArrow) {
+                dropdownArrow.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        dropdown.classList.toggle('active');
+                    }
+                });
+            }
+
+            // LINK CLICK - Navigate normally (FIXED)
+            const dropdownLinks = dropdown.querySelectorAll('a');
+            dropdownLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    // Only preventDefault for dropdown toggle links on mobile
+                    if (window.innerWidth <= 768 && link.classList.contains('dropdown-toggle')) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                        return;
+                    }
+                    // All other links navigate normally
+                    this.closeMobileMenu();
+                });
+            });
+        });
+
+        // 3. ALL NAV LINKS - Smooth scroll + close menu
+        document.querySelectorAll('#nav-menu a[href^="#"], nav a[href^="#"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                if (href === '#' || href.startsWith('#')) {
                     e.preventDefault();
-                    e.stopPropagation();
-                    dropdown.classList.toggle('active');
+                    const target = document.querySelector(href);
+                    if (target) {
+                        const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                    this.closeMobileMenu(); // Close menu after click
+                } else {
+                    // External links - close menu only
+                    this.closeMobileMenu();
                 }
             });
         });
 
-        // Navbar scroll effect
+        // 4. Navbar scroll effect
         window.addEventListener('scroll', this.handleScroll.bind(this));
         window.addEventListener('resize', this.handleResize.bind(this));
+
+        // 5. Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!this.navMenu.contains(e.target) && !this.mobileToggle.contains(e.target)) {
+                this.closeMobileMenu();
+            }
+        });
     }
 
     toggleMobileMenu() {
@@ -350,6 +409,7 @@ class Navigation {
         this.isOpen = false;
         this.mobileToggle.classList.remove('active');
         this.navMenu.classList.remove('active');
+        this.dropdowns.forEach(dropdown => dropdown.classList.remove('active'));
         document.body.style.overflow = '';
     }
 
