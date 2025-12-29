@@ -2599,51 +2599,66 @@ footer {
   }
 }
 
-/* =======================================================
-   FINAL PROJECT TIMELINE - PIXEL PERFECT REFERENCE MATCH
-   ======================================================= */
 
+/* SKELETON CSS - Copy from previous message */
+.section-header { text-align: center; margin-bottom: 60px; }
+.label-grey { color: var(--color-text-secondary); font-size: var(--font-size-xs); }
+.logo-carousel-container { /* centered carousel CSS from before */ }
+/* ... rest from skeleton CSS ... */
+
+/* PROJECTS SKELETON - PERFECT SPACING */
+.projects-section {
+  padding: 120px 0;
+  background: var(--color-background);
+}
+
+.logo-carousel-container {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 80px 0;
+}
+
+.logo-carousel {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* TIMELINE SKELETON */
 .project-timeline {
-  padding: 140px 0;
-  background: linear-gradient(135deg, #1a0a0a 0%, #2a1a1a 100%);
+  padding: 120px 0;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+
+.timeline-header {
+  text-align: center;
+  margin-bottom: 100px;
 }
 
 .timeline-title {
-  font-size: 4.5rem;
-  font-weight: 900;
-  color: #fff;
-  text-align: center;
-  margin-bottom: 24px;
-  letter-spacing: -0.03em;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  color: white;
+  margin-bottom: 20px;
 }
 
 .timeline-subtitle {
-  font-size: 1.3rem;
-  color: rgba(255,255,255,0.85);
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 140px;
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.8);
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .timeline-container {
   display: flex;
   justify-content: space-between;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 40px;
-  position: relative;
-}
-
-.timeline-container::before {
-  content: '';
-  position: absolute;
-  top: 32px;
-  left: 0;
-  right: 0;
-  height: 8px;
-  background: linear-gradient(to right, transparent 0%, rgba(165,64,64,0.3) 15%, #A54040 30%, #A54040 70%, rgba(165,64,64,0.3) 85%, transparent 100%);
-  z-index: 1;
+  gap: 40px;
+  height: 500px;
 }
 
 .timeline-phase {
@@ -2652,72 +2667,56 @@ footer {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  position: relative;
-  z-index: 2;
 }
 
 .phase-number {
   width: 80px;
   height: 80px;
-  background: #A54040;
-  border: 4px solid #fff;
+  background: var(--brand-crimson);
+  color: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.2rem;
-  font-weight: 900;
-  color: #fff;
-  box-shadow: 0 15px 40px rgba(165,64,64,0.6);
-  margin-bottom: 28px;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
 .phase-label {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
   text-transform: uppercase;
-  letter-spacing: 1.2px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .phase-desc {
-  font-size: 1rem;
-  color: rgba(255,255,255,0.9);
-  line-height: 1.6;
-  max-width: 240px;
-  margin-bottom: 40px;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 30px;
+  max-width: 220px;
 }
 
-.phase-image {
+.phase-image, .image-placeholder {
   width: 100%;
-  height: 260px;
-  background: linear-gradient(135deg, #2d2d2d 0%, #404040 100%);
-  border-radius: 20px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
-}
-
-.phase-image::before {
-  content: attr(data-placeholder, 'Image');
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: rgba(255,255,255,0.3);
-  font-size: 1rem;
+  height: 280px;
+  background: #333;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.9rem;
 }
 
 /* MOBILE */
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
   .timeline-container {
     flex-direction: column;
-    gap: 80px;
-  }
-  .timeline-container::before {
-    display: none;
+    height: auto;
+    gap: 60px;
   }
 }
+
 
 
