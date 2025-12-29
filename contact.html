@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - Mettle Hospitality</title>
+  <title>Mettle Hospitality - Culinary Consulting & Restaurant Launch</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="images/mettle logo no back.png" type="image/jpeg">
 </head>
@@ -12,10 +12,10 @@
   <!-- HEADER -->
   <header id="navbar">
     <div class="header-container">
-      <a href="index.html" class="logo">
+      <div class="logo">
         <img src="images/mettle logo no back.png" alt="Mettle Hospitality">
         <span></span>
-      </a>
+      </div>
       <button class="mobile-toggle" id="mobile-toggle">
         <span></span>
         <span></span>
@@ -23,7 +23,8 @@
       </button>
       <nav id="nav-menu">
         <ul>
-          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          
           <li><a href="about.html" class="nav-link">About us</a></li>
           
           <li class="dropdown">
@@ -31,81 +32,97 @@
                 <ul class="dropdown-menu">
                    <li><a href="service.html#current">Current Services</a></li>
                     <li><a href="service.html#past">Past Engagements</a></li>
-                </ul>
-          </li>
+                         </ul>
+                             </li>
           <li class="dropdown">
-            <a href="work.html" class="nav-link dropdown-toggle">Projects</a>
-            <ul class="dropdown-menu">
-              <li><a href="work.html#current">Current Projects</a></li>
-              <li><a href="work.html#past">Past Projects</a></li>
-            </ul>
-          </li>
+  <a href="work.html" class="nav-link dropdown-toggle">Projects</a>
+  <ul class="dropdown-menu">
+    <li><a href="work.html#current">Current Projects</a></li>
+    <li><a href="work.html#past">Past Projects</a></li>
+  </ul>
+</li>
           <li><a href="media.html" class="nav-link">Media</a></li>
-          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
-
-  <!-- INTRO -->
-  <section class="section-header" style="margin-top: 120px;">
-    <div class="label-grey">LET'S TALK</div>
-    <h2>Get In Touch</h2>
-    <p>Ready to transform your hospitality concept into a thriving reality? Let's start the conversation today.</p>
-  </section>
-
-  <!-- CONTACT WRAPPER -->
-  <section>
-    <div class="contact-wrapper">
-      
-      <!-- Left: Details & Form -->
-      <div class="contact-details">
-        <div class="contact-item">
-          <div class="label-grey">EMAIL</div>
-          <p><a href="mailto:admin@mettle-hospitality.com" style="font-size: 1.2rem;">admin@mettle-hospitality.com</a></p>
-        </div>
-
-        <div class="contact-item">
-          <div class="label-grey">PHONE</div>
-          <p><a href="tel:+918169501153" style="font-size: 1.2rem;">+91 81695 01153</a></p>
-        </div>
-
-        <div class="contact-item">
-          <div class="label-grey">LOCATION</div>
-          <p style="font-size: 1.2rem;">Mumbai, Maharashtra, India<br><span style="color: var(--text-secondary); font-size: 0.9rem;">Serving nationwide & globally</span></p>
-        </div>
-
-        <div class="contact-form" style="margin-top: 40px;">
-          <div class="label-grey" style="margin-bottom: 20px;">QUICK MESSAGE</div>
-          <form id="contact-form">
-            <div class="form-group">
-              <label>Name</label>
-              <input type="text" placeholder="Your Name" required>
-            </div>
-            <div class="form-group">
-              <label>Email</label>
-              <input type="email" placeholder="name@example.com" required>
-            </div>
-            <div class="form-group">
-              <label>Message</label>
-              <textarea placeholder="Tell us about your project..." rows="5"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </form>
+  
+ <main>
+    <!-- 2ND LAST SLIDE - "Let's Turn Someday Into Now" -->
+    <section class="contact-hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">Let's Turn<br>Someday Into Now</h1>
+          <p class="hero-subtitle">Your vision. Our expertise. Exceptional hospitality experiences that set new standards and drive lasting success.</p>
+          <div class="hero-buttons">
+            <a href="#contact-details" class="btn btn--primary rectangle-btn">Get In Touch</a>
+            <a href="#schedule-call" class="btn btn--secondary rectangle-btn">Schedule Call</a>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- Right: Calendly -->
-      <div class="calendly-section">
-        <!-- CALENDLY EMBED -->
-        <div style="margin-bottom: 20px;">
-          <div class="label-grey" style="margin-bottom: 20px; padding: 0 24px;">SCHEDULE A CALL</div>
-          <iframe src="https://calendly.com/YOUR_CALENDLY_USERNAME/30min" width="100%" height="600" frameborder="0"></iframe>
+    <!-- LAST SLIDE - CONTACT DETAILS + FORM -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-grid">
+          
+          <!-- LEFT: CONTACT INFO + FORM -->
+          <div class="contact-details" id="contact-details">
+            <div class="section-header">
+              <span class="label-grey">LET'S TALK</span>
+              <h2>Get In Touch</h2>
+              <p>Ready to transform your hospitality concept into a thriving reality? Let's start the conversation today.</p>
+            </div>
+
+            <!-- CONTACT INFO -->
+            <div class="contact-info-grid">
+              <div class="contact-item">
+                <div class="label-grey">EMAIL</div>
+                <a href="mailto:admin@mettle-hospitality.com" class="contact-value">admin@mettle-hospitality.com</a>
+              </div>
+              
+              <div class="contact-item">
+                <div class="label-grey">PHONE</div>
+                <a href="tel:+91816950115" class="contact-value">+91 81695 01153</a>
+              </div>
+              
+              <div class="contact-item">
+                <div class="label-grey">LOCATION</div>
+                <p class="contact-value">Based in Mumbai,<br><span style="font-size: 0.95rem;">serving nationwide & globally</span></p>
+              </div>
+            </div>
+
+            <!-- QUICK FORM -->
+            <div class="quick-form-section">
+              <div class="label-grey">QUICK MESSAGE</div>
+              <form id="contact-form" class="quick-form">
+                <input type="text" name="name" placeholder="Your Name *" required>
+                <input type="email" name="email" placeholder="Your Email *" required>
+                <textarea name="message" rows="5" placeholder="Tell us about your project vision, timeline & goals..." required></textarea>
+                <button type="submit" class="btn btn--primary rectangle-btn">Send Message</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- RIGHT: CALENDLY -->
+          <div class="calendly-section" id="schedule-call">
+            <div class="label-grey">SCHEDULE A CALL</div>
+            <div class="calendly-card glass-card">
+              <h3>Discovery Call</h3>
+              <p>Book a 30-minute call to discuss your project vision, timeline, and how we can bring it to life.</p>
+              <a href="https://calendly.com/vidit-aren/discovery-call" target="_blank" class="btn btn--primary rectangle-btn calendly-btn">Book Now</a>
+              <p class="whatsapp-note">Or WhatsApp for immediate response:<br>
+                <a href="https://wa.me/91816950115" class="whatsapp-link">+91 81695 01153</a>
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
-
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- FOOTER -->
   <footer>
