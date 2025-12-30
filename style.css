@@ -2438,27 +2438,49 @@ footer {
   border-color: rgba(218, 165, 32, 0.3);
 }
 
+/* ========================================= */
+/* 🛠️ CAROUSEL - MATCHING "CREW" STYLE       */
+/* ========================================= */
 .logo-carousel-container {
-  /* FORCE FULL WIDTH */
+  position: relative;
   width: 100vw !important;
   margin-left: -50vw !important;
   left: 50% !important;
-  position: relative;
   
-  padding: 120px 0; /* Vertical height */
+  /* Height & Spacing */
+  padding: 120px 0;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
   
-  /* IMAGE SETTINGS */
+  /* IMAGE (Clear, no dark color blend) */
   background-image: url('images/butterbg.gif');
   background-size: cover !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
   
-  /* OVERLAY */
-  background-color: rgba(0, 0, 0, 0.5);
-  background-blend-mode: overlay;
+  /* Remove the solid black color we added earlier */
+  background-color: transparent !important;
+  background-blend-mode: normal !important;
+  
+  /* Overlay Handling */
+  z-index: 1;
 }
+
+/* THE FADE OVERLAY (Like Crew Section) */
+.logo-carousel-container::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -1;
+  /* Top/Bottom Fade Gradient */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.6) 0%,   /* Dark Top */
+    rgba(0, 0, 0, 0.2) 50%,  /* Clear Center */
+    rgba(0, 0, 0, 0.8) 100%  /* Dark Bottom */
+  );
+}
+
 
 
 
@@ -2685,29 +2707,47 @@ footer {
 }
 
 
+/* ========================================= */
+/* 🛠️ TIMELINE - MATCHING "CREW" STYLE       */
+/* ========================================= */
 .projects-timeline-section {
-  /* FORCE FULL WIDTH */
+  position: relative;
   width: 100vw !important;
   margin-left: -50vw !important;
   left: 50% !important;
-  position: relative;
   
-  padding: 140px 0; /* Vertical height */
+  padding: 140px 0;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
   
-  /* IMAGE SETTINGS */
-  background-image: url('images/concept.PNG'); /* <--- CHANGE THIS IF WRONG */
+  /* IMAGE */
+  background-image: url('images/concept.PNG');
   background-size: cover !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
   
-  /* OVERLAY */
-  background-color: rgba(0, 0, 0, 0.85); /* Darker overlay for text */
-  background-blend-mode: overlay;
+  /* Clear Background */
+  background-color: transparent !important;
+  background-blend-mode: normal !important;
   
   color: white;
+  z-index: 1;
 }
+
+/* THE FADE OVERLAY */
+.projects-timeline-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -1;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+}
+
 
   
 
