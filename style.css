@@ -2453,8 +2453,21 @@ footer {
   display: block; /* Standard block behavior */
   padding: 40px 0;
   margin-bottom: 60px; /* Safe gap below */
+
+    z-index: 1; /* Establishes a stacking order */
+    overflow: hidden; /* optional: crops the image if it spills */
 }
 
+/* 2. Force the image to act like a background */
+.logo-carousel-container .full-width-bg {
+    position: absolute !important; /* Takes it out of the Flex row */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures it covers the area without stretching */
+    z-index: -1; /* Puts it BEHIND the logos */
+}
 
 .logo-carousel {
   position: relative;
