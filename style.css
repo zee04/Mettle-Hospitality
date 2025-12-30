@@ -2442,25 +2442,22 @@ footer {
 /* LOGO CAROUSEL - COMPLETE WITH BACKGROUND */
 .logo-carousel-container {
   position: relative;
-  width: 100%;
+  width: 100vw !important; /* Force full screen width */
+  margin-left: -50vw !important; /* Center it */
+  left: 50% !important;
+  padding: 120px 0; /* Add vertical breathing room */
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
   
-  /* Increased height to show more background */
-  height: 400px; 
+  /* Background Image */
+  background-image: url('images/butterbg.gif'); 
+  background-size: cover !important; /* Cover entire area */
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
   
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-  
-  /* ✅ ADDED BACKGROUND IMAGE HERE */
-  background-image: url('images/butterbg.gif');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  
-  /* Optional: Dark Overlay so white cards pop */
+  /* Dark Overlay */
   background-blend-mode: overlay;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 
@@ -2689,9 +2686,25 @@ footer {
 
 /* PROJECTS + TIMELINE - GREY BACKGROUND */
 .projects-timeline-section {
-  padding: 120px 0;
-  background: var(--color-background); /* GREY like carousel */
   position: relative;
+  width: 100vw !important; /* Force full screen width */
+  margin-left: -50vw !important;
+  left: 50% !important;
+  padding: 140px 0;
+  
+  /* Add Background Image here too */
+  background-image: url('images/carrotblack.jpg'); /* Or concept.PNG */
+  background-size: cover !important;
+  background-position: center center !important;
+  
+  /* Dark Overlay for Text Readability */
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 0.9),
+    rgba(10, 10, 10, 0.8)
+  ), url('images/serviceback.jpg'); /* Gradient ON TOP of image */
+  
+  color: white;
 }
 
 .section-header {
