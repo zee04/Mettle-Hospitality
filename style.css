@@ -3167,4 +3167,51 @@ footer {
    END CONTACT PAGE
    ======================================================= */
 
+/* ========================================= */
+/* 🚀 FINAL CORRECTED: BEIGE GRADIENT FIX    */
+/* ========================================= */
+
+/* 1. ENFORCE HEAVY FONT (SYSTEMS STYLE) */
+:root {
+  --font-family-base: 'FKGroteskNeue', 'Inter', sans-serif !important;
+  --font-weight-heavy: 900 !important;
+}
+
+h1, h2, h3, .section-title, .timeline-title {
+  font-family: var(--font-family-base) !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.03em !important;
+}
+
+/* 2. APPLY BEIGE + CRIMSON GRADIENT (NOT WHITE) */
+.work-page .section-title, 
+.work-page .timeline-title,
+.section-title, 
+.timeline-title,
+.hero-title-center h1 {
+  font-size: clamp(3.5rem, 9vw, 6.5rem) !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  margin-bottom: 28px !important;
+  
+  /* ✅ THE CORRECT BEIGE GRADIENT */
+  background: linear-gradient(135deg, var(--color-cream-50) 0%, var(--brand-crimson) 50%, var(--color-cream-50) 100%) !important;
+  
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  
+  /* Drop Shadow */
+  filter: drop-shadow(0 4px 12px rgba(165, 64, 64, 0.3));
+}
+
+/* 3. SUBTITLES (Glassy Beige) */
+.section-header p, 
+.timeline-subtitle {
+  font-size: 1.45rem !important;
+  color: rgba(252, 252, 249, 0.85) !important; /* Beige with opacity */
+  font-weight: 400 !important;
+  max-width: 750px !important;
+  margin: 0 auto 48px !important;
+}
 
