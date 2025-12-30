@@ -3165,73 +3165,70 @@ footer {
 
 
 /* ========================================= */
-/* 🚀 FINAL FIX: SCALED TITLES & ALIGNMENT   */
+/* 🚀 UNIVERSAL HEADLINE FIX (ALL PAGES)     */
 /* ========================================= */
 
-/* 1. UNIVERSAL FONT FAMILY */
+/* 1. FORCE FONT FAMILY */
 :root {
   --font-family-base: 'FKGroteskNeue', 'Inter', sans-serif !important;
 }
 
-html, body {
-  font-family: var(--font-family-base) !important;
-}
-
-/* 2. MAIN TITLES (SCALED DOWN & CENTERED) */
-/* Targets: Projects, Journey, Services, About, Contact Hero */
+/* 2. APPLY STYLE TO EVERY TITLE CLASS */
 h1.section-title, 
 h2.section-title,
 .timeline-title,
 .hero-title-center h1,
-.about-hero h1,
-.services-hero h1,
-.work-page .section-header h2 { /* Added specific target for Work page */
+
+/* 👉 ABOUT PAGE TITLES */
+.crew-title,
+.purpose-title,
+.north-star-title,
+
+/* 👉 SERVICES & WORK PAGE TITLES */
+.services-wrapper h1,
+.work-page .section-header h2,
+.section-header h2 { 
   
-  /* ✅ SIZE FIX: Max 3.5rem (Standard Large Header) */
+  /* ✅ SIZE: Scaled down to 3.5rem max */
   font-size: clamp(2rem, 5vw, 3.5rem) !important;
   
-  /* Style & Weight */
+  /* ✅ STYLE: Heavy & Tight */
   font-weight: 900 !important;
-  letter-spacing: -0.02em !important;
+  letter-spacing: -0.03em !important;
   line-height: 1.1 !important;
+  text-transform: none !important; /* Prevents unwanted uppercase */
   
-  /* ✅ ALIGNMENT FIX: Force Center */
+  /* ✅ ALIGNMENT: Center */
   text-align: center !important;
   margin-left: auto !important;
   margin-right: auto !important;
   display: block !important;
   
-  /* ✅ BEIGE GRADIENT */
+  /* ✅ COLOR: Beige Gradient */
   background: linear-gradient(135deg, var(--color-cream-50) 0%, var(--brand-crimson) 55%, var(--color-cream-50) 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
   
   filter: drop-shadow(0 4px 12px rgba(165, 64, 64, 0.25));
-  margin-bottom: 24px !important;
+  margin-bottom: 32px !important;
 }
 
-/* 3. ALIGNMENT CONTAINER FIX (Projects Page) */
-.section-header,
-.work-page .section-header {
-  width: 100% !important;
-  max-width: 900px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  text-align: center !important;
-}
-
-/* 4. SUBTITLES (Readable Size) */
+/* 3. SUBTITLES (Global Fix) */
 .section-header p, 
 .timeline-subtitle,
 .hero-subtitle,
-.hero-title-center p {
-  font-size: 1.15rem !important;
-  color: rgba(252, 252, 249, 0.8) !important;
-  font-weight: 400 !important;
-  max-width: 700px !important;
-  margin: 0 auto 40px !important;
+.crew-pillar p,
+.purpose-text p,
+.north-star-pillar p {
+  color: rgba(252, 252, 249, 0.8) !important; /* Soft Beige */
   line-height: 1.6 !important;
-  text-align: center !important;
+}
+
+/* 4. SPECIAL ALIGNMENT FOR ABOUT PAGE TEXT */
+/* The About page paragraphs often look better left-aligned, 
+   but if you want them centered like the titles, keep this: */
+.crew-content, .purpose-content, .north-star-wrapper {
+  text-align: center !important; 
 }
 
