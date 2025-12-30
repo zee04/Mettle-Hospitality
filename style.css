@@ -2439,15 +2439,30 @@ footer {
 }
 
 /* LOGO CAROUSEL - COMPLETE */
+/* LOGO CAROUSEL - COMPLETE WITH BACKGROUND */
 .logo-carousel-container {
   position: relative;
   width: 100%;
-  height: 250px;
+  
+  /* Increased height to show more background */
+  height: 400px; 
+  
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
+  
+  /* ✅ ADDED BACKGROUND IMAGE HERE */
+  background-image: url('images/butterbg.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Optional: Dark Overlay so white cards pop */
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.5);
 }
+
 
 .logo-carousel {
   position: relative;
