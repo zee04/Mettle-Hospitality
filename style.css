@@ -1525,130 +1525,152 @@ footer {
 }
 
 /* ========================================= */
-/* 🚀 ABOUT US PAGE - UNIFIED CINEMATIC LOOK */
+/* 🛠️ RESTORED ABOUT PAGE (SPLIT LAYOUTS)    */
 /* ========================================= */
 
-/* 1. SHARED STYLES FOR ALL ABOUT SECTIONS */
-.crew-section,
-.purpose-section,
-.north-star-section {
+/* 1. CREW SECTION (Keep Full Width & Dark Overlay Fix) */
+.crew-section {
   position: relative;
   width: 100%;
   max-width: none !important;
   margin: 0 !important;
   padding: 0 !important;
   border: none !important;
-  min-height: 100vh; /* Full screen height for each */
+  min-height: 100vh;
+  
+  background-image: url('images/crew.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
-/* 2. BACKGROUND IMAGES */
-.crew-section {
-  background-image: url('images/crew.jpg');
-}
-
-.purpose-section {
-  /* Using the chef image as full background instead of split */
-  background-image: url('images/viditblack.jpg'); 
-}
-
-.north-star-section {
-  /* Using the honey/ingredient image as background */
-  background-image: url('images/honey.jpg');
-}
-
-/* 3. UNIFIED DARK OVERLAY (Applied to all) */
-.crew-overlay,
-.purpose-section::before,
-.north-star-section::before {
-  content: "";
+/* Fix the overlay (Dark fade, NO BLUE) */
+.crew-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: 1;
-  
-  /* The "Cinematic Fade" */
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.7) 0%,
-    rgba(0, 0, 0, 0.4) 50%,
-    rgba(0, 0, 0, 0.9) 100%
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.8) 100%
   );
 }
 
-/* 4. CONTENT CONTAINERS */
-.crew-content,
-.purpose-content,
-.north-star-wrapper {
+.crew-content {
   position: relative;
-  z-index: 2; /* Above overlay */
+  z-index: 2;
   width: 100%;
   max-width: 1200px;
-  padding: 80px 20px;
+  padding: 0 20px;
   text-align: center;
   color: white;
-  
-  /* Reset flex properties that caused split layout */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: transparent !important; /* Remove old blue bg */
 }
 
-/* 5. HIDE OLD "SPLIT" IMAGE DIVS (Since images are now backgrounds) */
-.purpose-image,
-.north-star-image {
-  display: none !important;
-}
-
-/* 6. TYPOGRAPHY & SPACING FIXES */
-.purpose-label {
-  font-size: 0.9rem;
-  letter-spacing: 2px;
-  color: var(--brand-crimson); /* Pop color */
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  font-weight: 700;
-}
-
-/* Ensure paragraph text is readable over images */
-.purpose-text p,
-.north-star-pillar p {
-  max-width: 800px;
-  margin: 0 auto 20px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-  opacity: 0.95;
-  color: white !important;
-}
-
-/* North Star Grid Fix (Make it centered) */
-.north-star-grid {
+/* 2. PURPOSE SECTION (Restored Split Layout) */
+.purpose-section {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 40px;
+  min-height: 100vh;
+  background: #0f172a; /* Original dark blue bg */
+  position: relative; /* Ensure z-index works */
+  margin: 0 !important;
+  max-width: none !important;
   width: 100%;
 }
 
-.north-star-pillar {
+.purpose-image {
   flex: 1;
-  min-width: 250px;
-  max-width: 350px;
-  text-align: center;
+  min-width: 300px;
+  min-height: 100vh;
+  background-image: url('images/viditblack.jpg');
+  background-size: cover;
+  background-position: center;
+  display: block !important; /* Force visible */
 }
 
+.purpose-content {
+  flex: 1;
+  min-width: 300px;
+  padding: 80px 60px;
+  background: #0f172a; /* Match section bg */
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left; /* Keep left alignment */
+}
+
+/* 3. NORTH STAR SECTION (Restored Split Layout) */
+.north-star-section {
+  min-height: 100vh;
+  padding: 100px 60px;
+  background: #0f172a;
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: none !important;
+}
+
+.north-star-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.north-star-grid {
+  flex: 1;
+  min-width: 300px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2x2 Grid */
+  gap: 60px;
+}
+
+.north-star-image {
+  flex: 1;
+  min-width: 300px;
+  min-height: 500px;
+  background-image: url('images/honey.jpg');
+  background-size: cover;
+  background-position: center;
+  display: block !important; /* Force visible */
+}
+
+/* 4. RESTORE CRIMSON LINES & STYLING */
+.purpose-label {
+  font-size: 0.9rem;
+  color: var(--brand-crimson);
+  margin-bottom: 30px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Druk Wide Headers (Keep consistent font but align left for split sections) */
+.purpose-title,
+.north-star-title {
+  text-align: left !important;
+  margin-left: 0 !important;
+}
+
+.crew-pillar h3,
 .north-star-pillar h4 {
-  margin-bottom: 12px;
-  color: var(--color-cream-50);
+  color: var(--brand-crimson); /* Restore crimson color */
+  margin-bottom: 16px;
+  padding-top: 16px;
+  border-top: 4px solid var(--brand-crimson); /* The lines you wanted back */
+  display: inline-block;
+  text-align: left;
 }
 
 
