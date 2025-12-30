@@ -3164,15 +3164,11 @@ footer {
 }
 
 
-/* =======================================================
-   END CONTACT PAGE
-   ======================================================= */
-
 /* ========================================= */
-/* 🚀 GLOBAL HEADLINE FIX: SCALED DOWN & UNIVERSAL */
+/* 🚀 FINAL FIX: SCALED TITLES & ALIGNMENT   */
 /* ========================================= */
 
-/* 1. UNIVERSAL FONT FAMILY (Keep "Systems" look but normal weight for regular text) */
+/* 1. UNIVERSAL FONT FAMILY */
 :root {
   --font-family-base: 'FKGroteskNeue', 'Inter', sans-serif !important;
 }
@@ -3181,50 +3177,61 @@ html, body {
   font-family: var(--font-family-base) !important;
 }
 
-/* 2. TARGET ONLY MAIN PAGE TITLES (Home, About, Services, Work) */
-/* This applies to: "Our Projects", "The Project Journey", "Services", "About Us" */
+/* 2. MAIN TITLES (SCALED DOWN & CENTERED) */
+/* Targets: Projects, Journey, Services, About, Contact Hero */
 h1.section-title, 
 h2.section-title,
 .timeline-title,
 .hero-title-center h1,
 .about-hero h1,
-.services-hero h1 {
-  /* ✅ FONT SIZE FIX: Scaled down from 6.5rem to 4rem (Much cleaner) */
-  font-size: clamp(2.5rem, 6vw, 4.5rem) !important; 
+.services-hero h1,
+.work-page .section-header h2 { /* Added specific target for Work page */
   
-  font-weight: 900 !important; /* Heavy "Systems" weight */
-  letter-spacing: -0.03em !important;
+  /* ✅ SIZE FIX: Max 3.5rem (Standard Large Header) */
+  font-size: clamp(2rem, 5vw, 3.5rem) !important;
+  
+  /* Style & Weight */
+  font-weight: 900 !important;
+  letter-spacing: -0.02em !important;
   line-height: 1.1 !important;
-  text-align: center !important;
-  margin-bottom: 24px !important;
   
-  /* ✅ BEIGE GRADIENT (Applied to all main titles) */
+  /* ✅ ALIGNMENT FIX: Force Center */
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
+  
+  /* ✅ BEIGE GRADIENT */
   background: linear-gradient(135deg, var(--color-cream-50) 0%, var(--brand-crimson) 55%, var(--color-cream-50) 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
   
   filter: drop-shadow(0 4px 12px rgba(165, 64, 64, 0.25));
+  margin-bottom: 24px !important;
 }
 
-/* 3. ENSURE SUBTITLES ARE READABLE SIZE */
+/* 3. ALIGNMENT CONTAINER FIX (Projects Page) */
+.section-header,
+.work-page .section-header {
+  width: 100% !important;
+  max-width: 900px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+/* 4. SUBTITLES (Readable Size) */
 .section-header p, 
 .timeline-subtitle,
-.hero-subtitle {
-  font-size: 1.15rem !important; /* Reduced from 1.45rem */
-  color: rgba(252, 252, 249, 0.8) !important; /* Beige opacity */
+.hero-subtitle,
+.hero-title-center p {
+  font-size: 1.15rem !important;
+  color: rgba(252, 252, 249, 0.8) !important;
   font-weight: 400 !important;
   max-width: 700px !important;
   margin: 0 auto 40px !important;
   line-height: 1.6 !important;
-}
-
-/* 4. KEEP REGULAR H1/H2/H3 NORMAL (Don't break other parts of the site) */
-h1:not(.section-title):not(.timeline-title),
-h2:not(.section-title):not(.timeline-title),
-h3 {
-  background: none !important;
-  -webkit-text-fill-color: var(--color-cream-50) !important; /* specific beige text */
-  text-shadow: none !important;
+  text-align: center !important;
 }
 
