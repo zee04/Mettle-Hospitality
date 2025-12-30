@@ -2438,27 +2438,28 @@ footer {
   border-color: rgba(218, 165, 32, 0.3);
 }
 
-/* LOGO CAROUSEL - COMPLETE */
-/* LOGO CAROUSEL - COMPLETE WITH BACKGROUND */
 .logo-carousel-container {
-  position: relative;
-  width: 100vw !important; /* Force full screen width */
-  margin-left: -50vw !important; /* Center it */
+  /* FORCE FULL WIDTH */
+  width: 100vw !important;
+  margin-left: -50vw !important;
   left: 50% !important;
-  padding: 120px 0; /* Add vertical breathing room */
+  position: relative;
+  
+  padding: 120px 0; /* Vertical height */
   margin-top: 0 !important;
   margin-bottom: 0 !important;
   
-  /* Background Image */
-  background-image: url('images/butterbg.gif'); 
-  background-size: cover !important; /* Cover entire area */
+  /* IMAGE SETTINGS */
+  background-image: url('images/butterbg.gif');
+  background-size: cover !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
   
-  /* Dark Overlay */
+  /* OVERLAY */
+  background-color: rgba(0, 0, 0, 0.5);
   background-blend-mode: overlay;
-  background-color: rgba(0, 0, 0, 0.6);
 }
+
 
 
 .logo-carousel {
@@ -2684,27 +2685,32 @@ footer {
 }
 
 
-/* PROJECTS + TIMELINE - GREY BACKGROUND */
 .projects-timeline-section {
-  position: relative;
-  width: 100vw !important; /* Force full screen width */
+  /* FORCE FULL WIDTH */
+  width: 100vw !important;
   margin-left: -50vw !important;
   left: 50% !important;
-  padding: 140px 0;
+  position: relative;
   
-  /* Add Background Image here too */
-  background-image: url('images/carrotblack.jpg'); /* Or concept.PNG */
+  padding: 140px 0; /* Vertical height */
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  
+  /* IMAGE SETTINGS */
+  background-image: url('images/concept.PNG'); /* <--- CHANGE THIS IF WRONG */
   background-size: cover !important;
   background-position: center center !important;
+  background-repeat: no-repeat !important;
   
-  /* Dark Overlay for Text Readability */
-  background: linear-gradient(
-    to bottom,
-    rgba(10, 10, 10, 0.9),
-    rgba(10, 10, 10, 0.8)
-  )
+  /* OVERLAY */
+  background-color: rgba(0, 0, 0, 0.85); /* Darker overlay for text */
+  background-blend-mode: overlay;
   
+  color: white;
 }
+
+  
+
 
 .section-header {
   text-align: center;
