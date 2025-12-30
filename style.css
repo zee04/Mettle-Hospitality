@@ -3180,9 +3180,8 @@ footer {
   }
 }
 
-
 /* ========================================= */
-/* 🚀 FINAL CLEAN: DRUK WIDE (NO DISTORTION) */
+/* 🚀 FINAL TUNED: DRUK WIDE (ADJUSTABLE)    */
 /* ========================================= */
 
 h1.section-title, 
@@ -3196,36 +3195,29 @@ h2.section-title,
 .work-page .section-header h2,
 .section-header h2 { 
   
-  /* ✅ PURE FONT APPLICATION */
-  font-family: 'Druk Wide', 'Druk Wide Web', sans-serif !important;
+  font-family: "Druk Wide", sans-serif !important;
   
-  /* ✅ SIZE (Your requested small size) */
+  /* ✅ SIZE: Small & Tight */
   font-size: clamp(1.4rem, 4vw, 2.2rem) !important;
   
-  /* ✅ CLEAN STYLING (No weird transforms) */
-  font-weight: 800 !important; /* Standard bold for this font */
-  line-height: 1.1 !important;
-  font-style: normal !important;
+  /* ✅ WIDTH CONTROL: 
+     If it's "too wide", change 1 to 0.9 or 0.8
+     If it needs to be wider, change 1 to 1.1 or 1.2 */
+  transform: scaleX(0.9) !important; 
   
-  /* ✅ ALIGNMENT */
+  font-weight: 800 !important;
   text-align: center !important;
   margin-left: auto !important;
   margin-right: auto !important;
   display: block !important;
   
-  /* ✅ BEIGE GRADIENT */
+  /* Gradient */
   background: linear-gradient(135deg, var(--color-cream-50) 0%, var(--brand-crimson) 55%, var(--color-cream-50) 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
   
-  filter: drop-shadow(0 2px 8px rgba(165, 64, 64, 0.2));
   margin-bottom: 24px !important;
-  
-  /* Reset potentially conflicting properties */
-  transform: none !important;
-  letter-spacing: normal !important;
-  text-transform: none !important; 
 }
 
 
