@@ -3163,55 +3163,68 @@ footer {
   }
 }
 
+
 /* =======================================================
    END CONTACT PAGE
    ======================================================= */
 
 /* ========================================= */
-/* 🚀 FINAL CORRECTED: BEIGE GRADIENT FIX    */
+/* 🚀 GLOBAL HEADLINE FIX: SCALED DOWN & UNIVERSAL */
 /* ========================================= */
 
-/* 1. ENFORCE HEAVY FONT (SYSTEMS STYLE) */
+/* 1. UNIVERSAL FONT FAMILY (Keep "Systems" look but normal weight for regular text) */
 :root {
   --font-family-base: 'FKGroteskNeue', 'Inter', sans-serif !important;
-  --font-weight-heavy: 900 !important;
 }
 
-h1, h2, h3, .section-title, .timeline-title {
+html, body {
   font-family: var(--font-family-base) !important;
-  font-weight: 900 !important;
-  letter-spacing: -0.03em !important;
 }
 
-/* 2. APPLY BEIGE + CRIMSON GRADIENT (NOT WHITE) */
-.work-page .section-title, 
-.work-page .timeline-title,
-.section-title, 
+/* 2. TARGET ONLY MAIN PAGE TITLES (Home, About, Services, Work) */
+/* This applies to: "Our Projects", "The Project Journey", "Services", "About Us" */
+h1.section-title, 
+h2.section-title,
 .timeline-title,
-.hero-title-center h1 {
-  font-size: clamp(3.5rem, 9vw, 6.5rem) !important;
-  line-height: 1 !important;
+.hero-title-center h1,
+.about-hero h1,
+.services-hero h1 {
+  /* ✅ FONT SIZE FIX: Scaled down from 6.5rem to 4rem (Much cleaner) */
+  font-size: clamp(2.5rem, 6vw, 4.5rem) !important; 
+  
+  font-weight: 900 !important; /* Heavy "Systems" weight */
+  letter-spacing: -0.03em !important;
+  line-height: 1.1 !important;
   text-align: center !important;
-  margin-bottom: 28px !important;
+  margin-bottom: 24px !important;
   
-  /* ✅ THE CORRECT BEIGE GRADIENT */
-  background: linear-gradient(135deg, var(--color-cream-50) 0%, var(--brand-crimson) 50%, var(--color-cream-50) 100%) !important;
-  
+  /* ✅ BEIGE GRADIENT (Applied to all main titles) */
+  background: linear-gradient(135deg, var(--color-cream-50) 0%, var(--brand-crimson) 55%, var(--color-cream-50) 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
   
-  /* Drop Shadow */
-  filter: drop-shadow(0 4px 12px rgba(165, 64, 64, 0.3));
+  filter: drop-shadow(0 4px 12px rgba(165, 64, 64, 0.25));
 }
 
-/* 3. SUBTITLES (Glassy Beige) */
+/* 3. ENSURE SUBTITLES ARE READABLE SIZE */
 .section-header p, 
-.timeline-subtitle {
-  font-size: 1.45rem !important;
-  color: rgba(252, 252, 249, 0.85) !important; /* Beige with opacity */
+.timeline-subtitle,
+.hero-subtitle {
+  font-size: 1.15rem !important; /* Reduced from 1.45rem */
+  color: rgba(252, 252, 249, 0.8) !important; /* Beige opacity */
   font-weight: 400 !important;
-  max-width: 750px !important;
-  margin: 0 auto 48px !important;
+  max-width: 700px !important;
+  margin: 0 auto 40px !important;
+  line-height: 1.6 !important;
+}
+
+/* 4. KEEP REGULAR H1/H2/H3 NORMAL (Don't break other parts of the site) */
+h1:not(.section-title):not(.timeline-title),
+h2:not(.section-title):not(.timeline-title),
+h3 {
+  background: none !important;
+  -webkit-text-fill-color: var(--color-cream-50) !important; /* specific beige text */
+  text-shadow: none !important;
 }
 
