@@ -3182,10 +3182,9 @@ footer {
 
 
 /* ========================================= */
-/* 🚀 FINAL: DRUK WIDE HEADLINES             */
+/* 🚀 FINAL CLEAN: DRUK WIDE (NO DISTORTION) */
 /* ========================================= */
 
-/* 1. APPLY DRUK WIDE TO ALL HEADINGS */
 h1.section-title, 
 h2.section-title,
 .timeline-title,
@@ -3197,28 +3196,24 @@ h2.section-title,
 .work-page .section-header h2,
 .section-header h2 { 
   
-  /* ✅ FONT FAMILY: Real Druk Wide */
-  font-family: 'Druk Wide', 'Druk Wide Web', 'Impact', sans-serif !important;
+  /* ✅ PURE FONT APPLICATION */
+  font-family: 'Druk Wide', 'Druk Wide Web', sans-serif !important;
   
-  /* ✅ SIZE: Kept strictly controlled */
+  /* ✅ SIZE (Your requested small size) */
   font-size: clamp(1.4rem, 4vw, 2.2rem) !important;
   
-  /* ✅ REMOVED FAKE STRETCH (Real font doesn't need it) */
-  transform: none !important; 
-  letter-spacing: 0.04em !important; /* Druk Wide needs slight spacing */
-  
-  /* Style */
-  font-weight: 900 !important; /* Bold/Heavy */
+  /* ✅ CLEAN STYLING (No weird transforms) */
+  font-weight: 800 !important; /* Standard bold for this font */
   line-height: 1.1 !important;
-  text-transform: uppercase !important; /* Druk Wide usually looks best uppercase */
+  font-style: normal !important;
   
-  /* Alignment */
+  /* ✅ ALIGNMENT */
   text-align: center !important;
   margin-left: auto !important;
   margin-right: auto !important;
   display: block !important;
   
-  /* Beige Gradient */
+  /* ✅ BEIGE GRADIENT */
   background: linear-gradient(135deg, var(--color-cream-50) 0%, var(--brand-crimson) 55%, var(--color-cream-50) 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -3226,19 +3221,12 @@ h2.section-title,
   
   filter: drop-shadow(0 2px 8px rgba(165, 64, 64, 0.2));
   margin-bottom: 24px !important;
+  
+  /* Reset potentially conflicting properties */
+  transform: none !important;
+  letter-spacing: normal !important;
+  text-transform: none !important; 
 }
 
-/* 2. SUBTITLES (Normal Font) */
-.section-header p, 
-.timeline-subtitle,
-.hero-subtitle,
-.hero-title-center p {
-  font-family: 'FKGroteskNeue', 'Inter', sans-serif !important; /* Keep body font */
-  font-size: 1.15rem !important;
-  color: rgba(252, 252, 249, 0.8) !important;
-  line-height: 1.6 !important;
-  letter-spacing: normal !important;
-  text-transform: none !important;
-}
 
 
