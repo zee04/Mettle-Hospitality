@@ -1,3 +1,20 @@
+/* ========================================= */
+/* 📦 DRUK WIDE FONT IMPORT (Add at TOP)     */
+/* ========================================= */
+
+@font-face {
+    font-family: "Druk Wide";
+    src: url("https://db.onlinewebfonts.com/t/2206d6cc490084998d531e8c1b2cbb4a.eot"); /* IE9*/
+    src: url("https://db.onlinewebfonts.com/t/2206d6cc490084998d531e8c1b2cbb4a.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("https://db.onlinewebfonts.com/t/2206d6cc490084998d531e8c1b2cbb4a.woff2") format("woff2"), /* Modern Browsers */
+    url("https://db.onlinewebfonts.com/t/2206d6cc490084998d531e8c1b2cbb4a.woff") format("woff"), /* Modern Browsers */
+    url("https://db.onlinewebfonts.com/t/2206d6cc490084998d531e8c1b2cbb4a.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("https://db.onlinewebfonts.com/t/2206d6cc490084998d531e8c1b2cbb4a.svg#Druk Wide Bold") format("svg"); /* Legacy iOS */
+    font-weight: bold;
+    font-style: normal;
+}
+
+
 :root {
   /* Primitive Color Tokens */
   --color-white: rgba(255, 255, 255, 1);
