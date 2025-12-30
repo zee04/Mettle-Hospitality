@@ -2441,47 +2441,19 @@ footer {
 /* ========================================= */
 /* 🛠️ CAROUSEL - MATCHING "CREW" STYLE       */
 /* ========================================= */
+/* 1. Main Section Wrapper */
 .logo-carousel-container {
+  width: 100% !important; /* Fits inside the 1200px container */
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  left: auto !important;
+  right: auto !important;
+  
   position: relative;
-  width: 100vw !important;
-  margin-left: -50vw !important;
-  left: 50% !important;
-  
-  /* Height & Spacing */
-  padding: 120px 0;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  
-  /* IMAGE (Clear, no dark color blend) */
-  background-image: url('images/butterbg.gif');
-  background-size: cover !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-  
-  /* Remove the solid black color we added earlier */
-  background-color: transparent !important;
-  background-blend-mode: normal !important;
-  
-  /* Overlay Handling */
-  z-index: 1;
+  display: block; /* Standard block behavior */
+  padding: 40px 0;
+  margin-bottom: 60px; /* Safe gap below */
 }
-
-/* THE FADE OVERLAY (Like Crew Section) */
-.logo-carousel-container::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: -1;
-  /* Top/Bottom Fade Gradient */
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.6) 0%,   /* Dark Top */
-    rgba(0, 0, 0, 0.2) 50%,  /* Clear Center */
-    rgba(0, 0, 0, 0.8) 100%  /* Dark Bottom */
-  );
-}
-
-
 
 
 .logo-carousel {
@@ -2711,46 +2683,12 @@ footer {
 /* 🛠️ TIMELINE - MATCHING "CREW" STYLE       */
 /* ========================================= */
 .projects-timeline-section {
+  width: 100%;
   position: relative;
-  width: 100vw !important;
-  margin-left: -50vw !important;
-  left: 50% !important;
-  
-  padding: 140px 0;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  
-  /* IMAGE */
-  background-image: url('images/concept.PNG');
-  background-size: cover !important;
-  background-position: center center !important;
-  background-repeat: no-repeat !important;
-  
-  /* Clear Background */
-  background-color: transparent !important;
-  background-blend-mode: normal !important;
-  
-  color: white;
-  z-index: 1;
+  overflow: hidden; 
+  padding: 60px 0;
+  background: transparent; /* Or your preferred grey/black hex */
 }
-
-/* THE FADE OVERLAY */
-.projects-timeline-section::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: -1;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.6) 0%,
-    rgba(0, 0, 0, 0.3) 50%,
-    rgba(0, 0, 0, 0.9) 100%
-  );
-}
-
-
-  
-
 
 .section-header {
   text-align: center;
