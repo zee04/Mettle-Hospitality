@@ -2702,9 +2702,8 @@ footer {
     to bottom,
     rgba(10, 10, 10, 0.9),
     rgba(10, 10, 10, 0.8)
-  ), url('images/serviceback.jpg'); /* Gradient ON TOP of image */
+  )
   
-  color: white;
 }
 
 .section-header {
