@@ -1524,183 +1524,133 @@ footer {
   display: block;
 }
 
-/* ===== ABOUT US PAGE STYLES ===== */
+/* ========================================= */
+/* 🚀 ABOUT US PAGE - UNIFIED CINEMATIC LOOK */
+/* ========================================= */
 
-.crew-section {
+/* 1. SHARED STYLES FOR ALL ABOUT SECTIONS */
+.crew-section,
+.purpose-section,
+.north-star-section {
   position: relative;
-  min-height: 100vh;
-  background-image: url('images/crew.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: scroll;
+  width: 100%;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  min-height: 100vh; /* Full screen height for each */
+  
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   overflow: hidden;
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.crew-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(15, 23, 42, 0.75);
-  z-index: 1;
-}
-
-.crew-content {
-  position: relative;
-  z-index: 2;
-  max-width: 600px;
-  padding: 80px 60px;
-  color: var(--color-text);
-}
-
-.crew-title {
-  font-size: var(--font-size-3xl);
-  color: var(--color-text);
-  margin: 0 0 60px 0;
-  font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-tight);
-}
-
-.crew-pillars {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-}
-
-.crew-pillar h3 {
-  font-size: var(--font-size-lg);
-  color: #8B3A3A;
-  margin: 0 0 var(--space-12) 0;
-  font-weight: var(--font-weight-bold);
-  padding-top: var(--space-16);
-  border-top: 4px solid #8B3A3A;
-  display: inline-block;
-}
-
-.crew-pillar p {
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-md);
-  line-height: var(--line-height-normal);
-  margin: var(--space-12) 0 0 0;
+/* 2. BACKGROUND IMAGES */
+.crew-section {
+  background-image: url('images/crew.jpg');
 }
 
 .purpose-section {
-  display: flex;
-  flex-wrap: wrap;
-  min-height: 100vh;
-  background: #0f172a;
-}
-
-.purpose-image {
-  flex: 1;
-  min-width: 300px;
-  min-height: 100vh;
-  background-image: url('images/viditblack.jpg');
-  background-size: cover;
-  background-position: center;
-}
-
-.purpose-content {
-  flex: 1;
-  min-width: 300px;
-  padding: 80px 60px;
-  background: #0f172a;
-  color: var(--color-text);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.purpose-label {
-  font-size: var(--font-size-sm);
-  color: #8B3A3A;
-  margin-bottom: 30px;
-  font-weight: var(--font-weight-bold);
-  letter-spacing: 0.1em;
-}
-
-.purpose-title {
-  font-size: var(--font-size-2xl);
-  color: var(--color-text);
-  margin: 0 0 40px 0;
-  font-weight: var(--font-weight-bold);
-}
-
-.purpose-text {
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-md);
-  line-height: 1.8;
-}
-
-.purpose-text p {
-  margin-bottom: var(--space-24);
-}
-
-.purpose-text p:last-child {
-  margin-bottom: 0;
+  /* Using the chef image as full background instead of split */
+  background-image: url('images/viditblack.jpg'); 
 }
 
 .north-star-section {
-  min-height: 100vh;
-  padding: 100px 60px;
-  background: #0f172a;
-  color: var(--color-text);
+  /* Using the honey/ingredient image as background */
+  background-image: url('images/honey.jpg');
+}
+
+/* 3. UNIFIED DARK OVERLAY (Applied to all) */
+.crew-overlay,
+.purpose-section::before,
+.north-star-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1;
+  
+  /* The "Cinematic Fade" */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+}
+
+/* 4. CONTENT CONTAINERS */
+.crew-content,
+.purpose-content,
+.north-star-wrapper {
+  position: relative;
+  z-index: 2; /* Above overlay */
+  width: 100%;
+  max-width: 1200px;
+  padding: 80px 20px;
+  text-align: center;
+  color: white;
+  
+  /* Reset flex properties that caused split layout */
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
+  background: transparent !important; /* Remove old blue bg */
 }
 
-.north-star-title {
-  font-size: var(--font-size-3xl);
-  color: var(--color-text);
-  margin: 0 0 80px 0;
-  font-weight: var(--font-weight-bold);
+/* 5. HIDE OLD "SPLIT" IMAGE DIVS (Since images are now backgrounds) */
+.purpose-image,
+.north-star-image {
+  display: none !important;
 }
 
-.north-star-wrapper {
+/* 6. TYPOGRAPHY & SPACING FIXES */
+.purpose-label {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: var(--brand-crimson); /* Pop color */
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* Ensure paragraph text is readable over images */
+.purpose-text p,
+.north-star-pillar p {
+  max-width: 800px;
+  margin: 0 auto 20px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+  opacity: 0.95;
+  color: white !important;
+}
+
+/* North Star Grid Fix (Make it centered) */
+.north-star-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 60px;
-  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+  width: 100%;
 }
 
-.north-star-grid {
+.north-star-pillar {
   flex: 1;
-  min-width: 300px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  min-width: 250px;
+  max-width: 350px;
+  text-align: center;
 }
 
 .north-star-pillar h4 {
-  font-size: var(--font-size-lg);
-  color: #8B3A3A;
-  margin: 0 0 var(--space-16) 0;
-  font-weight: var(--font-weight-bold);
-  padding-top: var(--space-16);
-  border-top: 4px solid #8B3A3A;
-  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--color-cream-50);
 }
 
-.north-star-pillar p {
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-md);
-  line-height: var(--line-height-normal);
-  margin: var(--space-12) 0 0 0;
-}
-
-.north-star-image {
-  flex: 1;
-  min-width: 300px;
-  min-height: 500px;
-  background-image: url('images/honey.jpg');
-  background-size: cover;
-  background-position: center;
-}
 
 /* ===== SERVICES PAGE STYLES ===== */
 
