@@ -2463,6 +2463,7 @@ body {
   /* No width changes here - let it sit in the container */
 }
 
+
 /* 3. THE GHOST BACKGROUND (The "Breakout" Layer) */
 .logo-carousel-container::before {
   content: "";
@@ -3318,45 +3319,39 @@ h2.section-title,
 }
 
 
-/* ======================================================= */
-/* 🛠️ MASTER FIX: LAYOUT, HEADERS, GAP KILLER, CENTER      */
-/* ======================================================= */
+/* ========================================= */
+/* 🔧 CRITICAL FIXES: GREY GAP + CAROUSEL HEIGHT */
+/* ========================================= */
 
-/* 1. NUCLEAR GAP KILLER */
-html {
-    width: 100vw;
-    overflow-x: hidden;
-}
-
-body {
+/* 1. NUCLEAR GAP KILLER & FULL-WIDTH SECTIONS */
+html, body {
     width: 100%;
     max-width: 100vw;
     margin: 0;
     padding: 0;
     overflow-x: hidden !important;
-    position: relative;
 }
 
-/* 2. SAFER BREAKOUT (Prevents Scrollbar Trigger) */
-.projects-section, 
+.projects-section,
 .timeline-section {
-    width: 100vw;
     position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    padding: 100px 0;
-    box-sizing: border-box;
-    overflow: hidden; /* This stops internal content from pushing width out */
-    
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    padding: 100px 0 !important;
+    overflow: hidden;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
 }
 
-.projects-section { background-image: url('images/butterbg.gif'); }
-.timeline-section { background-image: url('images/concept.PNG'); }
+.projects-section {
+    background-image: url('images/butterbg.gif') !important;
+}
+
+.timeline-section {
+    background-image: url('images/concept.PNG') !important;
+}
 
 /* Dark Overlay */
 .projects-section::before,
@@ -3364,89 +3359,115 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.65);
     z-index: 0;
 }
 
-/* Content Container */
+/* 2. CENTERED CONTENT CONTAINER */
 .projects-section .container,
 .timeline-section .container {
     position: relative;
     z-index: 2;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px; /* Safe padding from edges */
+    padding: 0 20px;
 }
 
-/* 3. HEADER SWAP & ALIGNMENT */
-.section-header {
+/* 3. INCREASED CAROUSEL HEIGHT (Fixes overlap) */
+.logo-carousel-container {
+    position: relative;
     width: 100% !important;
+    min-height: 450px !important; /* Forces height */
     display: flex !important;
-    flex-direction: column;
     align-items: center !important;
     justify-content: center !important;
-    text-align: center !important;
-    margin: 0 auto 60px auto !important;
+    margin-top: 60px !important;
+    margin-bottom: 0 !important;
+    background: transparent !important;
+    padding: 0 !important;
 }
 
-/* BIG GRADIENT TITLE ("Our Projects") */
-.section-header .label-grey {
+.logo-carousel {
+    position: relative;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    perspective: 1000px;
+}
+
+/* 4. HEADER ALIGNMENT */
+.section-header {
+    width: 100% !important;
+    text-align: center !important;
+    margin-bottom: 80px !important;
+    position: relative;
+    z-index: 5;
+}
+
+.section-header .label-grey,
+.section-header .timeline-title {
     font-family: "Druk Wide", sans-serif !important;
     font-size: clamp(2.5rem, 6vw, 4rem) !important;
     font-weight: 800 !important;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     line-height: 1.1;
-    
     background: linear-gradient(135deg, #FFF8E7 0%, #D4AF37 55%, #FFF8E7 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     background-clip: text !important;
-    
-    margin-bottom: 24px !important;
-    order: 1; /* First */
+    margin-bottom: 20px !important;
     display: block;
-    width: 100%;
 }
 
-/* SMALL WHITE SUBTITLE ("A selection...") */
-.section-header .section-title {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-    font-size: 1.2rem !important;
+.section-header .section-title,
+.section-header .timeline-subtitle {
+    font-size: 1.15rem !important;
     font-weight: 400 !important;
-    color: rgba(255, 255, 255, 0.8) !important;
+    color: rgba(255, 255, 255, 0.85) !important;
     text-transform: none !important;
     letter-spacing: 0.5px;
-    line-height: 1.5;
-    
-    background: none !important;
-    -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
-    
+    line-height: 1.6;
     margin: 0 auto !important;
-    order: 2; /* Second */
     max-width: 700px;
 }
 
-/* 4. CAROUSEL CENTERING & RESET */
-.logo-carousel-container {
-    width: 100% !important;
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-    
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    
-    background: transparent !important;
-    padding: 0 !important;
-}
+/* ========================================= */
+/* MOBILE REFINEMENTS */
+/* ========================================= */
 
-/* 5. TIMELINE WRAPPER RESET */
-.timeline-wrapper {
-    background: transparent !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100%;
+@media screen and (max-width: 768px) {
+    /* Safe mobile width reset */
+    .projects-section,
+    .timeline-section {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        left: 0 !important;
+    }
+
+    /* Stack timeline vertically */
+    .timeline-section,
+    .timeline-container,
+    .journey-wrapper {
+        display: flex;
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 50px 0 !important;
+    }
+    
+    .timeline-item, .milestone, .timeline-phase {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 40px;
+    }
+
+    /* Smaller carousel on mobile */
+    .logo-carousel-container {
+        min-height: 320px !important;
+    }
 }
 
 
