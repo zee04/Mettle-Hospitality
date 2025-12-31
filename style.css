@@ -2439,10 +2439,21 @@ footer {
 }
 
 
-/* 1. PREVENT SCROLL BARS (Crucial when using 100vw) */
-body, html {
-  overflow-x: hidden !important;
+/* 1. NUCLEAR GAP KILLER */
+html {
+    width: 100vw;
+    overflow-x: hidden;
 }
+
+body {
+    width: 100%;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden !important;
+    position: relative;
+}
+
 
 /* 2. THE CAROUSEL STRIP (The "Object" inside the Box) */
 .logo-carousel-container {
@@ -3311,27 +3322,34 @@ h2.section-title,
 /* 🛠️ MASTER FIX: LAYOUT, HEADERS, GAP KILLER, CENTER      */
 /* ======================================================= */
 
-/* 1. GAP KILLER (Removes right-side grey space) */
-body, html {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden !important; /* CRITICAL */
+/* 1. NUCLEAR GAP KILLER */
+html {
+    width: 100vw;
+    overflow-x: hidden;
 }
 
-/* 2. FORCE SECTIONS FULL WIDTH (Breakout) */
+body {
+    width: 100%;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden !important;
+    position: relative;
+}
+
+/* 2. SAFER BREAKOUT (Prevents Scrollbar Trigger) */
 .projects-section, 
 .timeline-section {
-    width: 100vw !important;
-    position: relative !important;
-    left: 50% !important;
-    right: 50% !important;
-    margin-left: -50vw !important;
-    margin-right: -50vw !important;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
     padding: 100px 0;
     box-sizing: border-box;
+    overflow: hidden; /* This stops internal content from pushing width out */
     
-    /* Backgrounds */
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
