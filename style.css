@@ -3825,48 +3825,89 @@ header, #navbar, .header-container {
   .secret-content-right, .contact-form-section { padding: 40px 20px !important; order: 1 !important; }
 }
 
+
+
 /* ========================================= */
-/* 🔧 DIAGRAM FIT FIX: SHRINK LOOP & TEXT */
+/* 🔧 DIAGRAM FIT FIX 2.0: TIGHT & CENTERED */
 /* ========================================= */
 
-/* 1. Shrink the main ring */
+/* 1. Main Ring Sizing */
 .loop-ring {
-    width: 450px !important;  /* Reduced from 600px+ */
-    height: 450px !important; /* Reduced from 600px+ */
+    width: 420px !important;
+    height: 420px !important;
     margin: 0 auto;
+    position: relative;
 }
 
-/* 2. Pull text closer to the ring */
+/* 2. Container Adjustment - Pull columns closer */
+.content-container {
+    max-width: 1000px !important; /* Constrain overall width */
+    gap: 0 !important;
+    justify-content: center;
+}
+
+/* 3. Text Blocks - Pull them IN toward the ring */
+.item-left {
+    margin-right: -40px !important; /* Pull right closer to center */
+    padding-right: 20px;
+}
+
+.item-right {
+    margin-left: -40px !important; /* Pull left closer to center */
+    padding-left: 20px;
+}
+
+/* 4. Text Block Width & Alignment */
 .service-item .text-block {
-    max-width: 250px !important; /* Limit width so it doesn't spill */
+    max-width: 220px !important;
 }
 
-/* Right side items: pull left */
+.item-left .text-block {
+    text-align: right; 
+}
+
 .item-right .text-block {
-    margin-left: 20px !important; 
     text-align: left;
 }
 
-/* Left side items: pull right */
-.item-left .text-block {
-    margin-right: 20px !important;
-    text-align: right;
-}
-
-/* 3. Adjust Connector Lines length */
+/* 5. Connector Lines - Shorten them significantly */
 .connector-line {
-    width: 40px !important; /* Shorter lines */
+    width: 30px !important; 
 }
 
-/* 4. Responsive Shrink (Tablets/Laptops) */
+/* 6. Mobile/Tablet Responsive */
 @media (max-width: 1200px) {
     .loop-ring {
-        width: 380px !important;
-        height: 380px !important;
+        width: 360px !important;
+        height: 360px !important;
     }
     
-    .content-container {
-        gap: 0 !important; /* Remove huge gap between columns */
-        justify-content: center;
-    }
+    .item-left { margin-right: -20px !important; }
+    .item-right { margin-left: -20px !important; }
 }
+
+@media (max-width: 768px) {
+    /* Stack vertically on mobile */
+    .content-container {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    
+    .loop-ring {
+        margin: 40px auto !important;
+    }
+    
+    .item-left, .item-right {
+        margin: 0 !important;
+        text-align: center !important;
+        padding: 20px !important;
+    }
+    
+    .service-item .text-block {
+        max-width: 100% !important;
+        text-align: center !important;
+    }
+    
+    .connector-line { display: none !important; } /* Hide lines on mobile stack */
+}
+
