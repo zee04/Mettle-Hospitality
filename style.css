@@ -3689,7 +3689,7 @@ nav li:has(a[href="media.html"]),
   width: 100vw !important;
   margin-left: 50% !important;
   transform: translateX(-50%) !important;
-  background-image: url('images/honey.jpg') !important;
+  background-image: url('images/indulge.jpg') !important;
   background-size: cover !important;
   background-position: center !important;
   padding: 140px 0 !important;
@@ -3723,7 +3723,7 @@ nav li:has(a[href="media.html"]),
 
 .secret-image-left {
   flex: 1; min-width: 300px; min-height: 100vh;
-  background-image: url('images/honey.jpg');
+  background-image: url('images/burger.jpg');
   background-size: cover; background-position: center;
   order: 1;
 }
