@@ -3308,16 +3308,18 @@ h2.section-title,
 
 
 /* ======================================================= */
-/* 🛠️ FINAL LAYOUT FIXES: FULL WIDTH & HEADER SWAP         */
+/* 🛠️ MASTER FIX: LAYOUT, HEADERS, GAP KILLER, CENTER      */
 /* ======================================================= */
 
-/* 1. FORCE FULL WIDTH (Remove Letterboxing) */
+/* 1. GAP KILLER (Removes right-side grey space) */
 body, html {
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow-x: hidden !important;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden !important; /* CRITICAL */
 }
 
+/* 2. FORCE SECTIONS FULL WIDTH (Breakout) */
 .projects-section, 
 .timeline-section {
     width: 100vw !important;
@@ -3327,94 +3329,106 @@ body, html {
     margin-left: -50vw !important;
     margin-right: -50vw !important;
     padding: 100px 0;
+    box-sizing: border-box;
     
-    /* BACKGROUND SETTINGS */
+    /* Backgrounds */
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
 }
 
-/* Specific Backgrounds */
-.projects-section {
-    background-image: url('images/butterbg.gif');
-}
+.projects-section { background-image: url('images/butterbg.gif'); }
+.timeline-section { background-image: url('images/concept.PNG'); }
 
-.timeline-section {
-    background-image: url('images/concept.PNG');
-}
-
-/* Dark Overlay for Both */
+/* Dark Overlay */
 .projects-section::before,
 .timeline-section::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6); /* Adjust darkness */
+    background: rgba(0, 0, 0, 0.6);
     z-index: 0;
 }
 
-/* Ensure content sits above overlay */
+/* Content Container */
 .projects-section .container,
 .timeline-section .container {
     position: relative;
     z-index: 2;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px; /* Safe padding from edges */
 }
 
-
-/* ======================================================= */
-/* 🔄 HEADER SWAP: "OUR PROJECTS" IS NOW BIG               */
-/* ======================================================= */
-
-/* Container Alignment */
+/* 3. HEADER SWAP & ALIGNMENT */
 .section-header {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center !important;
+    justify-content: center !important;
     text-align: center !important;
-    margin-bottom: 60px;
-    display: flex;
-    flex-direction: column; /* Allows reordering if needed */
-    align-items: center;
+    margin: 0 auto 60px auto !important;
 }
 
-/* 1. THE BIG GRADIENT TITLE (Formerly the small label) */
+/* BIG GRADIENT TITLE ("Our Projects") */
 .section-header .label-grey {
-    /* Font & Size */
     font-family: "Druk Wide", sans-serif !important;
-    font-size: clamp(2.5rem, 6vw, 4rem) !important; /* BIG */
+    font-size: clamp(2.5rem, 6vw, 4rem) !important;
     font-weight: 800 !important;
     text-transform: uppercase;
     letter-spacing: 1px;
     line-height: 1.1;
     
-    /* Gradient Color */
     background: linear-gradient(135deg, #FFF8E7 0%, #D4AF37 55%, #FFF8E7 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     background-clip: text !important;
     
-    margin-bottom: 20px !important;
-    order: 1; /* Ensure it is first */
+    margin-bottom: 24px !important;
+    order: 1; /* First */
     display: block;
+    width: 100%;
 }
 
-/* 2. THE SMALL WHITE SUBTITLE (Formerly the big title) */
+/* SMALL WHITE SUBTITLE ("A selection...") */
 .section-header .section-title {
-    /* Font & Size */
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; /* Simple font */
-    font-size: 1.2rem !important; /* Small */
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-size: 1.2rem !important;
     font-weight: 400 !important;
-    color: rgba(255, 255, 255, 0.8) !important; /* White/Grey */
+    color: rgba(255, 255, 255, 0.8) !important;
     text-transform: none !important;
     letter-spacing: 0.5px;
     line-height: 1.5;
     
-    /* Remove Gradient */
     background: none !important;
     -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
     
-    max-width: 700px;
     margin: 0 auto !important;
-    order: 2; /* Ensure it is second */
+    order: 2; /* Second */
+    max-width: 700px;
+}
+
+/* 4. CAROUSEL CENTERING & RESET */
+.logo-carousel-container {
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    
+    background: transparent !important;
+    padding: 0 !important;
+}
+
+/* 5. TIMELINE WRAPPER RESET */
+.timeline-wrapper {
+    background: transparent !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
 }
 
 
