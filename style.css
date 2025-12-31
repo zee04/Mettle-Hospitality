@@ -3911,16 +3911,30 @@ header, #navbar, .header-container {
     .connector-line { display: none !important; } /* Hide lines on mobile stack */
 }
 
-/* Hide mobile nav when closed */
-nav {
-    max-height: 0 !important;
-    overflow: hidden !important;
+/* DESKTOP (769px+): Nav ALWAYS visible */
+@media (min-width: 769px) {
+  nav {
+    position: relative !important;
+    max-height: none !important;
+    overflow: visible !important;
+    background: transparent !important;
     border: none !important;
+  }
 }
 
-nav.active {
+/* MOBILE (768px and below): Nav hidden by default */
+@media (max-width: 768px) {
+  nav {
+    max-height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  nav.active {
     max-height: 100vh !important;
+  }
 }
+
+
 
 /* Remove border from header */
 header {
