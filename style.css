@@ -1831,19 +1831,14 @@ footer {
   padding-right: 50px;  /* SPACE FROM RING */
 }
 
+.left-col {
+  align-items: flex-end;
+  text-align: right;
+}
+
 .right-col {
   align-items: flex-start;
   text-align: left;
-  gap: 70px;  /* INCREASED GAP */
-  padding-left: 50px;  /* SPACE FROM RING */
-}
-
-
-.center-col {
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  min-height: 500px;
 }
 
 /* LOOP RING - CRIMSON GLOW */
