@@ -3308,51 +3308,207 @@ h2.section-title,
 }
 
 
-/* ========================================= */
-/* 🛠️ FULL SECTION BACKGROUND (LIKE CREW)    */
-/* ========================================= */
+/* ================================================================= */
+/* 🚀 NEW CLEAN LAYOUT: PROJECTS & TIMELINE (SEPARATED SECTIONS)     */
+/* ================================================================= */
 
-/* 1. Target the Main Wrapper */
-.projects-timeline-section {
-  position: relative;
-  width: 100%;
-  
-  /* The Image */
-  background-image: url('images/butterbg.gif');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  
-  /* Add vertical padding so content floats nicely */
-  padding: 100px 0;
-  
-  /* Text Color Fix (Since background might be bright/dark) */
-  color: #fff; /* or whatever contrasts with your GIF */
+/* ------------------------------------------------ */
+/* SECTION 1: PROJECTS (BUTTER BG)                  */
+/* ------------------------------------------------ */
+.projects-section {
+    position: relative;
+    width: 100%;
+    padding: 100px 0;
+    
+    /* BACKGROUND IMAGE: BUTTER GIF */
+    background-image: url('images/butterbg.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Text Color */
+    color: white; 
 }
 
-/* 2. Optional: Add a Dark Overlay (Readability) */
-/* If the GIF is too busy, this darkens it slightly */
-.projects-timeline-section::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.6); /* Adjust 0.6 to control darkness */
-  z-index: 0; /* Behind content */
+/* Dark Overlay for Butter Section (Readability) */
+.projects-section::before {
+    content: "";
+    position: absolute;
+    inset: 0; 
+    background: rgba(0, 0, 0, 0.6); 
+    z-index: 0;
 }
 
-/* 3. Ensure Content Sits on Top */
-.projects-timeline-section .container {
-  position: relative;
-  z-index: 2; /* Sits above the overlay */
+/* Ensure content sits above overlay */
+.projects-section .container {
+    position: relative;
+    z-index: 2;
 }
 
-/* 4. Remove Individual Backgrounds (Cleanup) */
-/* Just in case individual parts had their own colors */
-.logo-carousel-container,
+/* Header Styling */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    color: white !important;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+}
+
+.label-grey {
+    color: #cccccc !important;
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+/* ------------------------------------------------ */
+/* CAROUSEL CONTAINER (Inside Section 1)            */
+/* ------------------------------------------------ */
+.logo-carousel-container {
+    position: relative;
+    width: 100%;
+    min-height: 300px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent !important; /* No grey box */
+    margin: 0;
+}
+
+
+/* ------------------------------------------------ */
+/* SECTION 2: TIMELINE (BLACK/SEPARATE BG)          */
+/* ------------------------------------------------ */
+.timeline-section {
+    position: relative;
+    width: 100%;
+    padding: 100px 0;
+    
+    /* BACKGROUND: Deep Black */
+    background-color: #050505; 
+    
+    color: white;
+}/* ------------------------------------------------ */
+/* SECTION 2: TIMELINE (IMAGE BACKGROUND)           */
+/* ------------------------------------------------ */
+.timeline-section {
+    position: relative;
+    width: 100%;
+    padding: 100px 0;
+    
+    /* BACKGROUND IMAGE: Concept PNG */
+    background-image: url('images/concept.PNG'); /* Make sure filename matches exactly */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    color: white;
+}
+
+/* Dark Overlay for Timeline (Readability) */
+/* Essential because concept.PNG might be bright or busy */
+.timeline-section::before {
+    content: "";
+    position: absolute;
+    inset: 0; 
+    background: rgba(0, 0, 0, 0.7); /* darker than butter section (0.7) */
+    z-index: 0;
+}
+
+/* Ensure content sits above overlay */
+.timeline-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Timeline Wrapper Cleaning */
 .timeline-wrapper {
-  background: transparent !important;
-  margin-top: 60px; /* Space out the inner blocks */
-  margin-bottom: 60px;
+    position: relative;
+    width: 100%;
+    background: transparent !important;
+    margin: 0;
+    padding: 0;
+}
+
+.timeline-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.timeline-title {
+    color: white !important;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+}
+
+.timeline-subtitle {
+    color: #cccccc !important;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Timeline Grid Layout */
+.timeline-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap; 
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.timeline-phase {
+    flex: 1;
+    min-width: 200px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Phase Styling (Re-adding the styles we deleted but cleaner) */
+.phase-number {
+    width: 80px;
+    height: 80px;
+    background: var(--brand-crimson);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.phase-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.phase-desc {
+    color: #999;
+    font-size: 0.95rem;
+    max-width: 220px;
+}
+
+/* Mobile Fix */
+@media (max-width: 768px) {
+    .timeline-container {
+        flex-direction: column;
+        gap: 60px;
+    }
 }
 
 
