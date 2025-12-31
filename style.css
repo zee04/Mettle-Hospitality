@@ -4109,3 +4109,41 @@ select:focus {
   .service-item { margin: 0 !important; }
 }
 
+/* ==============================================
+   SERVICES RING - FINAL TEXT POSITIONING
+   ============================================== */
+
+/* Ensure the ring stays fixed */
+.loop-ring {
+  width: 420px !important;
+  height: 420px !important;
+  border: 4px solid #A54040 !important;
+  border-radius: 50% !important;
+  position: relative !important;
+  margin: 0 auto !important;
+  box-shadow: 0 0 40px rgba(165, 64, 64, 0.25) !important;
+}
+
+/* Right Side - Individual Text Adjustments */
+@media screen and (min-width: 1201px) {
+  
+  /* 1. F&B Consultancy (Top Right) - Pull closer (Left) */
+  .right-col .service-item:nth-child(1) { 
+     margin-bottom: 60px !important; 
+     margin-left: -40px !important; /* Pulled closer to node */
+  } 
+
+  /* 2. Scale & Franchise (Middle Right) - Push away (Right) */
+  .right-col .service-item:nth-child(2) { 
+     margin-bottom: 60px !important; 
+     margin-left: 10px !important; /* Pushed slightly right */
+  } 
+
+  /* 3. Private Dining (Bottom Right) - Pull closer (Left) */
+  .right-col .service-item:nth-child(3) { 
+     margin-left: -40px !important; /* Pulled closer to node */
+  }
+}
+
+
+
