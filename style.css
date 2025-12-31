@@ -3682,3 +3682,146 @@ nav li:has(a[href="media.html"]),
 }
 
 
+
+/* ======================================================= */
+/* 🚀 MASTER FIX 2.0: ALL OUTSTANDING ISSUES RESOLVED */
+/* ======================================================= */
+
+/* 1. MOBILE BUTTONS (Small Pill Style) */
+@media (max-width: 768px) {
+  .slide-buttons .btn,
+  .slide-buttons a {
+    padding: 10px 24px !important;
+    font-size: 14px !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    border-radius: 50px !important; /* Force pill shape */
+  }
+}
+
+/* 2. SERVICES PAGE (Background + Header + Split Secret Sauce) */
+.services-wrapper {
+  position: relative !important;
+  width: 100vw !important;
+  margin-left: 50% !important;
+  transform: translateX(-50%) !important;
+  background-image: url('images/honey.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  padding: 140px 0 !important;
+  overflow: hidden !important;
+}
+
+.services-wrapper::before {
+  content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.7) !important; z-index: 0;
+}
+
+.services-header {
+  position: relative; z-index: 3; text-align: center; margin-bottom: 60px;
+}
+
+.services-header h2 {
+  font-family: "Druk Wide", sans-serif !important;
+  font-size: clamp(2rem, 5vw, 3.5rem) !important;
+  color: var(--brand-crimson) !important;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* Secret Sauce - Split Layout */
+.secret-sauce-wrapper {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  min-height: 100vh !important;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%) !important;
+  padding: 0 !important; margin: 0 !important; max-width: none !important;
+}
+
+.secret-image-left {
+  flex: 1; min-width: 300px; min-height: 100vh;
+  background-image: url('images/honey.jpg');
+  background-size: cover; background-position: center;
+  order: 1;
+}
+
+.secret-content-right {
+  flex: 1; min-width: 300px; padding: 80px 60px;
+  display: flex; flex-direction: column; justify-content: center;
+  color: white; order: 2;
+}
+
+.secret-content-right h2 {
+    font-family: "Druk Wide", sans-serif !important;
+    font-size: clamp(2rem, 5vw, 3.5rem) !important;
+    font-weight: 800 !important;
+    color: var(--brand-crimson) !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+/* 3. CONTACT PAGE (Compact + Split Layout) */
+.contact-main-final {
+  padding: 0 !important; margin: 0 !important; max-width: none !important;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%) !important;
+}
+
+.contact-layout-split { display: flex; flex-wrap: wrap; min-height: 100vh; }
+
+.contact-image-section {
+  flex: 1; min-width: 300px; min-height: 100vh;
+  background-size: cover !important; background-position: center !important;
+  border-radius: 0 !important; /* Crisp edges */
+}
+
+.contact-form-section {
+  flex: 1; min-width: 300px; padding: 80px 60px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+
+.contact-form-compact {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 24px;
+}
+
+.discovery-card-compact {
+  background: rgba(165,64,64,0.15);
+  border: 1px solid rgba(165,64,64,0.3);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* 4. GREY LINE FIX (Header) */
+header, #navbar, .header-container {
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+/* 5. TIMELINE MOBILE FIXES */
+@media (max-width: 768px) {
+  /* Fix connecting lines */
+  .timeline-phase::after {
+    content: ""; position: absolute; left: 50%; bottom: -40px;
+    width: 2px; height: 40px; background: rgba(255,255,255,0.2);
+    transform: translateX(-50%); display: block !important;
+  }
+  .timeline-phase:last-child::after { display: none !important; }
+
+  /* Fix cut-off images */
+  .phase-image img {
+    object-fit: cover !important; width: 100% !important; height: 250px !important;
+    object-position: center center !important;
+  }
+  
+  /* Mobile Stacking for Split Sections */
+  .secret-sauce-wrapper, .contact-layout-split { flex-direction: column !important; }
+  .secret-image-left, .contact-image-section { min-height: 300px !important; order: 2 !important; }
+  .secret-content-right, .contact-form-section { padding: 40px 20px !important; order: 1 !important; }
+}
+
