@@ -3911,3 +3911,18 @@ header, #navbar, .header-container {
     .connector-line { display: none !important; } /* Hide lines on mobile stack */
 }
 
+/* Hide mobile nav when closed */
+nav {
+    max-height: 0 !important;
+    overflow: hidden !important;
+    border: none !important;
+}
+
+nav.active {
+    max-height: 100vh !important;
+}
+
+/* Remove border from header */
+header {
+    border-bottom: none !important;
+}
