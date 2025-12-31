@@ -3320,32 +3320,34 @@ h2.section-title,
 
 
 /* ========================================= */
-/* 🔧 FINAL FIX: GREY GAP + CAROUSEL HEIGHT */
+/* 🔧 FINAL LAYOUT FIX: NO BARS + TIGHT HEADER */
 /* ========================================= */
 
-/* 1. KILL THE SCROLLBAR/GREY GAP */
+/* 1. FORCE BACKGROUND TO COVER EVERYTHING (No Grey Bars) */
 html, body {
     width: 100%;
-    max-width: 100%;
-    overflow-x: hidden !important;
     margin: 0;
     padding: 0;
+    overflow-x: hidden !important;
 }
 
-/* 2. FULL WIDTH SECTIONS */
 .projects-section,
 .timeline-section {
     position: relative;
     width: 100vw;
     margin-left: 50%;
     transform: translateX(-50%);
-    padding: 120px 0; /* Big vertical space as you requested */
+    padding: 100px 0; /* Vertical breathing room */
     overflow: hidden;
-    background-size: cover !important;
-    background-position: center !important;
+    
+    /* CRITICAL: Force image to cover entire area */
+    background-size: cover !important; 
+    background-position: center center !important;
     background-repeat: no-repeat !important;
+    background-attachment: scroll !important; /* Prevents jittery fixed bg issues */
 }
 
+/* Ensure specific images are applied */
 .projects-section {
     background-image: url('images/butterbg.gif') !important;
 }
@@ -3354,17 +3356,52 @@ html, body {
     background-image: url('images/concept.PNG') !important;
 }
 
-/* Dark Overlay */
+/* Dark Overlay for Text Readability */
 .projects-section::before,
 .timeline-section::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.65);
+    background: rgba(0, 0, 0, 0.65); /* Adjust opacity if needed */
     z-index: 0;
 }
 
-/* 3. CENTER CONTENT */
+/* 2. TIGHTER HEADER ALIGNMENT (Sit right above logos) */
+.section-header {
+    position: relative;
+    z-index: 5;
+    width: 100% !important;
+    text-align: center !important;
+    margin-bottom: 30px !important; /* REDUCED from 60px/80px to pull it closer */
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 3. CAROUSEL CONTAINER (Centered & Sized) */
+.logo-carousel-container {
+    position: relative;
+    z-index: 5;
+    width: 100% !important;
+    max-width: 1200px; /* Constrain width so it doesn't stretch too wide */
+    margin: 0 auto !important;
+    min-height: 400px !important; /* Keep vertical height for cards */
+    display: flex !important;
+    align-items: center !important; /* Vertically center cards */
+    justify-content: center !important; /* Horizontally center cards */
+    padding: 0 !important;
+}
+
+/* Ensure the carousel track itself is centered */
+.logo-carousel {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 4. CONTAINER RESET */
 .projects-section .container,
 .timeline-section .container {
     position: relative;
@@ -3372,11 +3409,27 @@ html, body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Forces everything inside container to center */
 }
 
-/* 4. CAROUSEL HEIGHT FIX */
-.logo-carousel
-
+/* 5. MOBILE ADJUSTMENTS */
+@media screen and (max-width: 768px) {
+    .projects-section,
+    .timeline-section {
+        padding: 60px 0 !important;
+    }
+    
+    .section-header {
+        margin-bottom: 20px !important; /* Even tighter on mobile */
+    }
+    
+    .logo-carousel-container {
+        min-height: 300px !important;
+    }
+}
 
 
 
