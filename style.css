@@ -4011,3 +4011,112 @@ select:focus {
 .slide-buttons > * {
   flex-shrink: 0 !important;
 }
+
+/* =========================================
+   SERVICES RING: FINAL PRECISION FIX
+   ========================================= */
+
+/* 1. Ring Container - Fixed 420px */
+.loop-ring {
+  width: 420px !important;
+  height: 420px !important;
+  border: 4px solid #A54040 !important; /* Crimson Ring */
+  border-radius: 50% !important;
+  position: relative !important;
+  margin: 0 auto !important;
+  box-shadow: 0 0 30px rgba(165, 64, 64, 0.2) !important;
+  /* Remove old background/gradients if any */
+  background: transparent !important;
+}
+
+/* 2. Nodes - 60px Circle centered on the line */
+.node {
+  width: 60px !important;
+  height: 60px !important;
+  background: #A54040 !important;
+  border-radius: 50% !important;
+  position: absolute !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 10 !important;
+  box-shadow: 0 0 20px rgba(165, 64, 64, 0.6) !important;
+  /* Icon inside */
+  color: white !important;
+}
+
+.node svg {
+  width: 28px !important;
+  height: 28px !important;
+  stroke-width: 2 !important;
+}
+
+/* 3. NODE POSITIONS - Mathematical Precision for 420px Ring
+   0% / 100% is top-center. 
+   We want them spread nicely. 
+   Using standard clock positions.
+*/
+
+/* LEFT SIDE NODES */
+/* 10:00 Position */
+.node-l-1 { 
+  top: 14% !important; 
+  left: 6% !important; 
+  transform: translate(-50%, -50%) !important; 
+}
+
+/* 8:00 Position */
+.node-l-2 { 
+  top: 86% !important; 
+  left: 6% !important; 
+  transform: translate(-50%, -50%) !important; 
+}
+
+/* RIGHT SIDE NODES */
+/* 2:00 Position */
+.node-r-1 { 
+  top: 14% !important; 
+  right: 6% !important; 
+  transform: translate(50%, -50%) !important; 
+}
+
+/* 3:00 Position (Direct Right) */
+.node-r-2 { 
+  top: 50% !important; 
+  right: -30px !important; /* Half of node width (60/2) */
+  transform: translateY(-50%) !important; 
+}
+
+/* 4:00 Position */
+.node-r-3 { 
+  top: 86% !important; 
+  right: 6% !important; 
+  transform: translate(50%, -50%) !important; 
+}
+
+/* 4. TIGHTEN TEXT COLUMNS - Bring them closer to ring */
+@media screen and (min-width: 1201px) {
+  .content-container {
+    gap: 0 !important; /* Remove huge gap */
+    max-width: 1100px !important;
+  }
+  
+  .left-col {
+    padding-right: 40px !important;
+    align-items: flex-end !important;
+  }
+  
+  .right-col {
+    padding-left: 40px !important;
+    align-items: flex-start !important;
+  }
+  
+  .service-item {
+    margin-bottom: 60px !important; /* Space items out vertically */
+    position: relative !important;
+  }
+  
+  /* Connect lines visually */
+  .item-left { text-align: right !important; }
+  .item-right { text-align: left !important; }
+}
