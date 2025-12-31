@@ -3429,3 +3429,256 @@ h2.section-title,
 
 
 
+/* ========================================= */
+/* 📦 SERVICES PAGE - HEADER + LAYOUT */
+/* ========================================= */
+
+.services-wrapper {
+    position: relative;
+    width: 100vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    background-image: url('images/indulge.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 120px 0;
+}
+
+.services-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 0;
+}
+
+.services-header {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.services-header h2 {
+    font-family: "Druk Wide", sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    color: var(--brand-crimson);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+/* ========================================= */
+/* 🍯 SECRET SAUCE SECTION - SPLIT LAYOUT */
+/* ========================================= */
+
+.secret-sauce-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: none !important;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    margin: 0 !important;
+    padding: 100px 0 !important;
+}
+
+.secret-image-left {
+    flex: 1;
+    min-width: 300px;
+    min-height: 600px;
+    background-image: url('images/honey.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+}
+
+.secret-content-right {
+    flex: 1;
+    min-width: 300px;
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: transparent;
+    color: white;
+}
+
+.secret-content-right h2 {
+    font-family: "Druk Wide", sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    color: var(--brand-crimson);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+.secret-item {
+    margin-bottom: 40px;
+}
+
+.secret-item h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 12px;
+}
+
+.secret-item p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ========================================= */
+/* 📞 CONTACT PAGE - COMPACT LAYOUT */
+/* ========================================= */
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+.contact-image-hero {
+    width: 100%;
+    height: 500px;
+    background-image: url('images/honey.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 0; /* No rounded corners */
+}
+
+.contact-form-wrapper {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.contact-form-wrapper .form-group {
+    margin-bottom: 24px;
+}
+
+.contact-form-wrapper input,
+.contact-form-wrapper textarea {
+    padding: 14px 16px;
+    font-size: 0.95rem;
+    border-radius: 12px;
+}
+
+.contact-discovery-card {
+    background: rgba(165, 64, 64, 0.15);
+    border: 1px solid rgba(165, 64, 64, 0.3);
+    border-radius: 12px;
+    padding: 28px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.contact-discovery-card h3 {
+    color: var(--brand-crimson);
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.contact-discovery-card p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* ========================================= */
+/* 🔗 HEADER & FOOTER - BIGGER LOGO */
+/* ========================================= */
+
+.logo img {
+    height: 60px !important;
+    width: auto;
+}
+
+.footer-logo {
+    height: 50px !important;
+    width: auto;
+}
+
+/* HIDE MEDIA FROM NAV */
+nav li:has(a[href="media.html"]),
+.footer-nav a[href="media.html"],
+.dropdown[href*="media"] {
+    display: none !important;
+}
+
+/* ========================================= */
+/* 📱 MOBILE FIXES */
+/* ========================================= */
+
+/* Smaller slideshow arrows on mobile */
+@media screen and (max-width: 768px) {
+    .slideshow-arrow {
+        width: 38px !important;
+        height: 38px !important;
+        font-size: 16px !important;
+    }
+    
+    .slideshow-arrow.prev {
+        left: 12px !important;
+    }
+    
+    .slideshow-arrow.next {
+        right: 12px !important;
+    }
+    
+    /* Secret sauce stack vertically */
+    .secret-sauce-wrapper {
+        flex-direction: column;
+    }
+    
+    .secret-image-left {
+        min-height: 300px;
+        order: 2; /* Image below text on mobile */
+    }
+    
+    .secret-content-right {
+        padding: 40px 20px;
+        order: 1;
+    }
+    
+    /* Contact page stack */
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .contact-form-wrapper {
+        padding: 24px;
+    }
+}
+
+/* ========================================= */
+/* 🖼️ PHASE IMAGES - NO BORDER RADIUS */
+/* ========================================= */
+
+.phase-image {
+    border-radius: 0 !important; /* Crisp corners */
+    width: 100%;
+    height: 250px;
+    background-color: #2a2a2a;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.phase-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0 !important;
+}
+
+
