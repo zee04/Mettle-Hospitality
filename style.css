@@ -3307,38 +3307,53 @@ h2.section-title,
   margin-bottom: 24px !important;
 }
 
-/* Prevent horizontal scrollbar when using 100vw layers */
-html, body { overflow-x: hidden; }
 
-/* Make sure ancestors don't clip the pseudo background */
-.projects-timeline-section,
-.projects-timeline-section .container {
-  overflow: visible;
-}
+/* ========================================= */
+/* 🛠️ FULL SECTION BACKGROUND (LIKE CREW)    */
+/* ========================================= */
 
-/* Keep carousel content boxed, but paint a full-bleed background behind it */
-.logo-carousel-container{
+/* 1. Target the Main Wrapper */
+.projects-timeline-section {
   position: relative;
-  z-index: 0;              /* create stacking context */
-  isolation: isolate;      /* keeps z-index sane */
-  height: 250px;           /* keep your existing height (change if you want) */
+  width: 100%;
+  
+  /* The Image */
+  background-image: url('images/butterbg.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Add vertical padding so content floats nicely */
+  padding: 100px 0;
+  
+  /* Text Color Fix (Since background might be bright/dark) */
+  color: #fff; /* or whatever contrasts with your GIF */
 }
 
-/* Full-width “background strip” */
-.logo-carousel-container::before{
+/* 2. Optional: Add a Dark Overlay (Readability) */
+/* If the GIF is too busy, this darkens it slightly */
+.projects-timeline-section::before {
   content: "";
   position: absolute;
-  inset: 0;
-  width: 100vw;
-  left: 50%;
-  transform: translateX(-50%);
-  background: url("images/butterbg.gif") center/cover no-repeat;
-  z-index: -1;
-  pointer-events: none;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* Adjust 0.6 to control darkness */
+  z-index: 0; /* Behind content */
 }
 
-/* Ensure cards/arrows stay above */
-.logo-carousel,
-.carousel-arrow { position: relative; z-index: 2; }
+/* 3. Ensure Content Sits on Top */
+.projects-timeline-section .container {
+  position: relative;
+  z-index: 2; /* Sits above the overlay */
+}
+
+/* 4. Remove Individual Backgrounds (Cleanup) */
+/* Just in case individual parts had their own colors */
+.logo-carousel-container,
+.timeline-wrapper {
+  background: transparent !important;
+  margin-top: 60px; /* Space out the inner blocks */
+  margin-bottom: 60px;
+}
+
 
 
