@@ -3825,3 +3825,48 @@ header, #navbar, .header-container {
   .secret-content-right, .contact-form-section { padding: 40px 20px !important; order: 1 !important; }
 }
 
+/* ========================================= */
+/* 🔧 DIAGRAM FIT FIX: SHRINK LOOP & TEXT */
+/* ========================================= */
+
+/* 1. Shrink the main ring */
+.loop-ring {
+    width: 450px !important;  /* Reduced from 600px+ */
+    height: 450px !important; /* Reduced from 600px+ */
+    margin: 0 auto;
+}
+
+/* 2. Pull text closer to the ring */
+.service-item .text-block {
+    max-width: 250px !important; /* Limit width so it doesn't spill */
+}
+
+/* Right side items: pull left */
+.item-right .text-block {
+    margin-left: 20px !important; 
+    text-align: left;
+}
+
+/* Left side items: pull right */
+.item-left .text-block {
+    margin-right: 20px !important;
+    text-align: right;
+}
+
+/* 3. Adjust Connector Lines length */
+.connector-line {
+    width: 40px !important; /* Shorter lines */
+}
+
+/* 4. Responsive Shrink (Tablets/Laptops) */
+@media (max-width: 1200px) {
+    .loop-ring {
+        width: 380px !important;
+        height: 380px !important;
+    }
+    
+    .content-container {
+        gap: 0 !important; /* Remove huge gap between columns */
+        justify-content: center;
+    }
+}
