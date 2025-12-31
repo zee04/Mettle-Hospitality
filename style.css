@@ -1904,19 +1904,30 @@ footer {
 .node-r-2 { top: 50%; right: -5%; transform: translateY(-50%); }
 .node-r-3 { bottom: 8%; right: 8%; transform: translate(50%, 50%); }
 
-/* SERVICE ITEMS */
+/* TEXT BLOCKS - NO CONNECTORS */
 .service-item {
   display: flex;
-  align-items: center;
-  gap: 20px;
-  position: relative;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  margin-bottom: 0;
 }
 
-.item-left { flex-direction: row-reverse; justify-content: flex-end; }
-.item-right { flex-direction: row; justify-content: flex-start; }
+.item-left {
+ align-items: flex-end;
+  text-align: right;
+  gap: 70px;  /* INCREASED GAP */
+  padding-right: 50px;  /* SPACE FROM RING */
+}
+
+.item-right {
+ align-items: flex-start;
+  text-align: left;
+  gap: 70px;  /* INCREASED GAP */
+  padding-left: 50px;  /* SPACE FROM RING */
+}
 
 .text-block {
-  flex: 0 1 auto;
   max-width: 280px;
 }
 
