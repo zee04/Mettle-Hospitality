@@ -3307,5 +3307,38 @@ h2.section-title,
   margin-bottom: 24px !important;
 }
 
+/* Prevent horizontal scrollbar when using 100vw layers */
+html, body { overflow-x: hidden; }
+
+/* Make sure ancestors don't clip the pseudo background */
+.projects-timeline-section,
+.projects-timeline-section .container {
+  overflow: visible;
+}
+
+/* Keep carousel content boxed, but paint a full-bleed background behind it */
+.logo-carousel-container{
+  position: relative;
+  z-index: 0;              /* create stacking context */
+  isolation: isolate;      /* keeps z-index sane */
+  height: 250px;           /* keep your existing height (change if you want) */
+}
+
+/* Full-width “background strip” */
+.logo-carousel-container::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  background: url("images/butterbg.gif") center/cover no-repeat;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Ensure cards/arrows stay above */
+.logo-carousel,
+.carousel-arrow { position: relative; z-index: 2; }
 
 
