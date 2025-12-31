@@ -1824,12 +1824,7 @@ footer {
   position: relative;
 }
 
-.left-col {
-  align-items: flex-end;
-  text-align: right;
-  gap: 70px;  /* INCREASED GAP */
-  padding-right: 50px;  /* SPACE FROM RING */
-}
+
 
 .left-col {
   align-items: flex-end;
