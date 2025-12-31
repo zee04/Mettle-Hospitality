@@ -1860,20 +1860,27 @@ footer {
 }
 
 
-* NODES ON RING - CORRECT POSITIONING */
 .node {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: var(--brand-crimson);
+  background: var(--brand-crimson);
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 25px rgba(165, 64, 64, 0.8),
-              0 0 0 3px rgba(31, 33, 33, 1);
-  z-index: 10;  /* HIGHER Z-INDEX */
+  box-shadow: 0 0 25px rgba(165,64,64,0.8);
+  z-index: 10;
 }
+
+.node svg { stroke: white; width: 24px; height: 24px; stroke-width: 2; }
+
+/* Clock positions - perfect ring fit */
+.node-l-1 { top: 12%; left: 8%; transform: translate(-50%, -50%); }      /* 10:30 */
+.node-l-2 { bottom: 12%; left: 8%; transform: translate(-50%, 50%); }    /* 4:30 */
+.node-r-1 { top: 8%; right: 8%; transform: translate(50%, -50%); }       /* 1:30 */
+.node-r-2 { top: 48%; right: 4%; transform: translate(50%, -50%); }      /* 3:00 */
+.node-r-3 { bottom: 8%; right: 8%; transform: translate(50%, 50%); }     /* 6:30 */
 
 .node::before {
   content: '';
@@ -1886,24 +1893,7 @@ footer {
   z-index: 1;
 }
 
-.node svg {
-  position: relative;
-  z-index: 2;
-  width: 24px;
-  height: 24px;
-  stroke: white;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  fill: none;
-}
 
-/* PERFECT NODE POSITIONS ON RING */
-.node-l-1 { top: 15%; left: 10%; transform: translate(-50%, -50%); }
-.node-l-2 { bottom: 15%; left: 10%; transform: translate(-50%, 50%); }
-.node-r-1 { top: 10%; right: 10%; transform: translate(50%, -50%); }
-.node-r-2 { top: 52%; right: 2%; transform: translateY(-50%); }
-.node-r-3 { bottom: 10%; right: 10%; transform: translate(50%, 50%); }
 
 
 /* TEXT BLOCKS - NO CONNECTORS */
