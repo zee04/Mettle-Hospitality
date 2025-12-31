@@ -2851,7 +2851,7 @@ body {
 }
 
 .phase-image::before {
-  content: 'Image';
+ 
   position: absolute;
   top: 50%;
   left: 50%;
