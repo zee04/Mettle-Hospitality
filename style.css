@@ -2467,7 +2467,6 @@ body, html {
   transform: translateX(-50%); /* Center perfectly to screen */
   
   /* The Image */
-  background-image: url('images/butterbg.gif');
   background-size: cover;
   background-position: center;
   
