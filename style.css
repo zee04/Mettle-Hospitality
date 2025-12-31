@@ -2438,36 +2438,44 @@ footer {
   border-color: rgba(218, 165, 32, 0.3);
 }
 
-/* ========================================= */
-/* 🛠️ CAROUSEL - MATCHING "CREW" STYLE       */
-/* ========================================= */
-/* 1. Main Section Wrapper */
+
+/* 1. PREVENT SCROLL BARS (Crucial when using 100vw) */
+body, html {
+  overflow-x: hidden !important;
+}
+
+/* 2. THE CAROUSEL STRIP (The "Object" inside the Box) */
 .logo-carousel-container {
-  width: 100% !important; /* Fits inside the 1200px container */
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  left: auto !important;
-  right: auto !important;
+  position: relative; /* Anchor point for the ghost layer */
+  z-index: 1;         /* Keep logos on top */
+  padding: 60px 0;    /* Give it some height */
+  /* No width changes here - let it sit in the container */
+}
+
+/* 3. THE GHOST BACKGROUND (The "Breakout" Layer) */
+.logo-carousel-container::before {
+  content: "";
+  position: absolute;
   
-  position: relative;
-  display: block; /* Standard block behavior */
-  padding: 40px 0;
-  margin-bottom: 60px; /* Safe gap below */
-
-    z-index: 1; /* Establishes a stacking order */
-    overflow: hidden; /* optional: crops the image if it spills */
+  /* Vertical Alignment */
+  top: 0;
+  bottom: 0;
+  
+  /* The "Magic" Expansion */
+  width: 100vw;        /* Ignore container width, go full screen */
+  left: 50%;           /* Move to center of container */
+  transform: translateX(-50%); /* Center perfectly to screen */
+  
+  /* The Image */
+  background-image: url('images/butterbg.gif');
+  background-size: cover;
+  background-position: center;
+  
+  /* Send it to the back */
+  z-index: -1; 
+  pointer-events: none;
 }
 
-/* 2. Force the image to act like a background */
-.logo-carousel-container .full-width-bg {
-    position: absolute !important; /* Takes it out of the Flex row */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures it covers the area without stretching */
-    z-index: -1; /* Puts it BEHIND the logos */
-}
 
 .logo-carousel {
   position: relative;
