@@ -3307,207 +3307,114 @@ h2.section-title,
 }
 
 
-/* ================================================================= */
-/* 🚀 NEW CLEAN LAYOUT: PROJECTS & TIMELINE (SEPARATED SECTIONS)     */
-/* ================================================================= */
+/* ======================================================= */
+/* 🛠️ FINAL LAYOUT FIXES: FULL WIDTH & HEADER SWAP         */
+/* ======================================================= */
 
-/* ------------------------------------------------ */
-/* SECTION 1: PROJECTS (BUTTER BG)                  */
-/* ------------------------------------------------ */
+/* 1. FORCE FULL WIDTH (Remove Letterboxing) */
+body, html {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+}
+
+.projects-section, 
+.timeline-section {
+    width: 100vw !important;
+    position: relative !important;
+    left: 50% !important;
+    right: 50% !important;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+    padding: 100px 0;
+    
+    /* BACKGROUND SETTINGS */
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* Specific Backgrounds */
 .projects-section {
-    position: relative;
-    width: 100%;
-    padding: 100px 0;
-    
-    /* BACKGROUND IMAGE: BUTTER GIF */
     background-image: url('images/butterbg.gif');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    /* Text Color */
-    color: white; 
 }
 
-/* Dark Overlay for Butter Section (Readability) */
-.projects-section::before {
-    content: "";
-    position: absolute;
-    inset: 0; 
-    background: rgba(0, 0, 0, 0.6); 
-    z-index: 0;
-}
-
-/* Ensure content sits above overlay */
-.projects-section .container {
-    position: relative;
-    z-index: 2;
-}
-
-/* Header Styling */
-.section-header {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.section-title {
-    color: white !important;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 700;
-}
-
-.label-grey {
-    color: #cccccc !important;
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 12px;
-}
-
-/* ------------------------------------------------ */
-/* CAROUSEL CONTAINER (Inside Section 1)            */
-/* ------------------------------------------------ */
-.logo-carousel-container {
-    position: relative;
-    width: 100%;
-    min-height: 300px; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: transparent !important; /* No grey box */
-    margin: 0;
-}
-
-
-/* ------------------------------------------------ */
-/* SECTION 2: TIMELINE (BLACK/SEPARATE BG)          */
-/* ------------------------------------------------ */
 .timeline-section {
-    position: relative;
-    width: 100%;
-    padding: 100px 0;
-    
-    /* BACKGROUND: Deep Black */
-    background-color: #050505; 
-    
-    color: white;
-}/* ------------------------------------------------ */
-/* SECTION 2: TIMELINE (IMAGE BACKGROUND)           */
-/* ------------------------------------------------ */
-.timeline-section {
-    position: relative;
-    width: 100%;
-    padding: 100px 0;
-    
-    /* BACKGROUND IMAGE: Concept PNG */
-    background-image: url('images/concept.PNG'); /* Make sure filename matches exactly */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    color: white;
+    background-image: url('images/concept.PNG');
 }
 
-/* Dark Overlay for Timeline (Readability) */
-/* Essential because concept.PNG might be bright or busy */
+/* Dark Overlay for Both */
+.projects-section::before,
 .timeline-section::before {
     content: "";
     position: absolute;
-    inset: 0; 
-    background: rgba(0, 0, 0, 0.7); /* darker than butter section (0.7) */
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6); /* Adjust darkness */
     z-index: 0;
 }
 
 /* Ensure content sits above overlay */
+.projects-section .container,
 .timeline-section .container {
     position: relative;
     z-index: 2;
-}
-
-
-/* Timeline Wrapper Cleaning */
-.timeline-wrapper {
-    position: relative;
-    width: 100%;
-    background: transparent !important;
-    margin: 0;
-    padding: 0;
-}
-
-.timeline-header {
-    text-align: center;
-    margin-bottom: 80px;
-}
-
-.timeline-title {
-    color: white !important;
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    font-weight: 700;
-}
-
-.timeline-subtitle {
-    color: #cccccc !important;
-    font-size: 1.2rem;
-    max-width: 600px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Timeline Grid Layout */
-.timeline-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    flex-wrap: wrap; 
-    max-width: 1400px;
-    margin: 0 auto;
-}
 
-.timeline-phase {
-    flex: 1;
-    min-width: 200px; 
+/* ======================================================= */
+/* 🔄 HEADER SWAP: "OUR PROJECTS" IS NOW BIG               */
+/* ======================================================= */
+
+/* Container Alignment */
+.section-header {
+    text-align: center !important;
+    margin-bottom: 60px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Allows reordering if needed */
     align-items: center;
-    text-align: center;
 }
 
-/* Phase Styling (Re-adding the styles we deleted but cleaner) */
-.phase-number {
-    width: 80px;
-    height: 80px;
-    background: var(--brand-crimson);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 20px;
-}
-
-.phase-label {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: white;
+/* 1. THE BIG GRADIENT TITLE (Formerly the small label) */
+.section-header .label-grey {
+    /* Font & Size */
+    font-family: "Druk Wide", sans-serif !important;
+    font-size: clamp(2.5rem, 6vw, 4rem) !important; /* BIG */
+    font-weight: 800 !important;
     text-transform: uppercase;
-    margin-bottom: 12px;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    
+    /* Gradient Color */
+    background: linear-gradient(135deg, #FFF8E7 0%, #D4AF37 55%, #FFF8E7 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    
+    margin-bottom: 20px !important;
+    order: 1; /* Ensure it is first */
+    display: block;
 }
 
-.phase-desc {
-    color: #999;
-    font-size: 0.95rem;
-    max-width: 220px;
-}
-
-/* Mobile Fix */
-@media (max-width: 768px) {
-    .timeline-container {
-        flex-direction: column;
-        gap: 60px;
-    }
+/* 2. THE SMALL WHITE SUBTITLE (Formerly the big title) */
+.section-header .section-title {
+    /* Font & Size */
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; /* Simple font */
+    font-size: 1.2rem !important; /* Small */
+    font-weight: 400 !important;
+    color: rgba(255, 255, 255, 0.8) !important; /* White/Grey */
+    text-transform: none !important;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    
+    /* Remove Gradient */
+    background: none !important;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.8) !important;
+    
+    max-width: 700px;
+    margin: 0 auto !important;
+    order: 2; /* Ensure it is second */
 }
 
 
