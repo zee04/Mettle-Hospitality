@@ -1829,11 +1829,15 @@ footer {
 .left-col {
   align-items: flex-end;
   text-align: right;
+  gap: 70px;  /* INCREASED GAP */
+  padding-right: 50px;  /* SPACE FROM RING */
 }
 
 .right-col {
   align-items: flex-start;
   text-align: left;
+  gap: 70px;  /* INCREASED GAP */
+  padding-left: 50px;  /* SPACE FROM RING */
 }
 
 /* LOOP RING - CRIMSON GLOW */
