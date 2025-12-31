@@ -3320,34 +3320,31 @@ h2.section-title,
 
 
 /* ========================================= */
-/* 🔧 FINAL LAYOUT FIX: NO BARS + TIGHT HEADER */
+/* 🔧 FINAL MASTER FIX: NO LIMITS */
 /* ========================================= */
 
-/* 1. FORCE BACKGROUND TO COVER EVERYTHING (No Grey Bars) */
-html, body {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden !important;
-}
-
+/* 1. RESET GLOBAL LIMITS (The Hidden Culprit) */
 .projects-section,
 .timeline-section {
     position: relative;
-    width: 100vw;
-    margin-left: 50%;
-    transform: translateX(-50%);
-    padding: 100px 0; /* Vertical breathing room */
+    width: 100vw !important;
+    max-width: none !important; /* CRITICAL: Unlocks the 1280px limit */
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+    padding: 100px 0 !important;
     overflow: hidden;
     
-    /* CRITICAL: Force image to cover entire area */
+    /* Backgrounds */
     background-size: cover !important; 
     background-position: center center !important;
     background-repeat: no-repeat !important;
-    background-attachment: scroll !important; /* Prevents jittery fixed bg issues */
+    background-attachment: scroll !important;
+    border: none !important; /* Removes default section border */
 }
 
-/* Ensure specific images are applied */
+/* Apply Images */
 .projects-section {
     background-image: url('images/butterbg.gif') !important;
 }
@@ -3356,43 +3353,42 @@ html, body {
     background-image: url('images/concept.PNG') !important;
 }
 
-/* Dark Overlay for Text Readability */
+/* Dark Overlay */
 .projects-section::before,
 .timeline-section::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.65); /* Adjust opacity if needed */
+    background: rgba(0, 0, 0, 0.65);
     z-index: 0;
 }
 
-/* 2. TIGHTER HEADER ALIGNMENT (Sit right above logos) */
+/* 2. HEADER ALIGNMENT (Centered & Tight) */
 .section-header {
     position: relative;
     z-index: 5;
     width: 100% !important;
     text-align: center !important;
-    margin-bottom: 30px !important; /* REDUCED from 60px/80px to pull it closer */
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 20px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 1000px !important;
 }
 
-/* 3. CAROUSEL CONTAINER (Centered & Sized) */
+/* 3. CAROUSEL CONTAINER */
 .logo-carousel-container {
     position: relative;
     z-index: 5;
     width: 100% !important;
-    max-width: 1200px; /* Constrain width so it doesn't stretch too wide */
+    max-width: 1200px !important;
     margin: 0 auto !important;
-    min-height: 400px !important; /* Keep vertical height for cards */
+    min-height: 450px !important;
     display: flex !important;
-    align-items: center !important; /* Vertically center cards */
-    justify-content: center !important; /* Horizontally center cards */
+    align-items: center !important;
+    justify-content: center !important;
     padding: 0 !important;
 }
 
-/* Ensure the carousel track itself is centered */
 .logo-carousel {
     width: 100%;
     height: 100%;
@@ -3401,29 +3397,29 @@ html, body {
     align-items: center;
 }
 
-/* 4. CONTAINER RESET */
+/* 4. CONTENT CONTAINER (Restore center column) */
 .projects-section .container,
 .timeline-section .container {
     position: relative;
     z-index: 2;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
     padding: 0 20px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Forces everything inside container to center */
+    align-items: center;
 }
 
-/* 5. MOBILE ADJUSTMENTS */
+/* 5. MOBILE FIXES */
 @media screen and (max-width: 768px) {
     .projects-section,
     .timeline-section {
         padding: 60px 0 !important;
-    }
-    
-    .section-header {
-        margin-bottom: 20px !important; /* Even tighter on mobile */
+        margin-left: 0 !important; /* Reset on mobile to prevent scroll bugs */
+        margin-right: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
     }
     
     .logo-carousel-container {
