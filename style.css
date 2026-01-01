@@ -4346,31 +4346,29 @@ select:focus {
 }
 
 /* ========================================= */
-/* 🛑 OVERRIDE: CREW TITLE CLEANUP */
+/* CREW TITLE - EXACT MATCH TO "PURPOSE" */
 /* ========================================= */
-
-h2.crew-title {
-  /* 1. Reset any gradients or clips */
-  background: transparent !important;
-  background-image: none !important;
-  -webkit-background-clip: border-box !important;
-  background-clip: border-box !important;
-  -webkit-text-fill-color: initial !important; /* Resets the 'transparent' fill */
-  
-  /* 2. Force Clean Crimson Color */
-  color: #A54040 !important;
-  
-  /* 3. Standard Properties */
+.crew-title {
   font-family: 'Druk Wide', sans-serif !important;
-  font-size: 2.5rem !important;
+  font-size: 2.5rem !important; /* Nice and Big */
   font-weight: 800 !important;
   text-transform: uppercase !important;
   letter-spacing: 2px !important;
   margin-bottom: 50px !important;
   
-  /* 4. External Shadow Only */
-  text-shadow: 4px 4px 0px #000000 !important; /* Hard black drop shadow */
-  opacity: 1 !important;
-  visibility: visible !important;
+  /* The Gradient Fill (White -> Pink -> Red) */
+  background: linear-gradient(90deg, #FFFFFF 0%, #E88B8B 50%, #A54040 100%);
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  
+  /* Make text transparent so gradient shows through */
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  
+  /* Clean, Tight Drop Shadow (Not Text Shadow) */
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.8));
+  
+  /* Remove old dirty shadows */
+  text-shadow: none !important;
 }
 
