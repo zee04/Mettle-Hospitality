@@ -4165,30 +4165,48 @@ select:focus {
   }
 }
 
-/* Crimson Social Links (Footer + Contact Card) */
-.footer-social-links a, 
-.social-links a {
-  color: #A54040 !important; /* Crimson Text */
+/* ========================================= */
+/* SOCIAL LINKS STYLING */
+/* ========================================= */
+
+/* 1. FOOTER LINKS (Simple Text) */
+.footer-social-links {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.footer-social-links a {
+  color: #A54040 !important; /* Crimson */
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
-  margin-left: 20px; /* Spacing */
   transition: all 0.3s ease;
+  border: none; /* No border for footer links */
+  padding: 0;   /* No padding for footer links */
 }
 
-.footer-social-links a:hover,
-.social-links a:hover {
+.footer-social-links a:hover {
   color: white !important;
   text-shadow: 0 0 8px #A54040;
+  transform: translateY(-2px);
 }
 
-/* Specific styling for Contact Card buttons */
+/* 2. CONTACT CARD BUTTONS (Pill Shape) */
 .social-links a {
+  color: #A54040 !important;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  
+  /* Button Styling */
   border: 1px solid rgba(165, 64, 64, 0.4);
-  padding: 10px 20px;
-  border-radius: 20px;
-  margin-right: 10px; margin-left: 0; /* Adjust spacing for card */
+  padding: 10px 24px;
+  border-radius: 50px;
+  margin-right: 12px;
   display: inline-block;
+  transition: all 0.3s ease;
 }
 
 .social-links a:hover {
@@ -4196,7 +4214,9 @@ select:focus {
   border-color: #A54040;
   color: white !important;
   transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(165, 64, 64, 0.3);
 }
+
 
 
 
