@@ -4145,6 +4145,32 @@ select:focus {
   }
 }
 
+/* Mobile-only backgrounds - Secret Sauce & Contact */
+@media (max-width: 768px) {
+  /* Secret Sauce - Mobile BG */
+  .secret-sauce-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('images/burger.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+  
+  /* Contact - Mobile BG */
+  .contact-wrapper::before,
+  .contact-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('images/carrotblack.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+}
+
 
 
 
