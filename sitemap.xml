@@ -1,129 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-
-  <!-- 1. Homepage (Highest Priority) -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://zee04.github.io/ViditArenconsultancy/</loc>
-    <lastmod>2025-10-04</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.mettle-hospitality.com/index.html</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://zee04.github.io/ViditArenconsultancy/images/og-home.jpg</image:loc>
-      <image:title>Chef Vidit Aren | [Aren Culinary]</image:title>
-      <image:caption>The official consultancy of renowned Chef Vidit Aren.</image:caption>
-    </image:image>
   </url>
-
-  <!-- 2. About Page -->
   <url>
-    <loc>https://zee04.github.io/ViditArenconsultancy/about.html</loc>
-    <lastmod>2025-10-04</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
-    <image:image>
-      <image:loc>https://zee04.github.io/ViditArenconsultancy/images/og-about.jpg</image:loc>
-      <image:title>About Chef Vidit Aren</image:title>
-    </image:image>
-  </url>
-
-  <!-- 3. Services Page -->
-  <url>
-    <loc>https://zee04.github.io/ViditArenconsultancy/service.html</loc>
-    <lastmod>2025-10-04</lastmod>
-    <changefreq>yearly</changefreq>
+    <loc>https://www.mettle-hospitality.com/about.html</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://zee04.github.io/ViditArenconsultancy/images/og-services.jpg</image:loc>
-      <image:title>Culinary &amp; Hospitality Consulting Services</image:title>
-    </image:image>
   </url>
-
-  <!-- 4. Work Page -->
-  <url>
-    <loc>https://zee04.github.io/ViditArenconsultancy/work.html</loc>
-    <lastmod>2025-10-04</lastmod>
-    <changefreq>quarterly</changefreq>
+        
+    <url>
+    <loc>https://www.mettle-hospitality.com/services.html</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://zee04.github.io/ViditArenconsultancy/images/og-work.jpg</image:loc>
-      <image:title>Project Portfolio: Vantara, Basque, Breve</image:title>
-    </image:image>
-  </url>
-
-  <!-- 5. Media Page -->
-  <url>
-    <loc>https://zee04.github.io/ViditArenconsultancy/media.html</loc>
-    <lastmod>2025-10-04</lastmod>
-    <changefreq>quarterly</changefreq>
+  </url>   
+        
+    <url>
+    <loc>https://www.mettle-hospitality.com/work.html</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://zee04.github.io/ViditArenconsultancy/images/og-media.jpg</image:loc>
-      <image:title>Media Features: Star vs Food, CN Traveller</image:title>
-    </image:image>
   </url>
-
-  <!-- 6. Contact Page -->
-  <url>
-    <loc>https://zee04.github.io/ViditArenconsultancy/contact.html</loc>
-    <lastmod>2025-10-04</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://zee04.github.io/ViditArenconsultancy/images/og-contact.jpg</image:loc>
-      <image:title>Contact [Aren Culinary]</image:title>
-    </image:image>
-  </url>
-
-  <!-- Individual Service Pages (if created separately) -->
-  <url>
-    <loc>https://zee04.github.io/ViditArenconsultancy/services/culinary-consultancy</loc>
-    <lastmod>2025-09-30</lastmod>
+        
+     <url>
+    <loc>https://www.mettle-hospitality.com/contact.html</loc>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.9</priority>
   </url>
-
-  <url>
-    <loc>https://zee04.github.io/ViditArenconsultancy/services/hospitality-consultancy</loc>
-    <lastmod>2025-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://zee04.github.io/ViditArenconsultancy/services/brand-development</loc>
-    <lastmod>2025-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://zee04.github.io/ViditArenconsultancy/services/menu-development</loc>
-    <lastmod>2025-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Project Detail Pages (if created) -->
-  <url>
-    <loc>https://zee04.github.io/ViditArenconsultancy/projects/little-food-co</loc>
-    <lastmod>2025-09-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://zee04.github.io/ViditArenconsultancy/projects/meta-whatsapp</loc>
-    <lastmod>2025-09-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
-    <loc>https://zee04.github.io/ViditArenconsultancy/projects/vantara-machaan</loc>
-    <lastmod>2025-09-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
+    
+        <!-- ... add all 5 pages ... -->
 </urlset>
