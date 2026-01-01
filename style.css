@@ -4345,4 +4345,32 @@ select:focus {
   }
 }
 
+/* ========================================= */
+/* 🛑 OVERRIDE: CREW TITLE CLEANUP */
+/* ========================================= */
+
+h2.crew-title {
+  /* 1. Reset any gradients or clips */
+  background: transparent !important;
+  background-image: none !important;
+  -webkit-background-clip: border-box !important;
+  background-clip: border-box !important;
+  -webkit-text-fill-color: initial !important; /* Resets the 'transparent' fill */
+  
+  /* 2. Force Clean Crimson Color */
+  color: #A54040 !important;
+  
+  /* 3. Standard Properties */
+  font-family: 'Druk Wide', sans-serif !important;
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  margin-bottom: 50px !important;
+  
+  /* 4. External Shadow Only */
+  text-shadow: 4px 4px 0px #000000 !important; /* Hard black drop shadow */
+  opacity: 1 !important;
+  visibility: visible !important;
+}
 
