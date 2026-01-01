@@ -4146,37 +4146,5 @@ select:focus {
 }
 
 
-/* ===== FIX 1: RESTORE SLIDESHOW + CAROUSEL ===== */
-.slideshow-hero, .slideshow-container, .logo-carousel-container, .logo-carousel {
-    display: flex !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    height: auto !important;
-}
-.carousel-arrow {
-    display: flex !important;
-    opacity: 1 !important;
-}
-
-/* ===== FIX 2: VIDEO BACKGROUND FOR PROJECTS (Replace butterbg.gif) ===== */
-.projects-section {
-    position: relative !important;
-    background: none !important;
-}
-.project-bg-video {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    z-index: -2 !important;
-}
-.video-overlay {
-    position
-
-
-/* TEMP TEST - DELETE LATER */
-.slides
 
 
