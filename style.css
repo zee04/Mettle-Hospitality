@@ -1550,17 +1550,19 @@ footer {
 }
 
 /* Darker Overlay for Text Readability */
+/* Darker Overlay for Text Readability */
 .crew-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: 1;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.6) 0%,   /* Dark top */
-    rgba(0, 0, 0, 0.5) 40%,  /* Darker middle for text contrast */
-    rgba(0, 0, 0, 0.9) 100%  /* Very dark bottom */
+    rgba(0, 0, 0, 0.7) 0%,   /* Darker Top (was 0.6) */
+    rgba(0, 0, 0, 0.6) 40%,  /* Darker Middle (was 0.5) */
+    rgba(0, 0, 0, 0.95) 100% /* Nearly black bottom */
   ) !important;
 }
+
 
 .crew-content {
   position: relative;
