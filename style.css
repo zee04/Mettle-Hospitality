@@ -1591,18 +1591,18 @@ footer {
   text-align: center !important;
 }
 
-/* REVERTED Crew Headline (Clean White) */
-/* Crew Headline - Matches PURPOSE Crimson Style */
+/* Crew Headline - Plain Crimson */
 .crew-title {
   font-family: 'Druk Wide', sans-serif !important;
   font-size: 2.2rem !important;
-  color: var(--brand-crimson) !important; /* Crimson Red */
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.9); /* Strong Shadow */
+  color: var(--brand-crimson) !important;
   font-weight: 800 !important;
   margin-bottom: 40px !important;
   text-transform: uppercase;
   letter-spacing: 2px;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.9); /* Strong shadow for readability */
 }
+
 
 
 
