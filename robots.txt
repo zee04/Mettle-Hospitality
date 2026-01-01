@@ -1,6 +1,6 @@
 # robots.txt
 
-# Robots.txt for Aren Kitchen Consultancy
+# Robots.txt for Mettle Hospitality
 # This file tells search engines which pages to crawl and which to avoid
 
 User-agent: *
@@ -50,7 +50,7 @@ Allow: /*.webp$
 Allow: /*.svg$
 
 # Sitemap location
-Sitemap: https://arenkitchenconsultancy.com/sitemap.xml
+Sitemap: https://www.mettle-hospitality.com/sitemap.xml
 
 # Crawl delay (optional - only use if needed)
 # Crawl-delay: 1
