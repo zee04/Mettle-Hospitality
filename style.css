@@ -3327,24 +3327,18 @@ h2.section-title,
     border: none !important; /* Removes default section border */
 }
 
-/* Apply Images */
 .projects-section {
-    background-image: url('images/butterbg.gif') !important;
+    position: relative; overflow: hidden;
 }
+.projects-section video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.projects-section::before { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.65); z-index: -1; }
 
 .timeline-section {
-    background-image: url('images/cadbg.gif') !important;
+    position: relative; overflow: hidden;
 }
+.timeline-section video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.timeline-section::before { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.65); z-index: -1; }
 
-/* Dark Overlay */
-.projects-section::before,
-.timeline-section::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.65);
-    z-index: 0;
-}
 
 /* 2. HEADER ALIGNMENT (Centered & Tight) */
 .section-header {
