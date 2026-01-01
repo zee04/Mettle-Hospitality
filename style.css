@@ -4241,5 +4241,74 @@ select:focus {
   box-shadow: 0 5px 15px rgba(245, 245, 220, 0.3);
 }
 
+/* COMPACT GLASS CARD */
+.info-card-main.compact-card {
+  padding: 40px 50px !important; /* Reduced from 60px/80px */
+  max-width: 1000px; /* Reduced width */
+}
+
+.compact-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px; /* Space before slogan */
+}
+
+/* LEFT: Action Block */
+.action-left h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  color: white;
+}
+.action-left p {
+  margin-bottom: 20px;
+  opacity: 0.8;
+  color: white;
+}
+
+/* RIGHT: Connect Block */
+.connect-right {
+  text-align: right;
+}
+.connect-right h4 {
+  margin-bottom: 15px;
+  color: white;
+}
+.compact-socials {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+/* BOTTOM: Slogan */
+.slogan-container {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 30px;
+  text-align: center;
+}
+.slogan-text {
+  font-family: 'Druk Wide', sans-serif; /* Brand Font */
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.6); /* Subtle Grey */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .compact-row {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+  .connect-right {
+    text-align: center;
+  }
+  .compact-socials {
+    justify-content: center;
+  }
+}
 
 
