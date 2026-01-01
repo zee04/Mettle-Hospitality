@@ -1590,11 +1590,23 @@ footer {
 }
 
 /* Text Visibility Enhancements */
+/* Text Visibility Enhancements - UPDATED */
 .crew-title {
-  color: white !important;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.9);
+  font-family: 'Druk Wide', sans-serif !important; /* Ensure Brand Font */
+  font-size: 2.2rem !important;                    /* Make it BIG */
+  color: #ffffff !important;
+  text-shadow: 
+      0 4px 8px rgba(0,0,0,1),   /* Heavy black shadow */
+      0 0 20px rgba(0,0,0,0.8);  /* Outer glow to separate from background */
   font-weight: 800 !important;
-  margin-bottom: 40px !important;
+  margin-bottom: 60px !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  
+  /* Optional: Add a semi-transparent box behind just the title if shadow isn't enough */
+  /* background: rgba(0, 0, 0, 0.4); */
+  /* padding: 10px 20px; */
+  /* display: inline-block; */
 }
 
 .crew-pillar h3 {
