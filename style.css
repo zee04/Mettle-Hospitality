@@ -4372,3 +4372,14 @@ select:focus {
   text-shadow: none !important;
 }
 
+/* Mobile Fix for Crew Title */
+@media (max-width: 768px) {
+  .crew-title {
+    font-size: 1.4rem !important; /* Much smaller for mobile */
+    line-height: 1.4 !important;   /* Better spacing */
+    margin-bottom: 30px !important;
+    white-space: normal !important; /* Allow wrapping */
+    width: 100% !important;         /* Ensure full width */
+  }
+}
+
