@@ -4165,6 +4165,8 @@ select:focus {
   }
 }
 
+
+
 /* ========================================= */
 /* SOCIAL LINKS STYLING */
 /* ========================================= */
@@ -4241,17 +4243,27 @@ select:focus {
   box-shadow: 0 5px 15px rgba(245, 245, 220, 0.3);
 }
 
-/* COMPACT GLASS CARD */
+
+/* COMPACT GLASS CARD (Matches Top Form) */
 .info-card-main.compact-card {
-  padding: 40px 50px !important; /* Reduced from 60px/80px */
-  max-width: 1000px; /* Reduced width */
+  /* True Glass Effect (Transparent) */
+  background: rgba(255, 255, 255, 0.06) !important;
+  backdrop-filter: blur(30px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.6) !important;
+  
+  /* Size & Shape */
+  border-radius: 36px !important; /* Matches top form radius */
+  padding: 40px 50px !important;
+  max-width: 900px; /* Reduced width further */
+  margin: 0 auto;
 }
 
 .compact-row {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 30px; /* Space before slogan */
+  align-items: center; /* Vertically center items */
+  gap: 40px;
 }
 
 /* LEFT: Action Block */
@@ -4268,32 +4280,27 @@ select:focus {
 
 /* RIGHT: Connect Block */
 .connect-right {
-  text-align: right;
+  text-align: center; /* Force Title Center */
+  flex: 1; /* Take remaining space */
 }
+
 .connect-right h4 {
   margin-bottom: 15px;
   color: white;
+  text-align: center; /* Center "Connect" */
 }
+
 .compact-socials {
   display: flex;
   gap: 10px;
-  justify-content: flex-end;
+  justify-content: center; /* Center Buttons */
   flex-wrap: wrap;
 }
 
-/* BOTTOM: Slogan */
-.slogan-container {
-  border-top: 1px solid rgba(255,255,255,0.1);
-  padding-top: 30px;
-  text-align: center;
-}
-.slogan-text {
-  font-family: 'Druk Wide', sans-serif; /* Brand Font */
-  font-size: 1.2rem;
-  color: rgba(255,255,255,0.6); /* Subtle Grey */
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin: 0;
+/* Ensure Email button sits in same row (by preventing wrap if possible) */
+.social-links a {
+  white-space: nowrap; /* Prevent button text wrap */
+  margin: 0 !important; /* Remove old margins */
 }
 
 /* MOBILE RESPONSIVE */
@@ -4302,12 +4309,6 @@ select:focus {
     flex-direction: column;
     gap: 40px;
     text-align: center;
-  }
-  .connect-right {
-    text-align: center;
-  }
-  .compact-socials {
-    justify-content: center;
   }
 }
 
