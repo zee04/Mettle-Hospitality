@@ -23,26 +23,24 @@
       </button>
       <nav id="nav-menu">
         <ul>
-          <li><a href="index.html" class="nav-link active">Home</a></li>
-          
+          <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="about.html" class="nav-link">About us</a></li>
-          
           <li class="dropdown">
               <a href="service.html" class="nav-link dropdown-toggle">Services</a>
                 <ul class="dropdown-menu">
                    <li><a href="service.html#current">Current Services</a></li>
-                    <li><a href="service.html#past">Past Engagements</a></li>
-                         </ul>
-                             </li>
+                   <li><a href="service.html#past">Past Engagements</a></li>
+                </ul>
+          </li>
           <li class="dropdown">
-  <a href="work.html" class="nav-link dropdown-toggle">Projects</a>
-  <ul class="dropdown-menu">
-    <li><a href="work.html#current">Current Projects</a></li>
-    <li><a href="work.html#past">Past Projects</a></li>
-  </ul>
-</li>
+            <a href="work.html" class="nav-link dropdown-toggle">Projects</a>
+            <ul class="dropdown-menu">
+              <li><a href="work.html#current">Current Projects</a></li>
+              <li><a href="work.html#past">Past Projects</a></li>
+            </ul>
+          </li>
           <li><a href="media.html" class="nav-link">Media</a></li>
-          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -67,50 +65,55 @@
     
     <!-- RIGHT: Compact Form -->
     <div class="contact-form-section">
-      <form class="contact-form-compact">
+      
+      <!-- 1. Form Action Added Here -->
+      <form class="contact-form-compact" action="https://formspree.io/f/mrblwabz" method="POST">
+        
         <div class="form-row">
           <input type="text" name="name" placeholder="Name *" required>
           <input type="tel" name="phone" placeholder="Phone *" required>
         </div>
+        
         <input type="email" name="email" placeholder="Email *" required>
+        
         <div class="form-row">
           <select name="location">
-  <option>Select Location</option>
-  <option>Mumbai</option>
-  <option>Delhi</option>
-  <option>Bangalore</option>
-  <option>Hyderabad</option>
-  <option>Pune</option>
-  <option>Other</option>
-</select>
+            <option value="">Select Location</option>
+            <option>Mumbai</option>
+            <option>Delhi</option>
+            <option>Bangalore</option>
+            <option>Hyderabad</option>
+            <option>Pune</option>
+            <option>Other</option>
+          </select>
 
          <select name="interest">
-  <option>Select Interest</option>
-  <option>F&B Consulting</option>
-  <option>Menu Development</option>
-  <option>Kitchen Operations</option>
-  <option>Restaurant Launch</option>
-  <option>Private Dining</option>
-  <option>Other</option>
-</select>
-
+            <option value="">Select Interest</option>
+            <option>F&B Consulting</option>
+            <option>Menu Development</option>
+            <option>Kitchen Operations</option>
+            <option>Restaurant Launch</option>
+            <option>Private Dining</option>
+            <option>Other</option>
+          </select>
         </div>
+        
         <textarea name="message" rows="4" placeholder="Message *" required></textarea>
-        <button type="submit" href="https://formspree.io/f/mrblwabz"  class="btn btn-primary">Send Message</button>
+        
+        <!-- 2. Button Fixed (No href) -->
+        <button type="submit" class="btn btn-primary">Send Message</button>
 
       </form>
       
       <div class="discovery-card-compact">
         <h3> 30-Min Discovery Call</h3>
         <p>Let's discuss your project</p>
-        <a href="https://calendly.com/pranav-mettle-hospitality/30min" class="btn btn-primary">Book Now</a>
-
+        <a href="https://calendly.com/pranav-mettle-hospitality/30min" class="btn btn-primary" target="_blank">Book Now</a>
       </div>
     </div>
   </div>
 </section>
 
-   
   </main>
 
   <!-- FOOTER -->
@@ -142,13 +145,5 @@
   </footer>
 
   <script src="app.js"></script>
-  <script>
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      // Replace with your actual email handling service
-      alert('Thank you! We'll be in touch soon.');
-      this.reset();
-    });
-  </script>
 </body>
 </html>
