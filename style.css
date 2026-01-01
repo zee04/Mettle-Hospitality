@@ -4217,6 +4217,29 @@ select:focus {
   box-shadow: 0 5px 15px rgba(165, 64, 64, 0.3);
 }
 
+/* JOIN US BUTTON (Beige Hover) */
+.btn-join-crew {
+  display: inline-block;
+  padding: 16px 40px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.btn-join-crew:hover {
+  background: #F5F5DC; /* BEIGE */
+  color: #000;         /* Black text for contrast */
+  border-color: #F5F5DC;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(245, 245, 220, 0.3);
+}
 
 
 
