@@ -49,72 +49,96 @@
  <main>
    
   <section class="contact-hero-final">
-  <div class="container">
-    <!-- TOP CENTER TITLE -->
-    <div class="hero-title-center">
-      <h1>Get In Touch</h1>
-      <p>Connect with us for culinary consulting, hospitality projects, brand collaborations. Based in Mumbai, serving clients worldwide.</p>
-    </div>
-  </div>
-</section>
-
-<section class="contact-main-final">
-  <div class="contact-layout-split">
-    <!-- LEFT: Image -->
-    <div class="contact-image-section" style="background-image: url('images/carrotblack.jpg');"></div>
-    
-    <!-- RIGHT: Compact Form -->
-    <div class="contact-form-section">
-      
-      <!-- 1. Form Action Added Here -->
-      <form class="contact-form-compact" action="https://formspree.io/f/mrblwabz" method="POST">
-        
-        <div class="form-row">
-          <input type="text" name="name" placeholder="Name *" required>
-          <input type="tel" name="phone" placeholder="Phone *" required>
-        </div>
-        
-        <input type="email" name="email" placeholder="Email *" required>
-        
-        <div class="form-row">
-          <select name="location">
-            <option value="">Select Location</option>
-            <option>Mumbai</option>
-            <option>Delhi</option>
-            <option>Bangalore</option>
-            <option>Hyderabad</option>
-            <option>Pune</option>
-            <option>Other</option>
-          </select>
-
-         <select name="interest">
-            <option value="">Select Interest</option>
-            <option>F&B Consulting</option>
-            <option>Menu Development</option>
-            <option>Kitchen Operations</option>
-            <option>Restaurant Launch</option>
-            <option>Private Dining</option>
-            <option>Other</option>
-          </select>
-        </div>
-        
-        <textarea name="message" rows="4" placeholder="Message *" required></textarea>
-        
-        <!-- 2. Button Fixed (No href) -->
-        <button type="submit" class="btn btn-primary">Send Message</button>
-
-      </form>
-      
-      <div class="discovery-card-compact">
-        <h3> 30-Min Discovery Call</h3>
-        <p>Let's discuss your project</p>
-        <a href="https://calendly.com/pranav-mettle-hospitality/30min" class="btn btn-primary" target="_blank">Book Now</a>
+    <div class="container">
+      <!-- TOP CENTER TITLE -->
+      <div class="hero-title-center">
+        <h1>Get In Touch</h1>
+        <p>Connect with us for culinary consulting, hospitality projects, brand collaborations. Based in Mumbai, serving clients worldwide.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  </main>
+  <!-- SPLIT SECTION: IMAGE + FORM -->
+  <section class="contact-main-final">
+    <div class="contact-layout-split">
+      <!-- LEFT: Image -->
+      <div class="contact-image-section" style="background-image: url('images/carrotblack.jpg');"></div>
+      
+      <!-- RIGHT: Form Only -->
+      <div class="contact-form-section">
+        <form class="contact-form-compact" action="https://formspree.io/f/mrblwabz" method="POST">
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Name *" required>
+            <input type="tel" name="phone" placeholder="Phone *" required>
+          </div>
+          
+          <input type="email" name="email" placeholder="Email *" required>
+          
+          <div class="form-row">
+            <select name="location">
+              <option value="">Select Location</option>
+              <option>Mumbai</option>
+              <option>Delhi</option>
+              <option>Bangalore</option>
+              <option>Hyderabad</option>
+              <option>Pune</option>
+              <option>Other</option>
+            </select>
+
+           <select name="interest">
+              <option value="">Select Interest</option>
+              <option>F&B Consulting</option>
+              <option>Menu Development</option>
+              <option>Kitchen Operations</option>
+              <option>Restaurant Launch</option>
+              <option>Private Dining</option>
+              <option>Other</option>
+            </select>
+          </div>
+          
+          <textarea name="message" rows="4" placeholder="Message *" required></textarea>
+          
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTTOM CARD: GLASS STYLE (Discovery Call + Social Links) -->
+  <section class="info-card-section" style="padding: 0 20px 100px;">
+      <div class="info-card-main">
+          <div class="info-row">
+              <!-- Left: Contact Info -->
+              <div class="info-item">
+                  <h4>Contact Info</h4>
+                  <p>vidit@mettle-hospitality.com</p>
+                  <p>+91 81695 01155</p>
+                  <span style="margin-top: 10px; display:block; opacity: 0.7;">Based in Mumbai, serving globally.</span>
+              </div>
+              
+              <!-- Right: Social Links -->
+              <div class="info-item">
+                  <h4>Connect</h4>
+                  <div class="social-links">
+                      <a href="https://wa.me/91816950115" target="_blank">WhatsApp</a>
+                      <a href="https://www.instagram.com/arenvidit/?hl=en" target="_blank">Instagram</a>
+                      <a href="https://www.linkedin.com/in/vidit-aren-4534a6262/" target="_blank">LinkedIn</a>
+                  </div>
+              </div>
+          </div>
+          
+          <!-- Bottom: Calendly Button -->
+          <div class="calendly-main">
+              <h3>30-Min Discovery Call</h3>
+              <p>Let's discuss your project</p>
+              <a href="https://calendly.com/pranav-mettle-hospitality/30min" class="calendly-btn-main" target="_blank">
+                  <span>Book Now</span>
+              </a>
+          </div>
+      </div>
+  </section>
+
+</main>
 
   <!-- FOOTER -->
   <footer>
@@ -139,8 +163,15 @@
         <p><a href="contact.html">Get in touch</a></p>
       </div>
     </div>
+    
+    <!-- FOOTER BOTTOM: Copyright + Social Links -->
     <div class="footer-bottom">
       <p>&copy; 2025 Mettle Hospitality. All rights reserved.</p>
+      <div class="footer-social-links">
+        <a href="https://www.instagram.com/arenvidit/?hl=en" target="_blank">Instagram</a>
+        <a href="https://www.linkedin.com/in/vidit-aren-4534a6262/" target="_blank">LinkedIn</a>
+        <a href="https://wa.me/91816950115" target="_blank">WhatsApp</a>
+      </div>
     </div>
   </footer>
 
