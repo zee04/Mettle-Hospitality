@@ -4165,6 +4165,38 @@ select:focus {
   }
 }
 
+/* Crimson Social Links (Footer + Contact Card) */
+.footer-social-links a, 
+.social-links a {
+  color: #A54040 !important; /* Crimson Text */
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-left: 20px; /* Spacing */
+  transition: all 0.3s ease;
+}
+
+.footer-social-links a:hover,
+.social-links a:hover {
+  color: white !important;
+  text-shadow: 0 0 8px #A54040;
+}
+
+/* Specific styling for Contact Card buttons */
+.social-links a {
+  border: 1px solid rgba(165, 64, 64, 0.4);
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-right: 10px; margin-left: 0; /* Adjust spacing for card */
+  display: inline-block;
+}
+
+.social-links a:hover {
+  background: #A54040;
+  border-color: #A54040;
+  color: white !important;
+  transform: translateY(-3px);
+}
 
 
 
