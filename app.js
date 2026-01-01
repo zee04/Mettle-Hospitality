@@ -163,7 +163,7 @@ class FlippingCoverFlow {
             { title: 'Doppler', type: '', description: "Conceptualized a café for Boomerang Hospitality in a historic Jaipur haveli, redefining the experience as the city's premier slow bar destination.", logo: 'images/project-images/doppler.png' },
             { title: 'Sarabi', type: 'Modern Indian Restaurant', description: "An upscale 12,000 sqft space offering contemporary progressive Indian food, designed for a discerning clientele.", logo: 'images/project-images/saarbai.png' },
             { title: 'Mirari', type: '', description: 'Evolved a 30+ year legacy brand into a dual-floor destination with a Mediterranean café and a modern-Indian restaurant with playful tapas.', logo: 'images/project-images/sunnyy.png' },
-            { title: 'Indulge', type: '', description: 'Developed a comprehensive breakfast and gourment sandwich menu whilst introducing seasonal sundae programs that honors this PAN-India icecream brand  ', logo: 'images/project-images/indulgelogo.jpg' },
+            { title: 'Indulge', type: '', description: 'Developed a comprehensive breakfast and gourment sandwich menu whilst introducing seasonal sundae programs that honors this PAN-Indian icecream brand  ', logo: 'images/project-images/indulgelogo.jpg' },
         ];
 
         this.currentIndex = 0;
