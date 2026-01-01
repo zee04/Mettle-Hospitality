@@ -38,49 +38,97 @@
     </image:image>
   </url>   
         
-  <!-- 4. Work Page -->
+  <!-- 4. Work Page (ALL 12 Projects from App.js) -->
   <url>
     <loc>https://www.mettle-hospitality.com/work.html</loc>
     <lastmod>2026-01-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <image:image>
-      <image:loc>https://www.mettle-hospitality.com/images/indulgelogo.webp</image:loc>
-      <image:title>Indulge Creamery Project</image:title>
-    </image:image>
-  </url>
 
-   <url>
-    <loc>https://www.mettle-hospitality.com/work.html</loc>
-    <lastmod>2026-01-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <!-- 1. Vantara Niwas -->
     <image:image>
-      <image:loc>https://www.mettle-hospitality.com/images/vantaralogo.webp</image:loc>
-      <image:title>Vantara</image:title>
+      <image:loc>https://www.mettle-hospitality.com/images/project-images/vantaralogo.webp</image:loc>
+      <image:title>VANTARA NIWAS - MACHAAN Launch</image:title>
+      <image:caption>Luxury estate celebrations and culinary experiences.</image:caption>
     </image:image>
-  </url>
 
-  <url>
-    <loc>https://www.mettle-hospitality.com/work.html</loc>
-    <lastmod>2026-01-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <!-- 2. Little Food Co -->
     <image:image>
-      <image:loc>https://www.mettle-hospitality.com/images/whatsappplogo.webp</image:loc>
-      <image:title>Whatsapp Meta</image:title>
+      <image:loc>https://www.mettle-hospitality.com/images/project-images/littlefoodlogo.webp</image:loc>
+      <image:title>Little Food Co.</image:title>
+      <image:caption>Menu elevation and culinary consultancy.</image:caption>
     </image:image>
-  </url>
 
-  <url>
-    <loc>https://www.mettle-hospitality.com/work.html</loc>
-    <lastmod>2026-01-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <!-- 3. WhatsApp Meta -->
     <image:image>
-      <image:loc>https://www.mettle-hospitality.com/images/moonshine.webp</image:loc>
+      <image:loc>https://www.mettle-hospitality.com/images/project-images/whatsapplogo.webp</image:loc>
+      <image:title>META - WhatsApp Privacy Ad Film</image:title>
+      <image:caption>Food styling and kitchen design consultation.</image:caption>
+    </image:image>
+
+    <!-- 4. Moonshine -->
+    <image:image>
+      <image:loc>https://www.mettle-hospitality.com/images/project-images/moonshine.webp</image:loc>
       <image:title>Moonshine</image:title>
+      <image:caption>Brand positioning and sustainability strategy.</image:caption>
     </image:image>
+
+    <!-- 5. Viraasat -->
+    <image:image>
+      <image:loc>https://www.mettle-hospitality.com/images/project-images/virasatlogo.webp</image:loc>
+      <image:title>VIRAASAT - Aaverina Hospitality</image:title>
+      <image:caption>Contemporary Indian Restaurant in Mysore.</image:caption>
+    </image:image>
+
+    <!-- 6. Basque -->
+    <image:image>
+      <image:loc>https://www.mettle-hospitality.com/images/project-images/basque.webp</image:loc>
+      <image:title>Basque by Breve</image:title>
+      <image:caption>Concept café development in Bandra.</image:caption>
+    </image:image>
+
+    <!-- 7. Phat Fillings -->
+    <image:image>
+      <image:loc>https://www.mettle-hospitality.com/images/project-images/phat logo.webp</image:loc>
+      <image:title>Phat Fillings</image:title>
+      <image:caption>Premium pie delivery brand.</image:caption>
+    </image:image>
+
+    <!-- 8. ZEKI -->
+    <image:image>
+      <image:loc>https://www.mettle-hospitality.com/images/project-images/zekilogo.webp</image:loc>
+      <image:title>ZEKI</image:title>
+      <image:caption>Upscale casual bistro and global cuisine.</image:caption>
+    </image:image>
+
+    <!-- 9. Doppler -->
+    <image:image>
+      <image:loc>https://www.mettle-hospitality.com/images/project-images/doppler.webp</image:loc>
+      <image:title>Doppler</image:title>
+      <image:caption>Historic Jaipur haveli café concept.</image:caption>
+    </image:image>
+
+    <!-- 10. Sarabi -->
+    <image:image>
+      <image:loc>https://www.mettle-hospitality.com/images/project-images/saarbai.webp</image:loc>
+      <image:title>Sarabi</image:title>
+      <image:caption>Modern Indian restaurant.</image:caption>
+    </image:image>
+
+    <!-- 11. Mirari -->
+    <image:image>
+      <image:loc>https://www.mettle-hospitality.com/images/project-images/sunnyy.webp</image:loc>
+      <image:title>Mirari</image:title>
+      <image:caption>Mediterranean café and modern-Indian destination.</image:caption>
+    </image:image>
+
+    <!-- 12. Indulge -->
+    <image:image>
+      <image:loc>https://www.mettle-hospitality.com/images/project-images/indulgelogo.webp</image:loc>
+      <image:title>Indulge</image:title>
+      <image:caption>Gourmet sandwich and ice cream menu.</image:caption>
+    </image:image>
+
   </url>
   
   <!-- 5. Contact Page -->
