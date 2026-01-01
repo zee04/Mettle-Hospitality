@@ -153,7 +153,7 @@ class FlippingCoverFlow {
 
         this.projects = [
             { title: 'VANTARA NIWAS - MACHAAN Launch', type: '', description: "Visiting chefs for exclusive luxury estate celebrations in Jamnagar. Orchestrated multi-day culinary experiences for high-profile events featuring progressive Indian canapés, truffle-infused pasta service, and refined Indian and European cuisine for Ambani family and other Bollywood A listers", logo: 'images/project-images/vantaralogo.jpg' },
-            { title: 'Little Food Co.', type: 'Culinary Consultancy', description: "Menu elevation and consultancy for premier Mumbai catering brand. Elevated existing dishes, developed data tracking systems, implemented refined cooking techniques, optimized kitchen workflow..", logo: 'images/project-images/littlefoodlogo.PNG' },
+            { title: 'Little Food Co.', type: 'Culinary Consultancy', description: "Menu elevation and consultancy for premier Mumbai catering brand. Elevated existing dishes, developed data tracking systems, implemented refined cooking techniques, optimized kitchen workflow.", logo: 'images/project-images/littlefoodlogo.PNG' },
             { title: 'META - WhatsApp Privacy Ad Film', type: '', description: 'Provided comprehensive food styling and kitchen design consultation for the ad film, ensuring authentic culinary scene portrayal.', logo: 'images/project-images/whatsapplogo.png' },
             { title: 'Moonshine', type: 'Brand Positioning & Strategy', description: "Developed the brand identity and 'Be Better' tagline, creating a social media strategy focused on sustainability for this unique mead brand.", logo: 'images/project-images/moonshine.png' },
             { title: 'VIRAASAT - Aaverina Hospitality', type: 'Contemporary Indian Restaurant', description: 'Collaborated on a 300-seat restaurant in Mysore focusing on Northern Frontier Cuisine, blending traditional flavors with modern techniques.', logo: 'images/project-images/virasatlogo.png' },
@@ -162,8 +162,8 @@ class FlippingCoverFlow {
             { title: 'ZEKI', type: 'Upscale Casual Bistro', description: 'Developed an upscale bistro in Andheri West focused on global cuisine, designing the kitchen, curating crockery, and crafting an international menu.', logo: 'images/project-images/zekilogo.PNG' },
             { title: 'Doppler', type: '', description: "Conceptualized a café for Boomerang Hospitality in a historic Jaipur haveli, redefining the experience as the city's premier slow bar destination.", logo: 'images/project-images/doppler.png' },
             { title: 'Sarabi', type: 'Modern Indian Restaurant', description: "An upscale 12,000 sqft space offering contemporary progressive Indian food, designed for a discerning clientele.", logo: 'images/project-images/saarbai.png' },
-            { title: 'Mirari', type: '', description: 'Evolved a 30+ year legacy brand into a dual-floor destination with a Mediterranean café and a modern-Indian restaurant with playful tapas.', logo: 'images/project-images/sunnyy.png' }
-            { title: 'Indulge', type: '', description: 'Developed a comprehensive breakfast and gourment sandwich menu whilst introducing seasonal sundae programs that honors this PAN-India icecream brand  ', logo: 'images/project-images/indulgelogo.png' }
+            { title: 'Mirari', type: '', description: 'Evolved a 30+ year legacy brand into a dual-floor destination with a Mediterranean café and a modern-Indian restaurant with playful tapas.', logo: 'images/project-images/sunnyy.png' },
+            { title: 'Indulge', type: '', description: 'Developed a comprehensive breakfast and gourment sandwich menu whilst introducing seasonal sundae programs that honors this PAN-India icecream brand  ', logo: 'images/project-images/indulgelogo.jpg' },
         ];
 
         this.currentIndex = 0;
