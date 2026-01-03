@@ -4384,68 +4384,64 @@ select:focus {
 }
 
 /* ==========================================================================
-   METTLE HOSPITALITY - FINAL PRODUCTION FIX (JAN 2026)
-   1. Global 80% Scale (12.8px base)
-   2. Bulletproof Modal Fix (Z-Index 999999)
-   3. Mobile Services Grid (2 Columns + 1 Center)
+   METTLE HOSPITALITY - FINAL CLEAN FIX (JAN 2026)
    ========================================================================== */
 
 /* 1. GLOBAL 80% SCALING */
 html {
-  font-size: 12.8px !important; /* 80% of standard 16px */
+  font-size: 12.8px !important;
 }
 
-/* 2. WORK CAROUSEL MODAL FIX */
-/* Force container to fixed overlay */
+/* 2. WORK CAROUSEL MODAL - BULLETPROOF OVERLAY */
 .project-flip-container.active {
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
   width: 100vw !important;
   height: 100vh !important;
-  z-index: 999999 !important; /* Highest priority */
-  background: rgba(0, 0, 0, 0.85) !important; /* Dim background */
-  backdrop-filter: blur(5px) !important;
+  z-index: 2147483647 !important; /* Maximum possible Z-Index */
+  background: rgba(0, 0, 0, 0.9) !important;
+  backdrop-filter: blur(8px) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
 }
 
-/* Ensure the card itself is centered and sized correctly */
 .project-flip-container.active .flipper {
   width: 90vw !important;
   max-width: 500px !important;
   height: auto !important;
-  aspect-ratio: 1/1 !important; /* Keep it square-ish like a card */
-  transform: rotateY(180deg) !important; /* Ensure it shows the back */
-  position: relative !important;
+  aspect-ratio: 1/1 !important;
+  transform: rotateY(180deg) !important;
   margin: 0 !important;
+  position: relative !important;
 }
 
-/* 3. MOBILE SERVICES GRID (2x2 + 1 Center) */
+/* 3. MOBILE SERVICES GRID (2 Columns + 1 Center) */
 @media (max-width: 768px) {
-  /* Target the container (using your existing class structure) */
-  .services-section .container, 
-  .services-grid, 
-  [class*="service-list"] {
+  /* Force grid on the service container */
+  .services-section .container,
+  .services-grid,
+  .service-list {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
     gap: 1rem !important;
+    padding: 0 1rem !important;
   }
 
-  /* Force cards to equal height */
+  /* Force cards to fit */
   .service-card {
     height: 100% !important;
     min-height: 160px !important;
-    margin-bottom: 0 !important;
+    margin: 0 !important;
   }
 
-  /* The 5th card (last one) centers itself */
+  /* Center the 5th card */
   .service-card:nth-child(5) {
-    grid-column: 1 / -1 !important; /* Span full width */
+    grid-column: 1 / -1 !important;
     width: 60% !important;
-    margin: 1rem auto 0 !important; /* Center horizontally */
+    margin: 1rem auto 0 !important;
+    justify-self: center !important;
   }
 }
 
-body { border: 10px solid red !important; }
