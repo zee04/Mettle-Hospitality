@@ -4383,3 +4383,79 @@ select:focus {
   }
 }
 
+/* ==========================================================================
+   METTLE HOSPITALITY - FINAL ADJUSTMENTS (JAN 2026)
+   1. Global 20% Scale Down
+   2. Work Page Carousel Modal Fix (Overlap Issue)
+   3. Mobile Services Grid (2x2 + 1 Center)
+   ========================================================================== */
+
+/* 1. GLOBAL 20% SCALE DOWN (Desktop & Mobile) */
+html {
+  /* Default browser font-size is 16px. 
+     80% of 16px = 12.8px. 
+     This shrinks all rem-based elements by 20%. */
+  font-size: 12.8px;
+}
+
+/* 2. WORK CAROUSEL FIX (Prevents "Project Journey" overlap) */
+/* Force the modal to be a full-screen overlay, independent of parent size */
+.flipContainer.active .flipContent {
+  position: fixed !important; /* Detach from carousel flow */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full width of viewport */
+  height: 100vh; /* Full height of viewport */
+  z-index: 99999; /* Sit on top of EVERYTHING */
+  margin: 0;
+  border-radius: 0; /* Optional: cleaner look for full screen */
+  
+  /* Ensure content is centered */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  /* Restore background if lost */
+  background-color: #1f2121; /* Your dark theme color */
+}
+
+/* Ensure the close button is always visible on top right of screen */
+.flipContent .modal-close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 100000;
+}
+
+/* 3. MOBILE SERVICES LAYOUT (2 Columns + 1 Center) */
+@media (max-width: 768px) {
+  /* Turn the service list into a Grid */
+  .services-grid, 
+  .service-list { /* Targeting both class names just in case */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 1rem; /* Space between cards */
+    padding: 0 1rem; /* Side padding for mobile screen */
+  }
+
+  /* Target the 5th Service Card (Last one) to center it */
+  .service-card:nth-child(5) {
+    grid-column: 1 / -1; /* Span across all columns */
+    width: 50%; /* Make it half width (optional, looks neater) */
+    justify-self: center; /* Center it horizontally */
+    margin-top: 0.5rem;
+  }
+  
+  /* Ensure cards have consistent height in grid */
+  .service-card {
+    height: 100%;
+    min-height: 150px; /* Prevent squashing */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 0 !important; /* Remove old vertical margins */
+  }
+}
