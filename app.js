@@ -2,26 +2,7 @@
 // COMPLETE CLEANED-UP JS FILE - ALL CONFLICTS FIXED
 // ===============================================================
 
-// === 1. FIXED MOMENTUM SCROLL (SINGLE LISTENER) ===
-let scrollVelocity = 0;
-let scrollPosition = window.scrollY;
-const friction = 0.92;
-const acceleration = 0.1;
 
-window.addEventListener('wheel', (e) => {
-  e.preventDefault();
-  scrollVelocity += e.deltaY * acceleration;
-  requestAnimationFrame(updateScroll);
-}, { passive: false });
-
-function updateScroll() {
-  if (Math.abs(scrollVelocity) > 0.5) {
-    scrollPosition += scrollVelocity;
-    scrollVelocity *= friction;
-    window.scrollTo(0, scrollPosition);
-    requestAnimationFrame(updateScroll);
-  }
-}
 
 // === 2. SMOOTH SLIDESHOW (UNCHANGED - WORKS PERFECT) ===
 class SmoothSlideshow {
