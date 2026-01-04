@@ -29,7 +29,7 @@
   --color-charcoal-700: rgba(31, 33, 33, 1);
   --color-charcoal-800: rgba(38, 40, 40, 1);
   --color-slate-900: rgba(19, 52, 59, 1);
-  --color-teal-300: rgba(50, 184, 198, 1);
+  --brand-crimson: rgba(50, 184, 198, 1);
   --color-teal-400: rgba(45, 166, 178, 1);
   --color-teal-500: rgba(33, 128, 141, 1);
   --color-teal-600: rgba(29, 116, 128, 1);
@@ -161,12 +161,37 @@
   --container-xl: 1280px;
 }
 
+
+/* FORCE DARK MODE + NO TEAL (GLOBAL) */
+:root {
+  --color-background: var(--color-charcoal-700);
+  --color-surface: var(--color-charcoal-800);
+  --color-text: var(--color-gray-200);
+  --color-text-secondary: rgba(167, 169, 169, 0.7);
+
+  /* Primary now uses brand crimson (no teal) */
+  --color-primary: var(--brand-crimson);
+  --color-primary-hover: var(--brand-crimson);
+  --color-primary-active: var(--brand-crimson);
+
+  --color-secondary: rgba(119, 124, 124, 0.15);
+  --color-secondary-hover: rgba(119, 124, 124, 0.25);
+  --color-secondary-active: rgba(119, 124, 124, 0.3);
+  --color-border: rgba(119, 124, 124, 0.3);
+}
+
+/* If anything sets light explicitly, still behave as dark */
+[data-color-scheme="light"] {
+  color-scheme: dark;
+}
+
+
 /* Dark mode colors */
 @media (prefers-color-scheme: dark) {
   :root {
     /* RGB versions for opacity control (Dark Mode) */
     --color-gray-400-rgb: 119, 124, 124;
-    --color-teal-300-rgb: 50, 184, 198;
+    --color-crimson-300-rgb: 248, 113, 113; /* use crimson instead of teal */
     --color-gray-300-rgb: 167, 169, 169;
     --color-gray-200-rgb: 245, 245, 245;
 
@@ -185,18 +210,18 @@
     --color-surface: var(--color-charcoal-800);
     --color-text: var(--color-gray-200);
     --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
-    --color-primary: var(--color-teal-300);
-    --color-primary-hover: var(--color-teal-400);
-    --color-primary-active: var(--color-teal-800);
+    --color-primary: var(--brand-crimson);
+    --color-primary-hover: var(--brand-crimson);
+    --color-primary-active: var(--brand-crimson);
     --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
     --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
     --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
     --color-border: rgba(var(--color-gray-400-rgb), 0.3);
     --color-error: var(--color-red-400);
-    --color-success: var(--color-teal-300);
+    --color-success: var(--brand-crimson);
     --color-warning: var(--color-orange-400);
     --color-info: var(--color-gray-300);
-    --color-focus-ring: rgba(var(--color-teal-300-rgb), 0.4);
+    --color-focus-ring: rgba(var(--brand-crimson-rgb), 0.4);
     --color-btn-primary-text: var(--color-slate-900);
     --color-card-border: rgba(var(--color-gray-400-rgb), 0.2);
     --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.15);
@@ -215,7 +240,7 @@
     --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
 
     /* RGB versions for dark mode */
-    --color-success-rgb: var(--color-teal-300-rgb);
+    --color-success-rgb: var(--brand-crimson-rgb);
     --color-error-rgb: var(--color-red-400-rgb);
     --color-warning-rgb: var(--color-orange-400-rgb);
     --color-info-rgb: var(--color-gray-300-rgb);
@@ -226,7 +251,7 @@
 [data-color-scheme="dark"] {
   /* RGB versions for opacity control (dark mode) */
   --color-gray-400-rgb: 119, 124, 124;
-  --color-teal-300-rgb: 50, 184, 198;
+  --brand-crimson-rgb: 50, 184, 198;
   --color-gray-300-rgb: 167, 169, 169;
   --color-gray-200-rgb: 245, 245, 245;
 
@@ -244,19 +269,19 @@
   --color-background: var(--color-charcoal-700);
   --color-surface: var(--color-charcoal-800);
   --color-text: var(--color-gray-200);
-  --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
-  --color-primary: var(--color-teal-300);
-  --color-primary-hover: var(--color-teal-400);
-  --color-primary-active: var(--color-teal-800);
+  --color-text-secondary: rgba(var(--brand-crimson-rgb), 0.7);
+  --color-primary: var(--brand-crimson);
+  --color-primary-hover: var(--brand-crimson);
+  --color-primary-active: var(--brand-crimson);
   --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
   --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
   --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
   --color-border: rgba(var(--color-gray-400-rgb), 0.3);
   --color-error: var(--color-red-400);
-  --color-success: var(--color-teal-300);
+  --color-success: var(--brand-crimson);
   --color-warning: var(--color-orange-400);
   --color-info: var(--color-gray-300);
-  --color-focus-ring: rgba(var(--color-teal-300-rgb), 0.4);
+  --color-focus-ring: rgba(var(--brand-crimson-rgb), 0.4);
   --color-btn-primary-text: var(--color-slate-900);
   --color-card-border: rgba(var(--color-gray-400-rgb), 0.15);
   --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.15);
@@ -274,7 +299,7 @@
   --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
 
   /* RGB versions for dark mode */
-  --color-success-rgb: var(--color-teal-300-rgb);
+  --color-success-rgb: var(--brand-crimson-rgb);
   --color-error-rgb: var(--color-red-400-rgb);
   --color-warning-rgb: var(--color-orange-400-rgb);
   --color-info-rgb: var(--color-gray-300-rgb);
@@ -283,8 +308,8 @@
 [data-color-scheme="light"] {
   /* RGB versions for opacity control (light mode) */
   --color-brown-600-rgb: 94, 82, 64;
-  --color-teal-500-rgb: 33, 128, 141;
-  --color-slate-900-rgb: 19, 52, 59;
+--color-crimson-300-rgb: 248, 113, 113;
+    --color-slate-900-rgb: 19, 52, 59;
 
   /* Semantic Color Tokens (Light Mode) */
   --color-background: var(--color-cream-50);
@@ -326,6 +351,11 @@ html {
 }
 
 body {
+    transform: scale(0.5);
+  transform-origin: top left;
+  width: 200%;   /* compensate for 0.5 scale so layout fills viewport */
+  height: 200%;
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
 }
@@ -781,6 +811,10 @@ html {
 }
 
 body {
+    transform: scale(0.5);
+  transform-origin: top left;
+  width: 200%;   /* compensate for 0.5 scale so layout fills viewport */
+  height: 200%;
   font-family: var(--font-family-base);
   background: var(--color-background);
   color: var(--color-text);
@@ -4383,65 +4417,5 @@ select:focus {
   }
 }
 
-/* ==========================================================================
-   METTLE HOSPITALITY - FINAL CLEAN FIX (JAN 2026)
-   ========================================================================== */
-
-/* 1. GLOBAL 80% SCALING */
-html {
-  font-size: 12.8px !important;
-}
-
-/* 2. WORK CAROUSEL MODAL - BULLETPROOF OVERLAY */
-.project-flip-container.active {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  z-index: 2147483647 !important; /* Maximum possible Z-Index */
-  background: rgba(0, 0, 0, 0.9) !important;
-  backdrop-filter: blur(8px) !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-.project-flip-container.active .flipper {
-  width: 90vw !important;
-  max-width: 500px !important;
-  height: auto !important;
-  aspect-ratio: 1/1 !important;
-  transform: rotateY(180deg) !important;
-  margin: 0 !important;
-  position: relative !important;
-}
-
-/* 3. MOBILE SERVICES GRID (2 Columns + 1 Center) */
-@media (max-width: 768px) {
-  /* Force grid on the service container */
-  .services-section .container,
-  .services-grid,
-  .service-list {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 1rem !important;
-    padding: 0 1rem !important;
-  }
-
-  /* Force cards to fit */
-  .service-card {
-    height: 100% !important;
-    min-height: 160px !important;
-    margin: 0 !important;
-  }
-
-  /* Center the 5th card */
-  .service-card:nth-child(5) {
-    grid-column: 1 / -1 !important;
-    width: 60% !important;
-    margin: 1rem auto 0 !important;
-    justify-self: center !important;
-  }
-}
+so 
 
