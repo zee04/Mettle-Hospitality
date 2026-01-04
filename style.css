@@ -344,10 +344,6 @@ body {
 
 /* 🔍 BRUTE-FORCE SCALE: EVERYTHING 50% */
 body {
-  transform: scale(0.5);
-  transform-origin: top left;
-  width: 200%;
-  height: 200%;
   font-family: var(--font-family-base);
   background: var(--color-background);
   color: var(--color-text);
@@ -356,6 +352,7 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
+
 
 *,
 *::before,
