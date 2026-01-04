@@ -325,7 +325,7 @@
    ========================================= */
 
 html {
-  font-size: var(--font-size-base);
+  font-size: calc(var(--font-size-base) * 0.5); 
   font-family: var(--font-family-base);
   line-height: var(--line-height-normal);
   color: var(--color-text);
