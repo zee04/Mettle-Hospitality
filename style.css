@@ -4418,4 +4418,13 @@ select:focus {
 }
 
 
+/* Secret Sauce Section - Background Image */
+.secret-image-left {
+    background-image: url('images/north star back tho.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 400px;
+}
+
 
