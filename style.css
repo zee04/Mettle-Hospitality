@@ -4420,7 +4420,7 @@ select:focus {
 
 /* Secret Sauce Section - Background Image */
 .secret-image-left {
-    background-image: url('images/north star back tho.webp');
+    background-image: url('images/north star back.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -4428,7 +4428,7 @@ select:focus {
 }
 
 /* North Star Section - Background Image */
-.north-star-image-left {
+.north-star-image {
     background-image: url('images/honey.webp');
     background-size: cover;
     background-position: center;
