@@ -1811,7 +1811,7 @@ footer {
   display: flex;
   flex-direction: column;
   padding-top: 60px;
-  background-image: url(images/indulge.webp);
+  background-image: url(images/drawing.webp);
   background-size: cover;
   background-position: center;
 }
@@ -3458,7 +3458,7 @@ h2.section-title,
     width: 100vw;
     margin-left: 50%;
     transform: translateX(-50%);
-    background-image: url('images/indulge.webp');
+    background-image: url('images/drawing.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -3510,7 +3510,7 @@ h2.section-title,
     flex: 1;
     min-width: 300px;
     min-height: 600px;
-    background-image: url('images/burger.webp');
+    background-image: url('images/north star back.webp');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -3726,7 +3726,7 @@ nav li:has(a[href="media.html"]),
   width: 100vw !important;
   margin-left: 50% !important;
   transform: translateX(-50%) !important;
-  background-image: url('images/indulge.webp') !important;
+  background-image: url('images/drawing.webp') !important;
   background-size: cover !important;
   background-position: center !important;
   padding: 140px 0 !important;
@@ -3760,7 +3760,7 @@ nav li:has(a[href="media.html"]),
 
 .secret-image-left {
   flex: 1; min-width: 300px; min-height: 100vh;
-  background-image: url('images/burger.webp');
+  background-image: url('images/north star back.webp');
   background-size: cover; background-position: center;
   order: 1;
 }
@@ -4189,7 +4189,7 @@ select:focus {
     content: "";
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-image: url('images/burger.webp');
+    background-image: url('images/north star back.webp');
     background-size: cover;
     background-position: center;
     z-index: -1;
