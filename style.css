@@ -3539,7 +3539,8 @@ h2.section-title,
     padding: 100px 0 !important;
 }
 
-.secret-image-left {
+4423
+{
     flex: 1;
     min-width: 300px;
     min-height: 600px;
@@ -4458,6 +4459,7 @@ select:focus {
     background-position: center;
     background-attachment: fixed;
     min-height: 400px;
+    display: none;
 }
 
 /* North Star Section - Background Image */
@@ -4467,6 +4469,7 @@ select:focus {
     background-position: center;
     background-attachment: fixed;
     min-height: 400px;
+    display: none;
 }
 
 
