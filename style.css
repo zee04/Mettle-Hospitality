@@ -1785,8 +1785,6 @@ footer {
   .purpose-section,
   .north-star-wrapper {
     flex-direction: column;
-      width: 100%;
-      max-width: 100%;
       position: relative;
       z-index: 1;
   }
@@ -2073,7 +2071,8 @@ footer {
     z-index: 1;
 }
 
-.secret-sauce-wrapper::after {
+2871
+{
     content: '';
     position: absolute;
     top: 0;
@@ -4360,7 +4359,7 @@ select:focus {
 
 /* Left: Action Text */
 .action-left h3 {
-  font-size: 1.25rem !important; /* Smaller Title */
+  font-size: 1.25rem !important1788; /* Smaller Title */
   margin-bottom: 5px;
   color: white;
   font-weight: 600;
@@ -4392,7 +4391,9 @@ select:focus {
 }
 
 /* Social Buttons */
-.compact-socials {
+2876
+2871
+background-size: cover    background-size: contain.compact-socials {
   display: flex;
   gap: 8px; /* Tighter gap */
   justify-content: center;
