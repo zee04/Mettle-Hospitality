@@ -4554,12 +4554,12 @@ background-size: cover    background-size: contain.compact-socials {
 /* Specific Background Images */
 .work-before-work-bg {
     /* REPLACE with actual path to your concrete wall image */
-    background-image: url('images/north-star-back.jpg'); 
+    background-image: url('images/north star back.webp'); 
 }
 
 .north-star-bg {
     /* REPLACE with actual path to your honeycomb/north star image */
-    background-image: url('images/honeycomb-texture.jpg');
+    background-image: url('images/sealinkeve.webp');
 }
 
 /* Container for content */
