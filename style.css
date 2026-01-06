@@ -4512,103 +4512,89 @@ background-size: cover    background-size: contain.compact-socials {
 }
 
 
-/* Secret Sauce Section - Background Image */
-.secret-image-left {
-    background-image: url('images/north star back.webp');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    min-height: 400px;
-    display: none;
-}
-
-/* North Star Section - Background Image */
-.north-star-image {
-    background-image: url('images/honey.webp');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    min-height: 400px;
-    display: none;
-}
 
 
 /* ========================================= */
-/* SHARED SPLIT BACKGROUND SECTIONS          */
+/* SHARED SPLIT BACKGROUND SECTIONS (Fixed)  */
 /* ========================================= */
 
 .split-background-section {
     position: relative;
-    width: 100%;
-    min-height: 80vh; /* Full height impact */
+    width: 100vw;               /* Force full viewport width */
+    left: 50%;                  /* Center horizontally... */
+    right: 50%;
+    margin-left: -50vw;         /* ...then pull back to fill edge-to-edge */
+    margin-right: -50vw;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* Overlay for readability */
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6); 
     padding: 80px 0;
+    overflow: hidden;           /* Prevent scrollbars */
 }
 
 /* Specific Background Images */
 .work-before-work-bg {
-    /* REPLACE with actual path to your concrete wall image */
-    background-image: url('images/north star back.webp'); 
+    background-image: url('images/north star back'); 
 }
 
 .north-star-bg {
-    /* REPLACE with actual path to your honeycomb/north star image */
     background-image: url('images/sealinkeve.webp');
 }
 
 /* Container for content */
 .split-content-container {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1400px; /* Limits content width, not background */
     margin: 0 auto;
     display: flex;
     padding: 0 40px;
+    box-sizing: border-box;
 }
 
-/* Right Alignment Modifier */
 .split-content-container.right-aligned {
-    justify-content: flex-end; /* Pushes content to the right */
+    justify-content: flex-end;
 }
 
 /* Content Box Styling */
 .content-wrapper {
     width: 100%;
-    max-width: 600px; /* Limits width so it doesn't stretch too far */
-    color: var(--color-text); /* Ensure text is visible */
+    max-width: 600px;
+    color: var(--color-text);
 }
 
-/* TEXT STYLES */
-.split-background-section .section-title {
-    font-family: 'Druk Wide', sans-serif; /* Your bold font */
+/* TEXT STYLES (Fixed Font) */
+.split-background-section .section-title,
+.north-star-title {
+    /* Use your exact custom font stack */
+    font-family: "Druk Wide", "Arial Black", sans-serif !important; 
+    font-weight: 700;
     font-size: clamp(2.5rem, 5vw, 4rem);
     line-height: 1.1;
     color: #A5323E; /* Brand Crimson */
     margin-bottom: 40px;
     text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+/* North Star needs white title */
+.north-star-title {
+    color: #ffffff; 
 }
 
 .split-background-section .highlight-text {
+    font-family: var(--font-family-base); /* Ensure body font matches site */
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1rem;
     color: #ffffff;
+    line-height: 1.4;
 }
 
-/* NORTH STAR SPECIFIC GRID (Vertical List style) */
-.north-star-title {
-    font-family: 'Druk Wide', sans-serif;
-    font-size: 2rem;
-    color: #ffffff;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-}
-
+/* GRID STYLES */
 .north-star-grid-vertical {
     display: flex;
     flex-direction: column;
@@ -4616,7 +4602,8 @@ background-size: cover    background-size: contain.compact-socials {
 }
 
 .north-star-item h4 {
-    color: #A5323E; /* Brand Crimson */
+    font-family: "Druk Wide", sans-serif; /* Match headers */
+    color: #A5323E;
     font-size: 1.2rem;
     margin-bottom: 8px;
     text-transform: uppercase;
@@ -4624,6 +4611,7 @@ background-size: cover    background-size: contain.compact-socials {
 }
 
 .north-star-item p {
+    font-family: var(--font-family-base);
     color: #e0e0e0;
     font-size: 1rem;
     line-height: 1.6;
@@ -4635,16 +4623,17 @@ background-size: cover    background-size: contain.compact-socials {
     .split-background-section {
         min-height: auto;
         padding: 60px 20px;
+        /* Maintain full width logic on mobile */
+        width: 100vw;
+        left: 50%;
+        margin-left: -50vw;
     }
     
     .split-content-container {
-        justify-content: flex-start; /* Left align on mobile usually reads better, or keep centered */
+        justify-content: flex-start;
         padding: 0;
     }
-
-    .content-wrapper {
-        max-width: 100%;
-    }
 }
+
 
 
