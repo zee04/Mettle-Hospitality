@@ -4533,3 +4533,118 @@ background-size: cover    background-size: contain.compact-socials {
 }
 
 
+/* ========================================= */
+/* SHARED SPLIT BACKGROUND SECTIONS          */
+/* ========================================= */
+
+.split-background-section {
+    position: relative;
+    width: 100%;
+    min-height: 80vh; /* Full height impact */
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Overlay for readability */
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6); 
+    padding: 80px 0;
+}
+
+/* Specific Background Images */
+.work-before-work-bg {
+    /* REPLACE with actual path to your concrete wall image */
+    background-image: url('images/north-star-back.jpg'); 
+}
+
+.north-star-bg {
+    /* REPLACE with actual path to your honeycomb/north star image */
+    background-image: url('images/honeycomb-texture.jpg');
+}
+
+/* Container for content */
+.split-content-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    padding: 0 40px;
+}
+
+/* Right Alignment Modifier */
+.split-content-container.right-aligned {
+    justify-content: flex-end; /* Pushes content to the right */
+}
+
+/* Content Box Styling */
+.content-wrapper {
+    width: 100%;
+    max-width: 600px; /* Limits width so it doesn't stretch too far */
+    color: var(--color-text); /* Ensure text is visible */
+}
+
+/* TEXT STYLES */
+.split-background-section .section-title {
+    font-family: 'Druk Wide', sans-serif; /* Your bold font */
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    color: #A5323E; /* Brand Crimson */
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.split-background-section .highlight-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+/* NORTH STAR SPECIFIC GRID (Vertical List style) */
+.north-star-title {
+    font-family: 'Druk Wide', sans-serif;
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.north-star-grid-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.north-star-item h4 {
+    color: #A5323E; /* Brand Crimson */
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.north-star-item p {
+    color: #e0e0e0;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+    .split-background-section {
+        min-height: auto;
+        padding: 60px 20px;
+    }
+    
+    .split-content-container {
+        justify-content: flex-start; /* Left align on mobile usually reads better, or keep centered */
+        padding: 0;
+    }
+
+    .content-wrapper {
+        max-width: 100%;
+    }
+}
+
+
