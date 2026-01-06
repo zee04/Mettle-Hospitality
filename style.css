@@ -1722,7 +1722,8 @@ footer {
   max-width: none !important;
 }
 
-.north-star-wrapper {
+2450
+{
   display: flex;
   flex-wrap: wrap;
   gap: 60px;
@@ -1784,6 +1785,10 @@ footer {
   .purpose-section,
   .north-star-wrapper {
     flex-direction: column;
+      width: 100%;
+      max-width: 100%;
+      position: relative;
+      z-index: 1;
   }
   
   .purpose-image,
