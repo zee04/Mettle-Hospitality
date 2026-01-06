@@ -1,3 +1,4 @@
+2076
 /* ========================================= */
 /* 📦 DRUK WIDE FONT IMPORT (Add at TOP)     */
 /* ========================================= */
@@ -39,6 +40,58 @@
   --color-red-500: rgba(192, 21, 47, 1);
   --color-orange-400: rgba(230, 129, 97, 1);
   --color-orange-500: rgba(168, 75, 47, 1);
+
+    
+/* ===== CRITICAL FIXES: Secret Sauce & North Star ===== */
+
+/* SECRET SAUCE - FIX: Make image visible, text on RIGHT, proper background zoom */
+.secret-sauce-wrapper {
+  flex-direction: row-reverse !important;  /* Text on right, image on left */
+  background-size: 50% auto !important;  /* Zoom out - show more of image */
+  background-repeat: no-repeat !important;
+  background-position: left center !important;
+}
+
+.secret-content-right {
+  flex: 1;
+  z-index: 2;
+}
+
+.secret-image-left {
+  display: block !important;  /* MAKE VISIBLE */
+  flex: 1;
+  background-size: 90% !important;  /* Zoom out more */
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+/* NORTH STAR - FIX: Make honey image visible as background */
+.north-star-section::after {
+  background-size: 60% auto !important;  /* Zoom out honey image */
+  background-position: right center !important;
+}
+
+/* PROJECTS - FIX: Remove flip card animation */
+.flip-card {
+  transform: none !important;
+}
+
+.flip-card-inner {
+  transform: none !important;
+  transition: none !important;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: none !important;
+}
+
+.flip-card-front,
+.flip-card-back {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
 
   /* RGB versions for opacity control */
   --color-brown-600-rgb: 94, 82, 64;
@@ -199,7 +252,8 @@
     --color-bg-1: rgba(29, 78, 216, 0.15); /* Dark blue */
     --color-bg-2: rgba(180, 83, 9, 0.15); /* Dark yellow */
     --color-bg-3: rgba(21, 128, 61, 0.15); /* Dark green */
-    --color-bg-4: rgba(185, 28, 28, 0.15); /* Dark red */
+2076
+      --color-bg-4: rgba(185, 28, 28, 0.15); /* Dark red */
     --color-bg-5: rgba(107, 33, 168, 0.15); /* Dark purple */
     --color-bg-6: rgba(194, 65, 12, 0.15); /* Dark orange */
     --color-bg-7: rgba(190, 24, 93, 0.15); /* Dark pink */
