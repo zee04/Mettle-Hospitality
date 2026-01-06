@@ -4515,15 +4515,15 @@ background-size: cover    background-size: contain.compact-socials {
 
 
 /* ========================================= */
-/* SHARED SPLIT BACKGROUND SECTIONS (Fixed)  */
+/* SHARED SPLIT BACKGROUND SECTIONS (FINAL)  */
 /* ========================================= */
 
 .split-background-section {
     position: relative;
-    width: 100vw;               /* Force full viewport width */
-    left: 50%;                  /* Center horizontally... */
+    width: 100vw;
+    left: 50%;
     right: 50%;
-    margin-left: -50vw;         /* ...then pull back to fill edge-to-edge */
+    margin-left: -50vw;
     margin-right: -50vw;
     min-height: 80vh;
     display: flex;
@@ -4533,7 +4533,7 @@ background-size: cover    background-size: contain.compact-socials {
     background-repeat: no-repeat;
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6); 
     padding: 80px 0;
-    overflow: hidden;           /* Prevent scrollbars */
+    overflow: hidden;
 }
 
 /* Specific Background Images */
@@ -4548,7 +4548,7 @@ background-size: cover    background-size: contain.compact-socials {
 /* Container for content */
 .split-content-container {
     width: 100%;
-    max-width: 1400px; /* Limits content width, not background */
+    max-width: 1400px;
     margin: 0 auto;
     display: flex;
     padding: 0 40px;
@@ -4566,18 +4566,18 @@ background-size: cover    background-size: contain.compact-socials {
     color: var(--color-text);
 }
 
-/* TEXT STYLES (Fixed Font) */
+/* TEXT STYLES - FORCED MATCH */
 .split-background-section .section-title,
 .north-star-title {
-    /* Use your exact custom font stack */
     font-family: "Druk Wide", "Arial Black", sans-serif !important; 
-    font-weight: 700;
+    font-weight: 900 !important; /* Force heaviest weight */
     font-size: clamp(2.5rem, 5vw, 4rem);
     line-height: 1.1;
-    color: #A5323E; /* Brand Crimson */
+    color: #A5323E; 
     margin-bottom: 40px;
     text-transform: uppercase;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.05em; /* Widen spacing slightly */
+    -webkit-font-smoothing: antialiased;
 }
 
 /* North Star needs white title */
@@ -4586,7 +4586,7 @@ background-size: cover    background-size: contain.compact-socials {
 }
 
 .split-background-section .highlight-text {
-    font-family: var(--font-family-base); /* Ensure body font matches site */
+    font-family: var(--font-family-base);
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1rem;
@@ -4602,12 +4602,13 @@ background-size: cover    background-size: contain.compact-socials {
 }
 
 .north-star-item h4 {
-    font-family: "Druk Wide", sans-serif; /* Match headers */
+    font-family: "Druk Wide", "Arial Black", sans-serif !important;
     color: #A5323E;
     font-size: 1.2rem;
     margin-bottom: 8px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-weight: 700;
 }
 
 .north-star-item p {
@@ -4623,7 +4624,6 @@ background-size: cover    background-size: contain.compact-socials {
     .split-background-section {
         min-height: auto;
         padding: 60px 20px;
-        /* Maintain full width logic on mobile */
         width: 100vw;
         left: 50%;
         margin-left: -50vw;
@@ -4634,6 +4634,7 @@ background-size: cover    background-size: contain.compact-socials {
         padding: 0;
     }
 }
+
 
 
 
