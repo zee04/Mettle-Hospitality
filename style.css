@@ -4512,32 +4512,27 @@ background-size: cover    background-size: contain.compact-socials {
 }
 
 
-
 /* ========================================= */
-/* SHARED SPLIT BACKGROUND SECTIONS (FINAL)  */
+/* SHARED SPLIT BACKGROUND SECTIONS (FIXED) */
 /* ========================================= */
 
 .split-background-section {
     position: relative;
-    width: 100vw;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+    width: 100%;
     min-height: 80vh;
     display: flex;
     align-items: center;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.6); 
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.55);
     padding: 80px 0;
     overflow: hidden;
 }
 
-/* Specific Background Images */
+/* Specific Background Images - CORRECTED PATHS */
 .work-before-work-bg {
-    background-image: url('images/north star back.webp'); 
+    background-image: url('images/north-star-back.webp');
 }
 
 .north-star-bg {
@@ -4565,23 +4560,25 @@ background-size: cover    background-size: contain.compact-socials {
     color: var(--color-text);
 }
 
-/* TEXT STYLES - FORCED MATCH */
+/* TEXT STYLES - SOLID CRIMSON RED, DRUK WIDE FONT */
 .split-background-section .section-title,
 .north-star-title {
-    font-family: "Druk Wide", "Arial Black", sans-serif !important; 
-    font-weight: 900 !important; /* Force heaviest weight */
+    font-family: "Druk Wide", "Arial Black", sans-serif !important;
+    font-weight: 700 !important;
     font-size: clamp(2.5rem, 5vw, 4rem);
     line-height: 1.1;
-    color: #A5323E; 
+    color: #C1404A !important; /* SOLID CRIMSON RED - no shading */
     margin-bottom: 40px;
     text-transform: uppercase;
-    letter-spacing: 0.05em; /* Widen spacing slightly */
+    letter-spacing: 0.02em;
     -webkit-font-smoothing: antialiased;
+    text-shadow: none !important; /* REMOVE any shading */
 }
 
-/* North Star needs white title */
+/* North Star title - WHITE */
 .north-star-title {
-    color: #ffffff; 
+    color: #ffffff !important;
+    text-shadow: none !important;
 }
 
 .split-background-section .highlight-text {
@@ -4602,12 +4599,13 @@ background-size: cover    background-size: contain.compact-socials {
 
 .north-star-item h4 {
     font-family: "Druk Wide", "Arial Black", sans-serif !important;
-    color: #A5323E;
+    color: #C1404A !important; /* SOLID CRIMSON RED */
     font-size: 1.2rem;
     margin-bottom: 8px;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 700;
+    text-shadow: none !important; /* REMOVE shading */
 }
 
 .north-star-item p {
@@ -4623,16 +4621,18 @@ background-size: cover    background-size: contain.compact-socials {
     .split-background-section {
         min-height: auto;
         padding: 60px 20px;
-        width: 100vw;
-        left: 50%;
-        margin-left: -50vw;
     }
     
     .split-content-container {
         justify-content: flex-start;
-        padding: 0;
+        padding: 0 20px;
+    }
+
+    .content-wrapper {
+        max-width: 100%;
     }
 }
+
 
 
 
