@@ -9304,93 +9304,67 @@ background-size: cover    background-size: contain.compact-socials {
 
 
 /* ==========================================================================
-   METTLE HOSPITALITY - FINAL CORRECTED FIXES (JAN 2026)
+   METTLE HOSPITALITY - SURGICAL FIX (Restoring "Working" State)
    ========================================================================== */
 
-/* 1. FORCE TYPOGRAPHY & COLOR (CRIMSON RED + DRUK WIDE ONLY) */
-/* REMOVED "Arial Black" to prevent ugly stretching */
-h1, h2, h3, h4,
+/* 1. APPLY DRUK WIDE ONLY TO THE HEADERS YOU HAD BEFORE */
 .section-title,
 .crew-title,
 .north-star-title,
 .purpose-title,
 .timeline-title,
-.slide h2 span,
-.card h3,
-.north-star-item h4,
-.text-block h3,
-.hero-title,
-.hero-subtitle {
-    font-family: "Druk Wide", sans-serif !important; 
-    font-weight: 800 !important;
-    color: #A5323E !important; /* Solid Crimson */
-    text-shadow: none !important;
-    -webkit-text-stroke: 0 !important;
+.services-header h2,
+.secret-content-right h2,
+.hero-title {
+    font-family: "Druk Wide", Impact, sans-serif !important;
+    font-weight: 800 !important; /* Matches your old CSS preference */
+    color: #A5323E !important; /* CRIMSON RED */
+    text-shadow: none !important; /* Clean look */
     text-transform: uppercase !important;
-    letter-spacing: 1px !important;
     opacity: 1 !important;
     background: none !important;
     -webkit-text-fill-color: #A5323E !important;
 }
 
-/* 2. CAROUSEL FIX (Restore Movement, Kill Flip) */
-.logo-card {
-    /* STOP CLICKS, but ALLOW JS TRANSFORMS for movement */
-    pointer-events: none !important; 
+/* 2. SPECIFIC FIX FOR "THE WORK BEFORE THE WORK" TITLE */
+/* This ensures it isn't transparent or weirdly shaded */
+.north-star-title {
+    color: #A5323E !important;
+    -webkit-text-fill-color: #A5323E !important;
+    background: none !important;
+    text-shadow: none !important;
 }
 
-/* HIDE the back face so it never appears */
+/* 3. CAROUSEL FIX (Movement YES, Flip NO) */
+.logo-card {
+    pointer-events: none !important;
+}
 .logo-card .logo-back {
     display: none !important;
 }
-
-/* Force Front Face to stay visible */
 .logo-card .logo-front {
     display: block !important;
     opacity: 1 !important;
+    transform: none !important;
 }
-
-/* Kill the modal popup entirely */
 .project-flip-container {
     display: none !important;
 }
 
-/* 3. FIX BACKGROUND SECTIONS */
-.split-background-section {
-    width: 100% !important;
-    max-width: none !important;
-    min-height: 80vh !important;
-    margin: 0 !important;
-    padding: 80px 0 !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-    display: flex !important;
-    align-items: center !important;
-}
-
+/* 4. BACKGROUND FIXES */
 .work-before-work-bg {
     background-image: url('images/north-star-back.webp') !important;
 }
 .north-star-bg {
     background-image: url('images/sealinkeve.webp') !important;
 }
-
+/* Ensure overlay is present so red text pops */
 .split-background-section::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     background: rgba(0, 0, 0, 0.7) !important;
     z-index: 1;
-}
-
-.split-content-container {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 40px;
 }
 
 
