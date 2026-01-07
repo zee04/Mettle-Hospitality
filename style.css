@@ -9303,52 +9303,104 @@ background-size: cover    background-size: contain.compact-socials {
 }
 
 
-/* ========================================= */
-/* GLOBAL CRIMSON RED HEADLINE FIX          */
-/* REMOVE ALL COLOR SHADING - SOLID RED     */
-/* ========================================= */
+/* ==========================================================================
+   METTLE HOSPITALITY - FINAL "NUCLEAR" FIXES (JAN 2026 - VERIFIED)
+   ========================================================================== */
 
-/* ALL H2 CRIMSON HEADINGS */
-h2, .h2,
-h3, .h3,
-h4, .h4,
+/* 1. FORCE TYPOGRAPHY & COLOR (CRIMSON RED + DRUK WIDE) */
+h1, h2, h3, h4,
 .section-title,
 .crew-title,
 .north-star-title,
-.purpose-title {
-    font-family: 'Druk Wide', "Arial Black", sans-serif !important;
-    color: var(--brand-crimson) !important;
-    font-weight: 800 !important;
-    text-shadow: none !important; /* REMOVE SHADOW */
-    -webkit-text-stroke: 0 !important; /* REMOVE STROKE */
-}
-
-/* Remove ALL tints from crimson text specifically */
-h2[style*="color"], 
-h3[style*="color"],
-h4[style*="color"],
-.section-title,
-.crew-title,
-.north-star-title {
-    color: var(--brand-crimson) !important;
-    text-shadow: none !important;
-}
-
-/* NORTH STAR SECTION H4 - MUST BE CRIMSON SOLID */
+.purpose-title,
+.timeline-title,
+.slide h2 span,
+.card h3,
 .north-star-item h4,
-.crew-pillar h3 {
-    font-family: "Druk Wide", sans-serif !important;
-    color: var(--brand-crimson) !important;
+.text-block h3 {
+    font-family: "Druk Wide", "Arial Black", sans-serif !important;
     font-weight: 800 !important;
-    text-shadow: none !important; 
+    color: #A5323E !important; /* Solid Crimson */
+    text-shadow: none !important; /* Kill all shadows */
+    -webkit-text-stroke: 0 !important;
     text-transform: uppercase !important;
-    letter-spacing: 2px !important;
+    letter-spacing: 1px !important;
+    opacity: 1 !important;
+    background: none !important;
+    -webkit-text-fill-color: #A5323E !important;
 }
 
-/* KILL ANY GRADIENT OR RGBA COLORS ON CRIMSON TEXT */
-[style*="color: rgb"] {
-    color: var(--brand-crimson) !important;
-    text-shadow: none !important;
+/* EXCEPTION: North Star Title must be WHITE */
+.north-star-title {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
 }
+
+/* EXCEPTION: Regular text (Paragraphs) */
+p, .north-star-item p, .slide p, .text-block p {
+    font-family: var(--font-family-base) !important;
+    text-shadow: none !important;
+    color: inherit;
+    font-weight: normal !important;
+    text-transform: none !important;
+}
+
+/* 2. KILL FLIP ANIMATION (PROJECTS) */
+.logo-card {
+    pointer-events: none !important; /* Disable clicking */
+    transform: none !important; /* Stop movement */
+}
+.logo-card .logo-back {
+    display: none !important; /* Hide back face */
+}
+.logo-card .logo-front {
+    transform: none !important;
+    opacity: 1 !important;
+    display: block !important;
+}
+.project-flip-container {
+    display: none !important; /* Hide modal entirely */
+}
+
+/* 3. FIX BACKGROUND SECTIONS (Full Width, Correct Images) */
+.split-background-section {
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 80vh !important;
+    margin: 0 !important;
+    padding: 80px 0 !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Correct Image Paths */
+.work-before-work-bg {
+    background-image: url('images/north star back.webp') !important;
+}
+.north-star-bg {
+    background-image: url('images/sealinkeve.webp') !important;
+}
+
+/* Overlay for text readability */
+.split-background-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5) !important; /* Darken bg image */
+    z-index: 1;
+}
+
+.split-content-container {
+    position: relative;
+    z-index: 2; /* Text above overlay */
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
 
 
