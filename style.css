@@ -9304,10 +9304,11 @@ background-size: cover    background-size: contain.compact-socials {
 
 
 /* ==========================================================================
-   METTLE HOSPITALITY - FINAL "NUCLEAR" FIXES (JAN 2026 - VERIFIED)
+   METTLE HOSPITALITY - FINAL CORRECTED FIXES (JAN 2026)
    ========================================================================== */
 
-/* 1. FORCE TYPOGRAPHY & COLOR (CRIMSON RED + DRUK WIDE) */
+/* 1. FORCE TYPOGRAPHY & COLOR (CRIMSON RED + DRUK WIDE ONLY) */
+/* REMOVED "Arial Black" to prevent ugly stretching */
 h1, h2, h3, h4,
 .section-title,
 .crew-title,
@@ -9317,11 +9318,13 @@ h1, h2, h3, h4,
 .slide h2 span,
 .card h3,
 .north-star-item h4,
-.text-block h3 {
-    font-family: "Druk Wide", "Arial Black", sans-serif !important;
+.text-block h3,
+.hero-title,
+.hero-subtitle {
+    font-family: "Druk Wide", sans-serif !important; 
     font-weight: 800 !important;
     color: #A5323E !important; /* Solid Crimson */
-    text-shadow: none !important; /* Kill all shadows */
+    text-shadow: none !important;
     -webkit-text-stroke: 0 !important;
     text-transform: uppercase !important;
     letter-spacing: 1px !important;
@@ -9330,39 +9333,29 @@ h1, h2, h3, h4,
     -webkit-text-fill-color: #A5323E !important;
 }
 
-/* EXCEPTION: North Star Title must be WHITE */
-.north-star-title {
-    color: #ffffff !important;
-    -webkit-text-fill-color: #ffffff !important;
-}
-
-/* EXCEPTION: Regular text (Paragraphs) */
-p, .north-star-item p, .slide p, .text-block p {
-    font-family: var(--font-family-base) !important;
-    text-shadow: none !important;
-    color: inherit;
-    font-weight: normal !important;
-    text-transform: none !important;
-}
-
-/* 2. KILL FLIP ANIMATION (PROJECTS) */
+/* 2. CAROUSEL FIX (Restore Movement, Kill Flip) */
 .logo-card {
-    pointer-events: none !important; /* Disable clicking */
-    transform: none !important; /* Stop movement */
-}
-.logo-card .logo-back {
-    display: none !important; /* Hide back face */
-}
-.logo-card .logo-front {
-    transform: none !important;
-    opacity: 1 !important;
-    display: block !important;
-}
-.project-flip-container {
-    display: none !important; /* Hide modal entirely */
+    /* STOP CLICKS, but ALLOW JS TRANSFORMS for movement */
+    pointer-events: none !important; 
 }
 
-/* 3. FIX BACKGROUND SECTIONS (Full Width, Correct Images) */
+/* HIDE the back face so it never appears */
+.logo-card .logo-back {
+    display: none !important;
+}
+
+/* Force Front Face to stay visible */
+.logo-card .logo-front {
+    display: block !important;
+    opacity: 1 !important;
+}
+
+/* Kill the modal popup entirely */
+.project-flip-container {
+    display: none !important;
+}
+
+/* 3. FIX BACKGROUND SECTIONS */
 .split-background-section {
     width: 100% !important;
     max-width: none !important;
@@ -9376,26 +9369,24 @@ p, .north-star-item p, .slide p, .text-block p {
     align-items: center !important;
 }
 
-/* Correct Image Paths */
 .work-before-work-bg {
-    background-image: url('images/north star back.webp') !important;
+    background-image: url('images/north-star-back.webp') !important;
 }
 .north-star-bg {
     background-image: url('images/sealinkeve.webp') !important;
 }
 
-/* Overlay for text readability */
 .split-background-section::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.5) !important; /* Darken bg image */
+    background: rgba(0, 0, 0, 0.7) !important;
     z-index: 1;
 }
 
 .split-content-container {
     position: relative;
-    z-index: 2; /* Text above overlay */
+    z-index: 2;
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
