@@ -1868,7 +1868,7 @@ footer {
   display: flex;
   flex-direction: column;
   padding-top: 60px;
-  background-image: url(images/drawing.webp);
+  background-image: url('images/pencil.webp');
   background-size: cover;
   background-position: center;
 }
@@ -4510,7 +4510,6 @@ background-size: cover    background-size: contain.compact-socials {
     width: 100% !important;         /* Ensure full width */
   }
 }
-
 
 
 
