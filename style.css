@@ -9597,6 +9597,8 @@ video {
 .service-icon svg {
   width: 28px;
   height: 28px;
-  fill: #f3ded9 !important;
-  stroke: none !important;
+  fill: none !important;
+  stroke: #f3ded9 !important;
+  stroke-width: 1.75;
 }
+
