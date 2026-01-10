@@ -9379,7 +9379,7 @@ html {
 
 /* ---------- BRAND FONTS ---------- */
 :root {
-  --mh-font-heading: "Druk Wide", "DrukWide", sans-serif;
+  --mh-font-heading: "Montserrat", sans-serif;
   --mh-font-body: "Inter", -apple-system, BlinkMacSystemFont,
                     "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
@@ -9392,7 +9392,8 @@ html {
   font-family: var(--mh-font-heading) !important;
   color: var(--mh-crimson) !important;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+    font-weight: 800;
+  letter-spacing: -0.02em;
   line-height: 1.1;
 }
 
