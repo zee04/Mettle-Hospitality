@@ -2,6 +2,54 @@
 /* ========================================= */
 /* 📦 DRUK WIDE FONT IMPORT (Add at TOP)     */
 /* ========================================= */
+/* =====================================================
+   GLOBAL DESIGN SCALE SYSTEM (SITE-WIDE)
+   ===================================================== */
+:root {
+  --scale: 0.8;
+
+  /* Spacing scale */
+  --space-xxs: calc(4px * var(--scale));
+  --space-xs:  calc(8px * var(--scale));
+  --space-sm:  calc(12px * var(--scale));
+  --space-md:  calc(16px * var(--scale));
+  --space-lg:  calc(24px * var(--scale));
+  --space-xl:  calc(32px * var(--scale));
+  --space-xxl: calc(48px * var(--scale));
+
+  /* Layout width */
+  --container-max: calc(1200px * var(--scale));
+}
+
+/* =====================================================
+   BASE TYPOGRAPHY SCALE
+   ===================================================== */
+html {
+  font-size: calc(16px * var(--scale));
+}
+
+/* =====================================================
+   CONTAINER NORMALIZATION
+   ===================================================== */
+.container,
+.section,
+.section-inner,
+.header-container,
+.footer-content {
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =====================================================
+   SECTION SPACING NORMALIZATION
+   ===================================================== */
+section {
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+}
+
+
 
 @font-face {
     font-family: "Druk Wide";
