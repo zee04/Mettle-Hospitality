@@ -9503,41 +9503,105 @@ video {
   }
 }
 
-/* =====================================================
-   SERVICES PAGE — OVERLAY REDUCTION
-   ===================================================== */
+/* ================================
+   SERVICES – BACKGROUND OVERLAY
+   ================================ */
 
-/* Services hero background */
-.services-hero {
+.services-wrapper {
   position: relative;
+  background-color: #000;
+  overflow: hidden;
 }
 
 .services-bg-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35); /* WAS TOO DARK */
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.55) 70%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
   z-index: 1;
 }
+
+/* ensure content sits ABOVE overlay */
+.services-wrapper > *:not(.services-bg-overlay) {
+  position: relative;
+  z-index: 2;
+}
+
+/* ================================
+   SERVICES – HERO TITLE ALIGNMENT
+   ================================ */
 
 .services-hero-content {
-  position: relative;
-  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 24px 80px;
+  display: flex;
+  justify-content: center;
 }
 
-/* Work Before the Work background */
-.work-before-work {
-  position: relative;
+.services-hero-content .mh-heading {
+  text-align: center;
+  margin: 0;
 }
 
-.work-bg-overlay {
+/* ================================
+   SERVICES – LOOP DIAGRAM
+   ================================ */
+
+.loop-diagram {
+  position: relative;
+  width: 420px;
+  height: 420px;
+  margin: 0 auto;
+}
+
+.loop-ring-svg {
+  width: 100%;
+  height: 100%;
+  animation: slow-spin 40s linear infinite;
+}
+
+@keyframes slow-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ICONS */
+.loop-node {
   position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3); /* lighter */
-  z-index: 1;
+  width: 64px;
+  height: 64px;
+  background: #f3ded9;
+  color: #000;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
 }
 
-.work-content {
-  position: relative;
-  z-index: 2;
-}
+/* Positioning around circle */
+.node-1 { top: -10px; left: 50%; transform: translateX(-50%); }
+.node-2 { top: 20%; right: -10px; }
+.node-3 { bottom: 20%; right: -10px; }
+.node-4 { bottom: -10px; left: 50%; transform: translateX(-50%); }
+.node-5 { top: 20%; left: -10px; }
 
+/* Keep icons static while ring rotates */
+.loop-node {
+  pointer-events: none;
+}
+/* ================================
+   LOOP ICON SVG STYLING
+   ================================ */
+
+.loop-node svg {
+  width: 28px;
+  height: 28px;
+  stroke: #000;
+  fill: none;
+  stroke-width: 1.75;
+}
