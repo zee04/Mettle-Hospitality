@@ -865,10 +865,7 @@ html {
 }
 
 body {
-    transform: scale(0.5);
-  transform-origin: top left;
-  width: 200%;   /* compensate for 0.5 scale so layout fills viewport */
-  height: 200%;
+    
   font-family: var(--font-family-base);
   background: var(--color-background);
   color: var(--color-text);
@@ -5057,10 +5054,7 @@ html {
 }
 
 body {
-    transform: scale(0.5);
-  transform-origin: top left;
-  width: 200%;   /* compensate for 0.5 scale so layout fills viewport */
-  height: 200%;
+  
   overflow-x: hidden;
   margin: 0;
   padding: 0;
@@ -5517,10 +5511,7 @@ html {
 }
 
 body {
-    transform: scale(0.5);
-  transform-origin: top left;
-  width: 200%;   /* compensate for 0.5 scale so layout fills viewport */
-  height: 200%;
+   
   font-family: var(--font-family-base);
   background: var(--color-background);
   color: var(--color-text);
@@ -9439,14 +9430,7 @@ footer {
   padding-bottom: 48px;
 }
 
-@media (max-width: 768px) {
-  section,
-  header,
-  footer {
-    padding-top: 32px;
-    padding-bottom: 32px;
-  }
-}
+
 
 /* ---------- MEDIA ---------- */
 img,
