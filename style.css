@@ -9503,4 +9503,41 @@ video {
   }
 }
 
+/* =====================================================
+   SERVICES PAGE — OVERLAY REDUCTION
+   ===================================================== */
+
+/* Services hero background */
+.services-hero {
+  position: relative;
+}
+
+.services-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); /* WAS TOO DARK */
+  z-index: 1;
+}
+
+.services-hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Work Before the Work background */
+.work-before-work {
+  position: relative;
+}
+
+.work-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3); /* lighter */
+  z-index: 1;
+}
+
+.work-content {
+  position: relative;
+  z-index: 2;
+}
 
