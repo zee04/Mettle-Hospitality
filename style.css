@@ -408,10 +408,7 @@ html {
 }
 
 body {
-    transform: scale(0.5);
-  transform-origin: top left;
-  width: 200%;   /* compensate for 0.5 scale so layout fills viewport */
-  height: 200%;
+
   overflow-x: hidden;
   margin: 0;
   padding: 0;
