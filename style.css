@@ -9424,8 +9424,7 @@ a.button {
 
 /* ---------- SECTION COMPRESSION ---------- */
 section,
-header,
-footer {
+ {
   padding-top: 48px;
   padding-bottom: 48px;
 }
