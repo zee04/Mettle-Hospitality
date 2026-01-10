@@ -9645,4 +9645,9 @@ video {
   filter: none !important;
   mix-blend-mode: normal !important;
 }
+/* Service icons must be filled, not stroked */
+.services-wrapper .service-icon svg path {
+  fill: #111 !important;
+  stroke: none !important;
+}
 
