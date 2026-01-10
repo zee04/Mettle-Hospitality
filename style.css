@@ -9594,11 +9594,18 @@ video {
 .loop-node {
   pointer-events: none;
 
+/* FIX SVG ICONS VISIBILITY + DARK OVERLAY */
 .service-icon svg {
   width: 28px;
   height: 28px;
-  fill: none !important;
-  stroke: #f3ded9 !important;
-  stroke-width: 1.75;
+  stroke: #111;
+  stroke-width: 1.8;
+  fill: none;
 }
+
+/* Reduce black overlay so background image is visible */
+.services-bg-overlay {
+  background: rgba(0,0,0,0.6);
+}
+
 
