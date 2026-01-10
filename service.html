@@ -753,41 +753,27 @@
   
 <main class="services-wrapper">
 
+  <!-- LIGHTENED OVERLAY -->
   <div class="services-bg-overlay"></div>
 
+  <!-- CENTERED TITLE -->
   <div class="services-hero-content">
     <h2 class="mh-heading">What We Offer</h2>
   </div>
 
   <div class="content-container">
 
-    <!-- LEFT -->
+    <!-- LEFT SERVICES -->
     <div class="column left-col">
 
-      <div class="service-item">
-        <div class="service-icon">
-          <div class="node node-l-1">
-          <!-- Turnkey -->
-          <svg viewBox="0 0 24 24">
-            <path d="M3 10.5 12 3l9 7.5V21H14v-6h-4v6H3z"/>
-          </svg>
-        </div>
+      <div class="service-item" data-node="1">
         <div class="text-block">
           <h3>Turnkey Solutions</h3>
           <p>From blank space to first service: brand, menu, systems, hiring, training, go-live.</p>
         </div>
       </div>
-        </div>
 
-      <div class="service-item">
-        <div class="service-icon">
-          <div class="node node-l-2">
-          <!-- Camera -->
-          <svg viewBox="0 0 24 24">
-            <path d="M4 7h3l2-3h6l2 3h3v12H4z"/>
-            <circle cx="12" cy="13" r="4"/>
-          </svg>
-        </div>
+      <div class="service-item" data-node="2">
         <div class="text-block">
           <h3>Food Styling & Visuals</h3>
           <p>Professional photography and styling that captures your culinary vision authentically.</p>
@@ -798,73 +784,92 @@
 
     <!-- CENTER LOOP -->
     <div class="column center-col">
+
       <div class="loop-diagram">
-        <svg class="loop-ring-svg" viewBox="0 0 400 400">
-          <!-- Beige ring -->
+
+        <!-- BEIGE ROTATING RING -->
+        <svg class="loop-ring" viewBox="0 0 400 400">
           <circle cx="200" cy="200" r="160"
             fill="none"
             stroke="#f3ded9"
             stroke-width="16"
             stroke-linecap="round"/>
 
-          <!-- BLACK ARROW MARKERS (VISUAL ROTATION CUE) -->
-          <polygon points="200,30 190,55 210,55" fill="#000"/>
-          <polygon points="370,200 345,190 345,210" fill="#000"/>
-          <polygon points="200,370 190,345 210,345" fill="#000"/>
-          <polygon points="30,200 55,190 55,210" fill="#000"/>
+          <!-- Black bars so motion is visible -->
+          <rect x="195" y="20" width="10" height="30" fill="#000"/>
+          <rect x="195" y="350" width="10" height="30" fill="#000"/>
+          <rect x="20" y="195" width="30" height="10" fill="#000"/>
+          <rect x="350" y="195" width="30" height="10" fill="#000"/>
         </svg>
-      </div>
-    </div>
 
-    <!-- RIGHT -->
-    <div class="column right-col">
+        <!-- STATIC ICONS ON RING -->
+        <div class="loop-node node-1">
+          <svg viewBox="0 0 24 24">
+            <path d="M3 10.5 12 3l9 7.5V21H14v-6h-4v6H3z"/>
+          </svg>
+        </div>
 
-      <div class="service-item">
-        <div class=" node service-icon">
-          <!-- Consultancy -->
+        <div class="loop-node node-2">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 7h3l2-3h6l2 3h3v12H4z"/>
+            <circle cx="12" cy="13" r="4"/>
+          </svg>
+        </div>
+
+        <div class="loop-node node-3">
           <svg viewBox="0 0 24 24">
             <path d="M12 2 2 7l10 5 10-5z"/>
             <path d="M2 12l10 5 10-5"/>
           </svg>
         </div>
-        <div class="text-block">
-          <h3>F&B Consultancy</h3>
-          <p>Menus engineered for margins, speed, and identity. Strategic culinary design.</p>
-        </div>
-      </div>
 
-      <div class="service-item">
-        <div class=" node service-icon">
-          <!-- Scale -->
+        <div class="loop-node node-4">
           <svg viewBox="0 0 24 24">
             <path d="M3 3v18h18v-2H5V3z"/>
             <path d="M7 14l4-4 4 2 5-6"/>
           </svg>
         </div>
-        <div class="text-block">
-          <h3>Scale & Franchise</h3>
-          <p>Standardize the magic. Systems designed for consistent excellence across locations.</p>
-        </div>
-      </div>
 
-      <div class="service-item">
-        <div class="node service-icon">
-          <!-- Private Dining -->
+        <div class="loop-node node-5">
           <svg viewBox="0 0 24 24">
             <path d="M3 11h18v2H3z"/>
             <path d="M6 13v8M18 13v8"/>
           </svg>
         </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT SERVICES -->
+    <div class="column right-col">
+
+      <div class="service-item" data-node="3">
+        <div class="text-block">
+          <h3>F&B Consultancy</h3>
+          <p>Menus engineered for margins, speed, and identity.</p>
+        </div>
+      </div>
+
+      <div class="service-item" data-node="4">
+        <div class="text-block">
+          <h3>Scale & Franchise</h3>
+          <p>Systems designed for consistent excellence.</p>
+        </div>
+      </div>
+
+      <div class="service-item" data-node="5">
         <div class="text-block">
           <h3>Private Dining</h3>
-          <p>Bespoke private dining. Exclusive culinary experiences for intimate gatherings.</p>
+          <p>Bespoke culinary experiences.</p>
         </div>
       </div>
 
     </div>
 
   </div>
+
 </main>
+
 
   
  <!-- THE WORK BEFORE THE WORK SECTION -->
