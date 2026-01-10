@@ -9635,6 +9635,7 @@ video {
   opacity: 1 !important;
 }
 
+   
 /* Arrow markers on the loop */
 .loop-ring-svg polygon {
   fill: #111 !important;
@@ -9651,3 +9652,60 @@ video {
   stroke: none !important;
 }
 
+/* LIGHTER OVERLAY */
+.services-bg-overlay{
+  background: rgba(0,0,0,0.35) !important;
+}
+
+/* CENTER TITLE */
+.services-hero-content{
+  text-align:center;
+}
+
+/* LOOP BASE */
+.loop-diagram{
+  position:relative;
+  width:400px;
+  height:400px;
+  margin:auto;
+}
+
+.loop-ring{
+  width:100%;
+  height:100%;
+  animation: spin 18s linear infinite;
+  transform-origin: center;
+}
+
+/* ICONS */
+.loop-node{
+  position:absolute;
+  width:42px;
+  height:42px;
+  background:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.loop-node svg{
+  width:20px;
+  height:20px;
+  stroke:#000;
+  fill:none;
+  stroke-width:2;
+}
+
+/* ICON POSITIONS (Brand-deck layout) */
+.node-1{ top:-10px; left:50%; transform:translateX(-50%); }
+.node-2{ top:80px; right:-10px; }
+.node-3{ bottom:80px; right:-10px; }
+.node-4{ bottom:-10px; left:50%; transform:translateX(-50%); }
+.node-5{ top:50%; left:-10px; transform:translateY(-50%); }
+
+/* ROTATION */
+@keyframes spin{
+  from{ transform:rotate(0deg); }
+  to{ transform:rotate(360deg); }
+}
