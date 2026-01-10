@@ -9486,5 +9486,21 @@ video {
   max-width: 100%;
   height: auto;
 }
+/* =====================================================
+   MOBILE SLIDESHOW BUTTON FIX (ACTUAL ISSUE)
+   ===================================================== */
+@media (max-width: 768px) {
+
+  .slideshow-hero .slide-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .slideshow-hero .slide-buttons .btn {
+    width: auto !important;
+    min-width: max-content;
+  }
+}
 
 
