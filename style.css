@@ -9593,15 +9593,10 @@ video {
 /* Keep icons static while ring rotates */
 .loop-node {
   pointer-events: none;
-}
-/* ================================
-   LOOP ICON SVG STYLING
-   ================================ */
 
-.loop-node svg {
+.service-icon svg {
   width: 28px;
   height: 28px;
-  stroke: #000;
-  fill: none;
-  stroke-width: 1.75;
+  fill: #f3ded9 !important;
+  stroke: none !important;
 }
