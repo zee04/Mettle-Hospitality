@@ -9704,8 +9704,24 @@ video {
 .node-4{ bottom:-10px; left:50%; transform:translateX(-50%); }
 .node-5{ top:50%; left:-10px; transform:translateY(-50%); }
 
-/* ROTATION */
+
+/* ROTATE THE WHOLE LOOP */
+.loop-diagram{
+  animation: spin 22s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+/* STOP ICONS FROM ROTATING */
+.loop-node{
+  animation: counterSpin 22s linear infinite;
+}
+
 @keyframes spin{
-  from{ transform:rotate(0deg); }
-  to{ transform:rotate(360deg); }
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes counterSpin{
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
 }
