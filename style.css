@@ -9627,4 +9627,22 @@ video {
   opacity: 1 !important;
   filter: none !important;
 }
+/* SERVICES ICONS — FORCE VISIBILITY */
+.services-wrapper .service-icon svg,
+.services-wrapper .loop-diagram svg {
+  stroke: #111 !important;
+  fill: none !important;
+  opacity: 1 !important;
+}
+
+/* Arrow markers on the loop */
+.loop-ring-svg polygon {
+  fill: #111 !important;
+}
+
+/* Kill inherited fade + blend modes */
+.services-wrapper svg {
+  filter: none !important;
+  mix-blend-mode: normal !important;
+}
 
